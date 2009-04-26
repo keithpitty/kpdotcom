@@ -1,0 +1,16 @@
+<% content_for :secondary_content do %>
+  <div id="secondaryText">
+    <h2 class="top">Latest Blog Posts</h2>
+    <%= render :partial => "shared/latest_posts" %>
+    <%= render :partial => "shared/syndication" %>
+  </div>
+<% end %>
+<h1>Freelance Software Consultant</h1>
+<h2>What do I offer?</h2>
+<p>Based on the NSW Central Coast in Australia, I offer software development <%= link_to 'services', :controller => 'services' %>. I specialise in developing custom business software, often in the form of <%= link_to 'dynamic web applications', :controller => 'services', :action => 'agile_web' %>, using languages such as <%= link_to 'Ruby', :controller => 'services', :action => 'agileweb' %> and <%= link_to 'Java', :controller => 'services', :action => 'java' %>. I also offer services in <%= link_to 'development coaching', :controller => 'services', :action => 'coaching' %> and <%= link_to 'technology mentoring', :controller => 'services', :action => 'mentoring' %>.</p>
+<h2>What is my approach to Software Development?</h2>
+<p>Good software provides benefits to people. Good software developers strive to collaborate with others to create better software and enable people to make better use of it. These simple principles underpin my approach to software development, which is based on more than 20 years of <%= link_to 'professional experience', :controller => 'about' %>.</p>
+<%= javascript_include_tag "prototype" %>
+<%= render :partial => 'approach' %>
+<h2>My Availability</h2>
+<p>Please <%= link_to 'contact me', :controller => 'contact' %> to discuss your requirements and my availability. Meanwhile, you are welcome to read more about my <%= link_to 'professional background', :controller => 'about' %>, my <%= link_to 'services', :controller => 'services' %> or browse some of my recent <%= link_to 'blog posts', :controller => 'blog' %>.</p>

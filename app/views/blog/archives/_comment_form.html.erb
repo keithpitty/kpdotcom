@@ -1,0 +1,31 @@
+<h2>Post a Comment</h2>
+<p>Please use your real name and be respectful. <a href="http://hobix.com/textile/">Textile</a> formatting is supported.</p>
+<%= error_messages_for :comment %>
+<% form_for @comment do |f| %>
+  <fieldset>
+    <%= hidden_field_tag 'blog_id', @blog_post.id %>
+    <ol>
+      <li>
+        <label for="name">Your name:</label>
+        <%= f.text_field :name %>
+      </li>
+      <li>
+        <label for="email">Your email:</label>
+        <%= f.text_field :email %>
+      </li>
+      <li>
+        <label for="subject">Website:</label>
+        <%= f.text_field :website %>
+      </li>
+      <li>
+        <label for="message">Comment:</label>
+        <%= f.text_area :comment %>
+      </li>
+      <li class="submitBtn">
+        <button value="submit" class="submitBtn">
+          <span>Post Comment</span>
+        </button>
+      </li>
+    </ol>
+  </fieldset>
+<% end %>

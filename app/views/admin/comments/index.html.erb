@@ -1,0 +1,57 @@
+<% if @rejected_comments.size > 0 %>
+  <h1>Rejected Comments</h1>
+  <div id="success">
+    <% if flash[:notice] %>
+      <%= render :partial => 'shared/success', :locals => {:msg => flash[:notice]} %>
+    <% end %>
+  </div>
+  <% form_tag destroy_multiple_admin_comments_path, :method => :delete do %>
+    <table cellspacing="5" cellpadding="5">
+      <thead>
+        <tr><th></th><th>Name</th><th>Comment</th><th>Action</th></tr>
+      </thead>
+      <tbody>
+        <% @rejected_comments.each do |comment| %>
+          <tr>
+            <td><%= check_box_tag "comment_ids[]", comment.id, true %></td>
+            <% if comment.website.blank? %>
+              <td><%= h(comment.name) %></td>
+            <% else %>
+              <td><%= link_to h(comment.name), comment.website %></td>
+            <% end %>
+            <td><%= h truncate(comment.comment, 30) %></td>
+            <td><%= link_to 'Not spam', approve_admin_comment_path(comment), :confirm => 'Are you sure?', :method => :put  %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <fieldset>
+      <ol>
+        <li class="submitBtn">
+          <button value="submit" class="submitBtn">
+            <span>Destroy Checked</span>
+          </button>
+        </li>
+      </ol>
+    </fieldset>
+  <% end %>
+<% end %>
+<h1>Approved Comments</h1>
+<table cellspacing="5" cellpadding="5">
+  <thead>
+    <tr><th>Name</th><th>Comment</th><th>Action</th></tr>
+  </thead>
+  <tbody>
+    <% @approved_comments.each do |comment| %>
+      <tr>
+        <% if comment.website.blank? %>
+          <td><%= h(comment.name) %></td>
+        <% else %>
+          <td><%= link_to h(comment.name), comment.website %></td>
+        <% end %>
+        <td><%= h truncate(comment.comment, 30) %></td>
+        <td><%= link_to 'Spam', reject_admin_comment_path(comment), :confirm => 'Are you sure?', :method => :put  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

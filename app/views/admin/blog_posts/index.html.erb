@@ -1,0 +1,16 @@
+<% content_for :secondary_content do %>
+  <p><%= link_to 'Add post', new_admin_blog_post_path %></p>
+<% end %>
+<h1>Blog Posts</h1>
+<table cellspacing="5" cellpadding="5">
+  <thead>
+    <tr><th>Date</th><th>Title</th><th>Status</th><th>Actions</th></tr>
+  </thead>
+  <tbody>
+    <% @blog_posts.each do |post| %>
+      <tr><td><%= post.created_at.to_date.to_formatted_s(:rfc822) %></td><td><%= post.title %></td></td><td><%= post.status %></td>
+        <td><%= link_to 'Edit', edit_admin_blog_post_path(post) %> <%= link_to 'Delete', admin_blog_post_path(post), :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

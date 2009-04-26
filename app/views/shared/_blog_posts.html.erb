@@ -1,0 +1,15 @@
+<% content_for :secondary_content do %>
+  <%= render :partial => "shared/blog_sidebar" %>
+<% end %>
+<% @blog_posts.each do |p| %>
+  <h1 class="blog"><%= link_to p.title, blog_archive_path(p) %></h1>
+  <h6><%= p.created_at.to_date.to_formatted_s(:long_ordinal) %></h6>
+  <%= parse_textile_and_code_syntax(p.post) %>
+  <% unless p.taggings.empty? %>
+    <p class="blogPostFooter">
+      Tags: <% p.tags.each do |t| %>
+      <%= link_to t.name, blog_tag_path(t) %>
+      <% end %> | <%= link_to "Comments (#{p.comments.approved.size})", "#{blog_archive_path(p)}#comments" %>
+    </p>
+  <% end %>
+<% end %>

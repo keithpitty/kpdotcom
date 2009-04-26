@@ -1,0 +1,2 @@
+module Blog::ArchivesHelper
+end

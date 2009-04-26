@@ -1,0 +1,32 @@
+<h1>Service Details</h1>
+<%= error_messages_for :service %>
+<div id="success">
+  <% if flash[:notice] %>
+    <%= render :partial => 'shared/success', :locals => {:msg => flash[:notice]} %>
+  <% end %>
+</div>
+<fieldset>
+  <ol>
+    <li>
+      <label for="rank">Rank:</label>
+      <%= f.text_field :rank %>
+    </li>
+    <li>
+      <label for="name">Name:</label>
+      <%= f.text_field :name %>
+    </li>
+    <li>
+      <label for="heading">Heading:</label>
+      <%= f.text_field :heading %>
+    </li>
+    <li>
+      <label for="description">Description:</label>
+      <%= f.text_area :description %>
+    </li> 
+    <li class="submitBtn">
+      <button value="submit" class="submitBtn">
+        <span>Save Service</span>
+      </button>
+    </li>
+  </ol>
+</fieldset>

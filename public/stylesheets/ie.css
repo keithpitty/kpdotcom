@@ -1,0 +1,8 @@
+fieldset ol li button {
+  width:auto;
+  overflow:visible;
+}
+
+fieldset ol li button span {
+  margin-top:1px;
+}

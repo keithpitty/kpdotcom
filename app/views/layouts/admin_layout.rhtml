@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>keithpitty.com admin</title>
+  <%= stylesheet_link_tag 'application' %>
+  <!--[if IE]>
+    <%= stylesheet_link_tag 'ie' %>
+  <![endif]-->
+  <%= syntax_css 'mac_classic' %>
+</head>
+<body id="wrapper">
+  <div id="container">
+	<div id="adminBanner">
+	  <div class="adminHeading">
+	    Administration
+	  </div>
+	</div>
+	<% if logged_in? %>
+	<div id="<%= @section %>">
+		<div id="mainNav">
+			<ul>
+			  <li class="admin_home"><%= link_to 'Home', '/admin' %></li>
+			  <li class="admin_services"><%= link_to 'Services', '/admin/services' %></li>
+			  <li class="admin_achievements"><%= link_to 'Achievements', '/admin/achievements' %></li>
+			  <li class="admin_testimonials"><%= link_to 'Testimonials', '/admin/testimonials' %></li>
+			  <li class="admin_blog_posts"><%= link_to 'Blog posts', '/admin/blog_posts' %></li>
+			  <li class="admin_comments"><%= link_to 'Comments', '/admin/comments' %></li>
+			</ul>
+		</div>
+	</div>
+	<% end %>
+	<div id="content">
+	  <div id="mainContent">
+	    <%= yield :layout %>
+	  </div>
+	  <div id="secondaryContent">
+      <div id="secondaryText">
+    	  <% if logged_in? %>
+    		<%= yield :secondary_content %>
+  		  <p><%= link_to 'Log out', '/admin/account/logout' %></p>
+        <% end %>
+      </div>
+	  </div>
+    </div>
+  </div>
+  <div id="footer">
+	<span class="floatLeft">
+	 &nbsp; &copy; 2007-<%= Time.zone.now.year.to_s[2..3] %> Keith Pitty, all rights reserved.
+	</span>
+  </div>
+</body>
+</html>

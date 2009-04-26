@@ -1,0 +1,3 @@
+<% form_for (:achievement, :url => admin_achievement_path(@achievement), :html => { :method => :put }) do |f| %>
+  <%= render :partial => 'achievement_form', :locals => { :f => f } %>
+<% end %>

@@ -1,0 +1,9 @@
+<% content_for :secondary_content do %>
+  <%= render :partial => "shared/blog_sidebar" %>
+<% end %>
+<h1>Archives</h1>
+<ul class="archives">
+  <% @blog_posts.each do |p| %>
+    <li><%= "#{p.created_at.to_date.to_formatted_s(:rfc822)}: #{link_to p.title, blog_archive_path(p)}" %></li>
+  <% end %>
+</ul>

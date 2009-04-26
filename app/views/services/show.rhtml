@@ -1,0 +1,15 @@
+<h1><%= h @current_service.heading %></h1>
+<% content_for :secondary_content do %>
+  <div id="secondaryNav">
+    <ul>
+  	<% @services.each do |service| %>
+  	  <% if service == @current_service %>
+  	    <li class="selected"><%= link_to service.heading, service_path(service) %></li>
+  	  <% else %>
+    	  <li><%= link_to service.heading, service_path(service) %></li>
+  	  <% end %>
+  	<% end %>
+    </ul>	
+  </div>
+<% end %>
+<p><%= RedCloth.new(@current_service.description).to_html %></p>

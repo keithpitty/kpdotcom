@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Keith Pitty - better software through collaboration</title>
+  <%= stylesheet_link_tag 'application' %>
+  <!--[if IE]>
+    <%= stylesheet_link_tag 'ie' %>
+  <![endif]-->
+  <%= syntax_css 'mac_classic' %>
+  <%= auto_discovery_link_tag(:atom, {:controller => 'feed', :action => 'index'}) %>
+</head>
+<body id="wrapper">
+  <div id="container">
+	<a href="/">
+  	<div id="banner">
+  	</div>
+	</a>
+	<div id="<%= @section %>">
+		<div id="mainNav">
+			<ul>
+			  <li class="home"><a href="/">Home</a></li>
+			  <li class="services"><a href="/services">Services</a></li>
+			  <li class="blog"><a href="/blog">Blog</a></li>
+			  <li class="about"><a href="/about">About me</a></li>
+			  <li class="contact"><a href="/contact">Contact me</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="content">
+	  <div id="mainContent">
+	    <%= yield :layout %>
+	  </div>
+	  <div id="secondaryContent">
+		<%= yield :secondary_content %>
+	  </div>
+    </div>
+  </div>
+  <div id="footer">
+	<span class="floatLeft">
+	 &nbsp; &copy; 2007-<%= Time.zone.now.year.to_s[2..3] %> Keith Pitty, all rights reserved.
+	</span>
+	<span class="floatRight">
+	 <%= link_to 'Home', "/" %> | 
+	 <a href="/services">Services</a> |
+   <a href="/blog">Blog</a> |
+	 <a href="/about">About</a> |
+	 <a href="/contact">Contact</a>&nbsp;
+	</span>
+  </div>
+</body>
+</html>

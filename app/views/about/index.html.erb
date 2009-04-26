@@ -1,0 +1,20 @@
+<h1>About me</h1>
+<% content_for :secondary_content do %>
+    <div id="secondaryText">
+	  <h2 class="top">How I can help you</h2>
+	  <p>If you haven't already, I invite you to read about the <%= link_to 'services', :controller => 'services' %> I offer. Alternatively, my background may suggest another service that I could provide to meet your needs.</p>
+	  <p>If you would like to know more about what I can do for you or would like to talk with one of my referees, please <%= link_to 'contact me', :controller => 'contact' %>.</p>
+	  <h2>Testimonials</h2>
+		<% @testimonials.each do |testimonial| %>
+		  <p><%= image_tag "start-quote.gif" %><%= h testimonial.recommendation %><%= image_tag "end-quote.gif" %></p>
+		  <p class="testimonialProvider"><%= h testimonial.provider %></p>
+		<% end %>	
+    </div>
+<% end %>
+<p>
+<img src="images/keith.jpg" alt="photo" height="124" width="125" vspace="5" hspace="30" align="left" />Having commenced working in the industry in 1983, I have accumulated technical experience on a diverse range of platforms. My roles have covered the full life-cycle of software development. I have successfully led and contributed to teams that have delivered applications to corporate and government organisations in Australia and the United Kingdom.</p>
+<p>Read on to learn more about my professional background and what others have had to say about my work.</p>
+<% @achievements.each do |achievement| %>
+  <h2><%= h achievement.heading %></h2>
+  <%= RedCloth.new(achievement.description).to_html %>
+<% end %>

@@ -1,0 +1,17 @@
+<div id="secondaryText" class="blog">
+  <h2 class="top">Navigation</h2>
+  <ul>
+    <li><%= link_to "Blog home", "/blog" %></li>
+    <li><%= link_to "Archives", "/blog/archives" %></li>
+  </ul>
+  <h2>Latest Blog Posts</h2>
+  <%= render :partial => "shared/latest_posts" %>
+  <h2>Syndication</h2>
+  <%= render :partial => "shared/syndication" %>
+  <h2>Tags</h2>
+  <p>
+    <% tag_cloud @tags, %w(css1 css2 css3 css4) do |tag, css_class| %>
+      <%= link_to tag.name, blog_tag_path(tag), :class => css_class %>
+    <% end %>
+  </p>
+</div>

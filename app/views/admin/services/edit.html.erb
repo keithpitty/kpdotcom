@@ -1,0 +1,3 @@
+<% form_for (:service, :url => admin_service_path(@service), :html => { :method => :put }) do |f| %>
+  <%= render :partial => 'service_form', :locals => { :f => f } %>
+<% end %>
