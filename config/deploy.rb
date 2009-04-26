@@ -42,14 +42,18 @@ namespace :deploy do
   end
 end
 
-# Passenger
+# Override app start and restart for Passenger
 
-namespace :passenger do
-  desc "Restart Application"
-  task :restart do
+namespace :deploy do
+  desc "Restarting mod_rails with restart.txt"
+  task :restart, :roles => :app, :except => { :no_release => true } do
     run "touch #{current_path}/tmp/restart.txt"
+  end
+ 
+  [:start, :stop].each do |t|
+    desc "#{t} task is a no-op with mod_rails"
+    task t, :roles => :app do ; end
   end
 end
 
 after "deploy:symlink", "deploy:create_symlinks"
-after :deploy, "passenger:restart"
