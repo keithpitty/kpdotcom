@@ -1,5 +1,8 @@
 set :application, "kpdotcom"
-set :repository,  "http://svn.keithpitty.com/#{application}/trunk"
+default_run_options[:pty] = true
+set :ssh_options, {:forward_agent => true}
+set :repository, "git@cockatoosoftware.unfuddle.com:cockatoosoftware/#{application}.git"
+set :branch, "master"
 
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location
@@ -8,7 +11,8 @@ set :repository,  "http://svn.keithpitty.com/#{application}/trunk"
 
 # If you aren't using Subversion to manage your source code, specify
 # your SCM below:
-# set :scm, :subversion
+set :scm, :git
+set :deploy_via, :remote_cache
 
 role :app, "keithpitty.com"
 role :web, "keithpitty.com"
@@ -38,4 +42,14 @@ namespace :deploy do
   end
 end
 
+# Passenger
+
+namespace :passenger do
+  desc "Restart Application"
+  task :restart do
+    run "touch #{current_path}/tmp/restart.txt"
+  end
+end
+
 after "deploy:symlink", "deploy:create_symlinks"
+after :deploy, "passenger:restart"
