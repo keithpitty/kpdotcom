@@ -1,4 +1,4 @@
-atom_feed(:url => formatted_feed_index_url(:atom)) do |feed|
+atom_feed(:url => feed_index_url(:atom)) do |feed|
   feed.title("Keith Pitty - better software through collaboration")
   feed.updated(@blog_posts.first ? @blog_posts.first.created_at : Time.now.utc)
 
