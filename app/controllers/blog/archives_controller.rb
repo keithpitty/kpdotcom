@@ -1,6 +1,8 @@
 class Blog::ArchivesController < ApplicationController
   before_filter :get_tags, :set_section, :get_latest_posts
   
+  cache_sweeper :comment_sweeper, :only => :create_comment
+  
   def index
     @blog_posts = BlogPost.published
   end
@@ -17,6 +19,7 @@ class Blog::ArchivesController < ApplicationController
     if @comment.save
       if @comment.approved?
         flash[:notice] = "Thanks for your comment."
+        expire_fragment(:fragment => "blog_home")
       else
         flash[:error] = "Unfortunately this comment is considered spam by Akismet. If it is not spam it will show up once it has been approved by the administrator."
       end

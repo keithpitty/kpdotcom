@@ -10,8 +10,10 @@
   <%= render :partial => "shared/syndication" %>
   <h2>Tags</h2>
   <p>
-    <% tag_cloud @tags, %w(css1 css2 css3 css4) do |tag, css_class| %>
-      <%= link_to tag.name, blog_tag_path(tag), :class => css_class %>
+    <% cache :tag_cloud do %>
+      <% tag_cloud @tags, %w(css1 css2 css3 css4) do |tag, css_class| %>
+        <%= link_to tag.name, blog_tag_path(tag), :class => css_class %>
+      <% end %>
     <% end %>
   </p>
 </div>

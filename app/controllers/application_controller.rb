@@ -8,10 +8,14 @@ class ApplicationController < ActionController::Base
   
   protected
     def get_tags
-      @tags = BlogPost.tag_counts.sort {|x,y| x.name <=> y.name}
+      if !fragment_exist? :tag_cloud
+        @tags = BlogPost.tag_counts.sort {|x,y| x.name <=> y.name}
+      end
     end
     
     def get_latest_posts
-      @latest_posts = BlogPost.latest_published
+      if !fragment_exist? :recent_posts
+        @latest_posts = BlogPost.latest_published
+      end
     end
 end

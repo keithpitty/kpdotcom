@@ -1,8 +1,6 @@
 class HomeController < ApplicationController
   before_filter :get_latest_posts
 
-  caches_page :index
-
   def index
     @section = 'home'
     @show_detail = false

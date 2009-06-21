@@ -1,15 +1,17 @@
 <% content_for :secondary_content do %>
   <%= render :partial => "shared/blog_sidebar" %>
 <% end %>
-<h1 class="blog"><%= @blog_post.title %></h1>
-<h6><%= @blog_post.created_at.to_date.to_formatted_s(:long_ordinal) %></h6>
-<%= parse_textile_and_code_syntax(@blog_post.post) %>
-<% unless @blog_post.taggings.empty? %>
-  <p class="blogPostFooter">
-    Tags: <% @blog_post.tags.each do |t| %>
-    <%= link_to t.name, "/blog?tag=#{t.name}" %>
-    <% end %>
-  </p>
+<% cache "blog_post_detail_#{@blog_post.id}" do %>
+  <h1 class="blog"><%= @blog_post.title %></h1>
+  <h6><%= @blog_post.created_at.to_date.to_formatted_s(:long_ordinal) %></h6>
+  <%= parse_textile_and_code_syntax(@blog_post.post) %>
+  <% unless @blog_post.taggings.empty? %>
+    <p class="blogPostFooter">
+      Tags: <% @blog_post.tags.each do |t| %>
+      <%= link_to t.name, "/blog?tag=#{t.name}" %>
+      <% end %>
+    </p>
+  <% end %>
 <% end %>
 <div id="comments">
   <h2>Comments</h2>
@@ -23,12 +25,14 @@
       <%= render :partial => 'shared/error', :locals => {:msg => flash[:error]} %>
     <% end %>
   </div>
-  <% if @blog_post.comments.approved.empty? %>
-    <p>None yet.</p>
-  <% end %>
-  <% @blog_post.comments.approved.each do |c| %>
-    <%= parse_textile_and_code_syntax(c.comment) %>
-    <p class="commentFooter"><%= "Posted by: #{c.footer_name} #{distance_of_time_in_words(@blog_post.created_at, c.created_at)} later"%></p>
+  <% cache "comments_for_blog_post_#{@blog_post.id}" do%>
+    <% if @blog_post.comments.approved.empty? %>
+      <p>None yet.</p>
+    <% end %>
+    <% @blog_post.comments.approved.each do |c| %>
+      <%= parse_textile_and_code_syntax(c.comment) %>
+      <p class="commentFooter"><%= "Posted by: #{c.footer_name} #{distance_of_time_in_words(@blog_post.created_at, c.created_at)} later"%></p>
+    <% end %>  
   <% end %>
   <%= render :partial => "comment_form" %>
 </div>
