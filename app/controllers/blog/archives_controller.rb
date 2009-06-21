@@ -9,6 +9,23 @@ class Blog::ArchivesController < ApplicationController
     @blog_post = BlogPost.find_by_param params[:id]
     @comment = Comment.new
   end
+  
+  def create_comment
+    @comment = Comment.new(params[:comment])
+    @comment.blog_post = BlogPost.find(params[:blog_id])
+    @comment.request = request
+    if @comment.save
+      if @comment.approved?
+        flash[:notice] = "Thanks for your comment."
+      else
+        flash[:error] = "Unfortunately this comment is considered spam by Akismet. If it is not spam it will show up once it has been approved by the administrator."
+      end
+      redirect_to "#{blog_post_path(@comment.blog_post)}#comments"
+    else
+      @blog_post = BlogPost.find_by_param params[:id]
+      render :action => "show"
+    end  
+  end
 
   private
     def set_section

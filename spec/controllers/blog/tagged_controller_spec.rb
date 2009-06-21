@@ -10,7 +10,7 @@ describe Blog::TaggedController do
 
   it "should display all posts for a given tag" do
     BlogPost.stub!(:find_published_tagged_with).with("A tag").and_return([@blog_post_2])
-    get 'index', :tag => "A tag"
+    get 'show', :id => "A tag"
     response.should be_success
     assigns[:blog_posts].should == [@blog_post_2]
   end

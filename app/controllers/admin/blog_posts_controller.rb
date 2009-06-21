@@ -1,7 +1,5 @@
 class Admin::BlogPostsController < AdminLayoutController
   
-  cache_sweeper :blog_sweeper, :only => [:create, :update, :destroy]
-  
   def index
     @blog_posts = BlogPost.find :all, :order => "created_at desc"
   end

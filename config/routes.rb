@@ -6,7 +6,7 @@ ActionController::Routing::Routes.draw do |map|
     blog.resources :tags, :controller => :tagged
   end
   map.resources :feed
-  map.resources :blog_posts, :controller => "blog/archives"
+  map.resources :blog_posts, :controller => "blog/archives", :member => { :create_comment => :post }
   map.resources :comments
   map.resources :services
   
