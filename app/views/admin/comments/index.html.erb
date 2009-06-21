@@ -49,7 +49,7 @@
         <% else %>
           <td><%= link_to h(comment.name), comment.website %></td>
         <% end %>
-        <td><%= h truncate(comment.comment, 30) %></td>
+        <td><%= h truncate(comment.comment, :length => 50) %></td>
         <td><%= link_to 'Spam', reject_admin_comment_path(comment), :confirm => 'Are you sure?', :method => :put  %></td>
       </tr>
     <% end %>
