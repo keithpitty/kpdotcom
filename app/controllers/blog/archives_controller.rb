@@ -1,8 +1,6 @@
 class Blog::ArchivesController < ApplicationController
   before_filter :get_tags, :set_section, :get_latest_posts
   
-  caches_page :index, :show
-  
   def index
     @blog_posts = BlogPost.published
   end

@@ -13,11 +13,6 @@
 <% end %>
 <div id="comments">
   <h2>Comments</h2>
-  <div id="success">
-    <% if flash[:notice] %>
-      <%= render :partial => 'shared/success', :locals => {:msg => flash[:notice]} %>
-    <% end %>
-  </div>
   <% if @blog_post.comments.approved.empty? %>
     <p>None yet.</p>
   <% end %>

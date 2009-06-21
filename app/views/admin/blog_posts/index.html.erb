@@ -2,6 +2,11 @@
   <p><%= link_to 'Add post', new_admin_blog_post_path %></p>
 <% end %>
 <h1>Blog Posts</h1>
+<div id="success">
+  <% if flash[:notice] %>
+    <%= render :partial => 'shared/success', :locals => {:msg => flash[:notice]} %>
+  <% end %>
+</div>
 <table cellspacing="5" cellpadding="5">
   <thead>
     <tr><th>Date</th><th>Title</th><th>Status</th><th>Actions</th></tr>

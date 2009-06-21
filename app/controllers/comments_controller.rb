@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   
-  cache_sweeper :comment_sweeper
+  # FIXME: validation needs to show errors on blog page and redisplay entered data.
   
   def create
     @comment = Comment.new(params[:comment])
@@ -10,11 +10,11 @@ class CommentsController < ApplicationController
       if @comment.approved?
         flash[:notice] = "Thanks for your comment."
       else
-        flash[:notice] = "Unfortunately this comment is considered spam by Akismet. If it is not spam it will show up once it has been approved by the administrator."
+        flash[:error] = "Unfortunately this comment is considered spam by Akismet. If it is not spam it will show up once it has been approved by the administrator."
       end
-      redirect_to "#{blog_post_path(@comment.blog_post)}#comments"
     else
-      render
-    end
+      flash[:error] = "Something went wrong!"
+    end  
+    redirect_to "#{blog_post_path(@comment.blog_post)}#comments"
   end
 end
