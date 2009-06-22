@@ -1,4 +1,9 @@
 <h1>Enter Credentials</h1>
+<div id="success">
+  <% if flash[:notice] %>
+    <%= render :partial => 'shared/success', :locals => {:msg => flash[:notice]} %>
+  <% end %>
+</div>
 <fieldset>
 <% form_tag do -%>
   <ol>
