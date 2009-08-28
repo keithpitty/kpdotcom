@@ -1,7 +1,5 @@
 class ContactController < ApplicationController
 
-  caches_page :index
-
   def index
     @section = 'contact'
     @contact = Contact.new
