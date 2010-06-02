@@ -3,8 +3,13 @@ class ServicesController < ApplicationController
   caches_page :show
   
   def index
+    @section = 'services'
     first_service = Service.find :first, :order => 'rank'
-    redirect_to service_path(first_service)
+    if first_service
+      redirect_to service_path(first_service)
+    else
+      render
+    end
   end
   
   def show
