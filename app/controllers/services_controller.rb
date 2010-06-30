@@ -4,12 +4,16 @@ class ServicesController < ApplicationController
   
   def index
     @section = 'services'
-    first_service = Service.find :first, :order => 'rank'
-    if first_service
-      redirect_to service_path(first_service)
-    else
-      render
-    end
+    
+    # Note: commenting out this code now that I am redirecting the visitor 
+    # to the services section on the Cockatoo Software site.
+    
+    # first_service = Service.find :first, :order => 'rank'
+    # if first_service
+    #   redirect_to service_path(first_service)
+    # else
+    #   render
+    # end
   end
   
   def show
