@@ -1,0 +1,6 @@
+log/
+public/.DS_Store
+.DS_Store
+config/.DS_Store
+tmp/
+.rvmrc
