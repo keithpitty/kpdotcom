@@ -16,6 +16,3 @@ config.action_view.debug_rjs                         = true
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
-
-# See Rails::Configuration for more options
-config.gem "rspec-rails", :lib => "spec"

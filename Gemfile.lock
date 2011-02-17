@@ -1,0 +1,53 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    RedCloth (4.2.7)
+    actionmailer (2.3.11)
+      actionpack (= 2.3.11)
+    actionpack (2.3.11)
+      activesupport (= 2.3.11)
+      rack (~> 1.1.0)
+    activerecord (2.3.11)
+      activesupport (= 2.3.11)
+    activeresource (2.3.11)
+      activesupport (= 2.3.11)
+    activesupport (2.3.11)
+    dasil003-tm_syntax_highlighting (1.9.0)
+      spox-ultraviolet
+    diff-lcs (1.1.2)
+    mysql (2.8.1)
+    rack (1.1.0)
+    rails (2.3.11)
+      actionmailer (= 2.3.11)
+      actionpack (= 2.3.11)
+      activerecord (= 2.3.11)
+      activeresource (= 2.3.11)
+      activesupport (= 2.3.11)
+      rake (>= 0.8.3)
+    rake (0.8.7)
+    rspec (2.1.0)
+      rspec-core (~> 2.1.0)
+      rspec-expectations (~> 2.1.0)
+      rspec-mocks (~> 2.1.0)
+    rspec-core (2.1.0)
+    rspec-expectations (2.1.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.1.0)
+    rspec-rails (2.1.0)
+      rspec (~> 2.1.0)
+    spox-plist (3.0.1)
+    spox-textpow (0.10.3)
+      spox-plist
+    spox-ultraviolet (0.10.5)
+      spox-textpow
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  RedCloth
+  dasil003-tm_syntax_highlighting
+  mysql
+  rails (~> 2.3.11)
+  rspec
+  rspec-rails
