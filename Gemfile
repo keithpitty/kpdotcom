@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem "rails", "~> 2.3.11"
+gem "rails", "~> 3.0.4"
 gem "mysql"
 gem "RedCloth"
 gem "dasil003-tm_syntax_highlighting"

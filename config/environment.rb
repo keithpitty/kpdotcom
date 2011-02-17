@@ -1,3 +1,9 @@
+# Load the rails application
+require File.expand_path('../application', __FILE__)
+
+# Initialize the rails application
+Kpdotcom::Application.initialize!
+
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
