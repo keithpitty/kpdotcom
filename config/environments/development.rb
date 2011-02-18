@@ -6,4 +6,5 @@ Kpdotcom::Application.configure do
   # config.action_view.cache_template_extensions         = false
   config.action_view.debug_rjs                         = true
   config.action_mailer.raise_delivery_errors = false
+  config.active_support.deprecation = :log
 end

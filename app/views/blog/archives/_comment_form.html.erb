@@ -2,7 +2,7 @@
   <h2>Post a Comment</h2>
   <p>Please use your real name and be respectful. <a href="http://hobix.com/textile/">Textile</a> formatting is supported.</p>
   <%= error_messages_for :comment %>
-  <% remote_form_for @comment, :url => {:controller => "blog/archives", :action => "create_comment"} do |f| %>
+  <%= form_for @comment, :url => {:controller => "blog/archives", :action => "create_comment"}, :remote => true do |f| %>
     <fieldset>
       <%= hidden_field_tag 'blog_id', @blog_post.id %>
       <ol>

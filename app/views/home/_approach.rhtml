@@ -17,7 +17,7 @@
   end %>
 <p>
 	<em>
-		<%= link_to_remote link_text, :update => 'detailed_approach', :url => { :action => 'toggle_detail', :show_or_hide => link_text } %>
+		<%= link_to link_text, :update => 'detailed_approach', :url => { :action => 'toggle_detail', :show_or_hide => link_text }, :remote => true %>
 	</em>
 </p>
 </div>

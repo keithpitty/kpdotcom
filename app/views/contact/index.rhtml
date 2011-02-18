@@ -48,7 +48,7 @@
     <%= render :partial => 'shared/success', :locals => {:msg => flash[:notice]} %>
   <% end %>
 </div>
-<% form_for @contact do |f| %>
+<%= form_for @contact do |f| %>
   <fieldset>
     <ol>
       <li>
