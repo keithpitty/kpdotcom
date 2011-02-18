@@ -42,13 +42,13 @@
 <p>
   For whatever professional reason, I would love to hear from you. Please complete the form below or make use of my contact details to the right. 
 </p>
-<%= error_messages_for :contact %>
 <div id="success">
   <% if flash[:notice] %>
     <%= render :partial => 'shared/success', :locals => {:msg => flash[:notice]} %>
   <% end %>
 </div>
 <%= form_for @contact do |f| %>
+  <%= render "shared/error_messages", :target => @contact %>
   <fieldset>
     <ol>
       <li>

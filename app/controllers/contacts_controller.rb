@@ -1,6 +1,6 @@
-class ContactController < ApplicationController
+class ContactsController < ApplicationController
 
-  def index
+  def new
     @section = 'contact'
     @contact = Contact.new
   end
@@ -11,7 +11,7 @@ class ContactController < ApplicationController
       flash[:notice] = "Message sent!"
       redirect_to '/contact'
     else
-      render :action => "index"
+      render :action => "new"
     end
   end
   

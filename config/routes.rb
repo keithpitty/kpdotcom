@@ -32,6 +32,7 @@ Kpdotcom::Application.routes.draw do
 
   match '' => 'home#index'
   match '/admin' => 'admin_layout#index'
+  match '/contact' => 'contacts#new'
   match ':controller/service.wsdl' => '#wsdl'
   match '/:controller(/:action(/:id))'
 end

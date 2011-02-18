@@ -2,11 +2,10 @@ class Admin::AccountController < AdminLayoutController
   # Be sure to include AuthenticationSystem in Application Controller instead
   # If you want "remember me" functionality, add this before_filter to Application Controller
   before_filter :login_from_cookie
-  before_filter :login_required, :only => 'logout'
+  before_filter :require_user, :only => 'logout'
 
-  # say something nice, you goof!  something sweet.
   def index
-    logged_in? ? redirect_to('/admin') : redirect_to(:action => 'signup')
+    redirect_to('/admin')
   end
 
   def login

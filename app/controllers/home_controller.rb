@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_filter :get_latest_posts
+  before_filter :get_latest_posts, :require_no_user
 
   def index
     @section = 'home'

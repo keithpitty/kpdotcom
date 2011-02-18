@@ -1,5 +1,5 @@
 class AdminLayoutController < ApplicationController
-  before_filter :login_required, :set_section
+  before_filter :require_user, :set_section
   
   def index
     
