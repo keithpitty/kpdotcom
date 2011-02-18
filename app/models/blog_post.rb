@@ -3,7 +3,7 @@ class BlogPost < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :post
   acts_as_taggable
-  named_scope :published, :conditions => {:published => true}, :order => "created_at desc"
+  scope :published, :conditions => {:published => true}, :order => "created_at desc"
   
   def self.latest_published(amount = 5)
     find :all, :conditions => {:published => true}, :order => "created_at desc", :limit => amount

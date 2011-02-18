@@ -1,5 +1,5 @@
 class ContactObserver < ActiveRecord::Observer
   def after_create(contact)
-    ContactMailer.deliver_contact_message(contact)
+    ContactMailer.contact_message(contact).deliver
   end
 end

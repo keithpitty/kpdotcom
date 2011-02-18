@@ -7,8 +7,8 @@ class Comment < ActiveRecord::Base
                               :allow_blank => true
   validates_presence_of :comment
   before_create :check_for_spam
-  named_scope :approved, :conditions => {:approved => true}, :order => "created_at desc"
-  named_scope :rejected, :conditions => {:approved => false}, :order => "created_at desc"
+  scope :approved, :conditions => {:approved => true}, :order => "created_at desc"
+  scope :rejected, :conditions => {:approved => false}, :order => "created_at desc"
   
   def footer_name
     website.blank? ? name : "<a href=\"#{website}\">#{name}</a>"
