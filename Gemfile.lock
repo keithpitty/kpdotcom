@@ -31,8 +31,7 @@ GEM
     activesupport (3.0.4)
     arel (2.0.8)
     builder (2.1.2)
-    dasil003-tm_syntax_highlighting (1.9.0)
-      spox-ultraviolet
+    coderay (0.9.7)
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -74,11 +73,6 @@ GEM
     rspec-mocks (2.1.0)
     rspec-rails (2.1.0)
       rspec (~> 2.1.0)
-    spox-plist (3.0.1)
-    spox-textpow (0.10.3)
-      spox-plist
-    spox-ultraviolet (0.10.5)
-      spox-textpow
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
@@ -89,7 +83,7 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth
-  dasil003-tm_syntax_highlighting
+  coderay
   mysql
   rails (~> 3.0.4)
   rspec
