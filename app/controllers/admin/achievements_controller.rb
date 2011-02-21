@@ -1,5 +1,6 @@
 class Admin::AchievementsController < AdminLayoutController
-
+  
+  before_filter :require_user
   cache_sweeper :achievement_sweeper, :only => [:create, :update, :destroy]
 
   def index

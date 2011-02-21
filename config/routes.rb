@@ -1,4 +1,5 @@
 Kpdotcom::Application.routes.draw do
+  resource :user_session
   resources :contacts
   namespace :blog do
     resources :archives

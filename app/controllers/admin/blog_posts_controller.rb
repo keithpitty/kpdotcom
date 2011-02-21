@@ -1,5 +1,6 @@
 class Admin::BlogPostsController < AdminLayoutController
   
+  before_filter :require_user
   cache_sweeper :blog_sweeper, :only => [:create, :update, :destroy]
   
   def index
