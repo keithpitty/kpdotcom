@@ -39,7 +39,7 @@
       <div id="secondaryText">
     	  <% if current_user %>
     		<%= yield :secondary_content %>
-  		  <p><%= link_to 'Log out', '/admin/account/logout' %></p>
+  		  <p><%= link_to 'Log out', '/logout' %></p>
         <% end %>
       </div>
 	  </div>
@@ -47,7 +47,7 @@
   </div>
   <div id="footer">
 	<span class="floatLeft">
-	 &nbsp; &copy; 2007-<%= Time.zone.now.year.to_s[2..3] %> Keith Pitty, all rights reserved.
+	 &nbsp; &copy; <%= Time.zone.now.year.to_s %> Keith Pitty, all rights reserved.
 	</span>
   </div>
 </body>

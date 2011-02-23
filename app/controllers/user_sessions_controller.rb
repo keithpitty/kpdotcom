@@ -23,6 +23,6 @@ class UserSessionsController < AdminLayoutController
 
   def destroy
     current_user_session.destroy
-    redirect_to(root_url, :notice => "Logout successful!")
+    redirect_to(login_url, :notice => "Logout successful!")
   end
 end
