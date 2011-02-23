@@ -1,13 +1,12 @@
-class UserSessionsController < ApplicationController
+class UserSessionsController < AdminLayoutController
   before_filter :require_no_user, :only => [:create]
   before_filter :require_user, :only => :destroy
   
-  def index
+  def new
     if current_user
       redirect_to admin_url
     else
       @user_session = UserSession.new
-      @home = true
     end
   end
 
@@ -18,8 +17,7 @@ class UserSessionsController < ApplicationController
       msg = "Login successful!"
       redirect_to(admin_url, :notice => msg)
     else
-      @home = true
-      render :action => :index
+      render :action => :new
     end
   end
 
