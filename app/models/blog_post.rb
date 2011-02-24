@@ -5,10 +5,6 @@ class BlogPost < ActiveRecord::Base
   acts_as_taggable
   scope :published, :conditions => {:published => true}, :order => "created_at desc"
   
-  def self.latest_published(amount = 5)
-    find :all, :conditions => {:published => true}, :order => "created_at desc", :limit => amount
-  end
-  
   def self.find_published_tagged_with(tag)
     temp = find_tagged_with(tag)
     temp = temp.select {|post| post.published}

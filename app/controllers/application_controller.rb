@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
     
     def get_latest_posts
       if !fragment_exist? :recent_posts
-        @latest_posts = BlogPost.latest_published
+        @latest_posts = BlogPost.published.limit(5)
       end
     end
 
