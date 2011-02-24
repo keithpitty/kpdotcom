@@ -29,6 +29,7 @@ GEM
       activemodel (= 3.0.4)
       activesupport (= 3.0.4)
     activesupport (3.0.4)
+    acts-as-taggable-on (2.0.6)
     arel (2.0.8)
     authlogic (2.1.6)
       activesupport
@@ -99,6 +100,7 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth
+  acts-as-taggable-on
   authlogic
   capistrano
   coderay

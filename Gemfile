@@ -5,6 +5,7 @@ gem "mysql"
 gem "RedCloth"
 gem "coderay"
 gem "authlogic"
+gem "acts-as-taggable-on"
 
 group :development do
   gem "capistrano"
