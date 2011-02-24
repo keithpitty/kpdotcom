@@ -1,5 +1,5 @@
 <h1>Achievement Details</h1>
-<%= error_messages_for :achievement %>
+<%= render "shared/error_messages", :target => @achievement %>
 <div id="success">
   <% if flash[:notice] %>
     <%= render :partial => 'shared/success', :locals => {:msg => flash[:notice]} %>

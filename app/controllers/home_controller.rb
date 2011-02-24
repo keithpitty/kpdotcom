@@ -5,9 +5,4 @@ class HomeController < ApplicationController
     @section = 'home'
     @show_detail = false
   end
-  
-  def toggle_detail
-    @show_detail = params[:show_or_hide] == 'Show more ...' 
-    render :partial => 'approach'
-  end
 end

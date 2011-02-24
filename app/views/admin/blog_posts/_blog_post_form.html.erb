@@ -1,4 +1,4 @@
-<%= error_messages_for :blog_post %>
+<%= render "shared/error_messages", :target => @blog_post %>
 <div id="success">
   <% if flash[:notice] %>
     <%= render :partial => 'shared/success', :locals => {:msg => flash[:notice]} %>
