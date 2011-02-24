@@ -31,7 +31,7 @@
     <% end %>
     <% @blog_post.comments.approved.each do |c| %>
       <%= textilize(coderay(c.comment)) %>
-      <p class="commentFooter"><%= "Posted by: #{c.footer_name} #{distance_of_time_in_words(@blog_post.created_at, c.created_at)} later"%></p>
+      <p class="commentFooter"><%= "Posted by: #{c.footer_name} #{distance_of_time_in_words(@blog_post.created_at, c.created_at)} later".html_safe %></p>
     <% end %>  
   <% end %>
   <%= render :partial => "comment_form" %>
