@@ -7,8 +7,10 @@ module ApplicationHelper
   end
   
   def coderay(text)
-    text.gsub(/\<code( lang="(.+?)")?\>(.+?)\<\/code\>/m) do
-      content_tag("notextile", CodeRay.scan($3, $2).div(:css => :class))
+    text.gsub(/^\<code(?: lang='(.+?)')?\>(.+?)\<\/code\>/m) do
+      logger.debug("--- coderay about to parse ---")
+      logger.debug(text)
+      "\n<notextile>#{CodeRay.scan($2, $1).div(:css => :class)}</notextile>"
     end
   end
   
