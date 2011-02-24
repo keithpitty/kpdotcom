@@ -4,6 +4,8 @@ class BlogPost < ActiveRecord::Base
   validates_presence_of :post
   acts_as_taggable
   scope :published, :conditions => {:published => true}, :order => "created_at desc"
+  before_create :set_param_from_now
+  before_update :set_param_from_created_at
   
   def self.find_published_tagged_with(tag)
     temp = find_tagged_with(tag)
@@ -11,11 +13,11 @@ class BlogPost < ActiveRecord::Base
     result = temp.sort {|x,y| y.created_at <=> x.created_at}
   end
   
-  def before_create
+  def set_param_from_now
     self.param = param_from_time(Time.zone.now)
   end
   
-  def before_update
+  def set_param_from_created_at
     self.param = param_from_time(created_at)
   end
   
