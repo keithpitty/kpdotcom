@@ -4,7 +4,7 @@
 <% cache "blog_post_detail_#{@blog_post.id}" do %>
   <h1 class="blog"><%= @blog_post.title %></h1>
   <h6><%= @blog_post.created_at.to_date.to_formatted_s(:long_ordinal) %></h6>
-  <%= textalize(coderay(@blog_post.post)) %>
+  <%= textilize(coderay(@blog_post.post)) %>
   <% unless @blog_post.taggings.empty? %>
     <p class="blogPostFooter">
       Tags: <% @blog_post.tags.each do |t| %>
@@ -30,7 +30,7 @@
       <p>None yet.</p>
     <% end %>
     <% @blog_post.comments.approved.each do |c| %>
-      <%= textalize(coderay(c.comment)) %>
+      <%= textilize(coderay(c.comment)) %>
       <p class="commentFooter"><%= "Posted by: #{c.footer_name} #{distance_of_time_in_words(@blog_post.created_at, c.created_at)} later"%></p>
     <% end %>  
   <% end %>
