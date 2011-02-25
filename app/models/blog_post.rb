@@ -8,7 +8,7 @@ class BlogPost < ActiveRecord::Base
   before_update :set_param_from_created_at
   
   def self.find_published_tagged_with(tag)
-    temp = find_tagged_with(tag)
+    temp = self.tagged_with(tag)
     temp = temp.select {|post| post.published}
     result = temp.sort {|x,y| y.created_at <=> x.created_at}
   end

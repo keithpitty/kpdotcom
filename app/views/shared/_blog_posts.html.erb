@@ -9,7 +9,7 @@
     <% unless p.taggings.empty? %>
       <p class="blogPostFooter">
         Tags: <% p.tags.each do |t| %>
-        <%= link_to t.name, blog_tag_path(t) %>
+        <%= link_to t.name, blog_tag_path(t.name.gsub(' ', '-')) %>
         <% end %> | <%= link_to "Comments (#{p.comments.approved.size})", "#{blog_archive_path(p)}#comments" %>
       </p>
     <% end %>

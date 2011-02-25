@@ -1,4 +1,4 @@
-class Blog::TaggedController < ApplicationController
+class Blog::TagsController < ApplicationController
   before_filter :get_tags, :get_latest_posts
   
   def show
