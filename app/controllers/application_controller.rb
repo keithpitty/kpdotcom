@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
     
     def get_tags
       if !fragment_exist? :tag_cloud
-        @tags = BlogPost.tag_counts.sort {|x,y| x.name <=> y.name}
+        @tags = BlogPost.tag_counts_on(:tags).sort {|x,y| x.name <=> y.name}
       end
     end
     
