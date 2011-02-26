@@ -80,6 +80,7 @@ GEM
       rake (>= 0.8.7)
       thor (~> 0.14.4)
     rake (0.8.7)
+    rakismet (1.0.1)
     rspec (2.1.0)
       rspec-core (~> 2.1.0)
       rspec-expectations (~> 2.1.0)
@@ -106,5 +107,6 @@ DEPENDENCIES
   coderay
   mysql
   rails (~> 3.0.4)
+  rakismet
   rspec
   rspec-rails

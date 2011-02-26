@@ -1,4 +1,6 @@
 class Comment < ActiveRecord::Base
+  include Rakismet::Model
+  
   belongs_to :blog_post
   validates_presence_of :name
   validates_presence_of :email
@@ -6,6 +8,11 @@ class Comment < ActiveRecord::Base
                               :on => :create, 
                               :allow_blank => true
   validates_presence_of :comment
+  rakismet_attrs :author => :name,
+                 :author_url => :website,
+                 :author_email => :email,
+                 :content => :comment,
+                 :permalink => proc { blog_post.param }
   before_create :check_for_spam
   scope :approved, :conditions => {:approved => true}, :order => "created_at desc"
   scope :rejected, :conditions => {:approved => false}, :order => "created_at desc"
@@ -21,31 +28,18 @@ class Comment < ActiveRecord::Base
   end
   
   def check_for_spam
-    self.approved = !Akismetor.spam?(akismet_attributes)
+    self.approved = self.spam?
     true
-  end
-  
-  def akismet_attributes
-    {
-      :key => 'ac7c797a41f0',
-      :blog => 'http://keithpitty.com',
-      :user_ip => user_ip,
-      :user_agent => user_agent,
-      :comment_author => name,
-      :comment_author_email => email,
-      :comment_author_url => website,
-      :comment_content => comment
-    }
   end
   
   def mark_as_spam!
     update_attribute(:approved, false)
-    Akismetor.submit_spam(akismet_attributes)
+    self.spam!
   end
   
   def mark_as_ham!
     update_attribute(:approved, true)
-    Akismetor.submit_ham(akismet_attributes)
+    self.ham!
   end
   
 end

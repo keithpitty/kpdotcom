@@ -15,6 +15,8 @@ module Kpdotcom
     config.time_zone = 'Sydney'
     config.encoding = "utf-8"
     config.filter_parameters += [:password]
+    config.rakismet.key = 'ac7c797a41f0'
+    config.rakismet.url = 'http://keithpitty.com/'
     config.generators do |g|
       g.test_framework :rspec
     end

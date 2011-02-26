@@ -6,6 +6,7 @@ gem "RedCloth"
 gem "coderay"
 gem "authlogic"
 gem "acts-as-taggable-on"
+gem "rakismet"
 
 group :development do
   gem "capistrano"
