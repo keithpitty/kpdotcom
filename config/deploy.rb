@@ -49,4 +49,13 @@ namespace :deploy do
   end
 end
 
+namespace :bundler do
+  desc "Automatically installed your bundled gems if a Gemfile exists"
+  task :bundle_gems do
+    run "ln -nfs #{shared_path}/vendor_bundle #{latest_release}/vendor/bundle"
+    run "if [ -f #{release_path}/Gemfile ]; then cd #{release_path} && bundle install --deployment --without=test development deployment; fi"
+  end
+  after "deploy:update_code", "bundler:bundle_gems"
+end
+
 after "deploy:symlink", "deploy:create_symlinks"
