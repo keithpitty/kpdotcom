@@ -1,5 +1,6 @@
 class Admin::ServicesController < AdminLayoutController
   
+  before_filter :require_user
   cache_sweeper :service_sweeper, :only => [:create, :update, :destroy]
 
   def index

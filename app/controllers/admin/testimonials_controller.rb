@@ -1,5 +1,6 @@
 class Admin::TestimonialsController < AdminLayoutController
 
+  before_filter :require_user
   cache_sweeper :testimonial_sweeper, :only => [:create, :update, :destroy]
 
   def index

@@ -16,5 +16,5 @@
 <p>Read on to learn more about my professional background and what others have had to say about my work.</p>
 <% @achievements.each do |achievement| %>
   <h2><%= h achievement.heading %></h2>
-  <%= RedCloth.new(achievement.description).to_html %>
+  <%= textilize(achievement.description) %>
 <% end %>

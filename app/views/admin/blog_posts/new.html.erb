@@ -1,4 +1,4 @@
 <h1>New Blog Post</h1>
-<% form_for (:blog_post, :url => admin_blog_posts_path) do |f| %>
+<%= form_for @blog_post, :url => admin_blog_posts_path do |f| %>
   <%= render :partial => 'blog_post_form', :locals => { :f => f } %>
 <% end %>

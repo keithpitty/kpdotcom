@@ -1,5 +1,5 @@
 <h1>Service Details</h1>
-<%= error_messages_for :service %>
+<%= render "shared/error_messages", :target => @service %>
 <div id="success">
   <% if flash[:notice] %>
     <%= render :partial => 'shared/success', :locals => {:msg => flash[:notice]} %>

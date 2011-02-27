@@ -12,6 +12,6 @@ class ServiceSweeper < ActionController::Caching::Sweeper
   private
   
   def expire_cache_for(service)
-    FileUtils.rm_rf File.expand_path("public/services", RAILS_ROOT)
+    FileUtils.rm_rf File.expand_path("public/services", Rails.root)
   end
 end

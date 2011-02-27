@@ -1,1 +1,0 @@
-TmSyntaxHighlighting.defaults = {:theme => "mac_classic", :line_numbers => false, :lang => "ruby"}
