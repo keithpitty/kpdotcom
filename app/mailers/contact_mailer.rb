@@ -1,5 +1,5 @@
 class ContactMailer < ActionMailer::Base
-  defailt :to => "keith@keithpitty.com"
+  default :to => "keith@keithpitty.com"
   
   def contact_message(contact)
     @message = contact.message
