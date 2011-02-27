@@ -3,23 +3,21 @@ class BlogPost < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :post
   acts_as_taggable
-  named_scope :published, :conditions => {:published => true}, :order => "created_at desc"
-  
-  def self.latest_published(amount = 5)
-    find :all, :conditions => {:published => true}, :order => "created_at desc", :limit => amount
-  end
+  scope :published, :conditions => {:published => true}, :order => "created_at desc"
+  before_create :set_param_from_now
+  before_update :set_param_from_created_at
   
   def self.find_published_tagged_with(tag)
-    temp = find_tagged_with(tag)
+    temp = self.tagged_with(tag)
     temp = temp.select {|post| post.published}
     result = temp.sort {|x,y| y.created_at <=> x.created_at}
   end
   
-  def before_create
+  def set_param_from_now
     self.param = param_from_time(Time.zone.now)
   end
   
-  def before_update
+  def set_param_from_created_at
     self.param = param_from_time(created_at)
   end
   
@@ -37,6 +35,6 @@ class BlogPost < ActiveRecord::Base
   
   private
     def param_from_time(time)
-      "#{time.to_date.to_formatted_s(:db)}-#{title.downcase.gsub(/\s|\./,"-")}"
+      "#{time.to_date.to_formatted_s(:db)}-#{title.downcase.gsub(/\s|\./,"-").gsub(',','')}"
     end
 end

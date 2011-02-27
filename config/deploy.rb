@@ -4,13 +4,6 @@ set :ssh_options, {:forward_agent => true}
 set :repository, "git@cockatoosoftware.unfuddle.com:cockatoosoftware/#{application}.git"
 set :branch, "master"
 
-# If you aren't deploying to /u/apps/#{application} on the target
-# servers (which is the default), you can specify the actual location
-# via the :deploy_to variable:
-# set :deploy_to, "/var/www/#{application}"
-
-# If you aren't using Subversion to manage your source code, specify
-# your SCM below:
 set :scm, :git
 set :deploy_via, :remote_cache
 
@@ -54,6 +47,15 @@ namespace :deploy do
     desc "#{t} task is a no-op with mod_rails"
     task t, :roles => :app do ; end
   end
+end
+
+namespace :bundler do
+  desc "Automatically installed your bundled gems if a Gemfile exists"
+  task :bundle_gems do
+    run "ln -nfs #{shared_path}/vendor_bundle #{latest_release}/vendor/bundle"
+    run "if [ -f #{release_path}/Gemfile ]; then cd #{release_path} && bundle install --deployment --without=test development deployment; fi"
+  end
+  after "deploy:update_code", "bundler:bundle_gems"
 end
 
 after "deploy:symlink", "deploy:create_symlinks"

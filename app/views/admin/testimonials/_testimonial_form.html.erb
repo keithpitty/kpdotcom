@@ -1,5 +1,5 @@
 <h1>Testimonial Details</h1>
-<%= error_messages_for :testimonial %>
+<%= render "shared/error_messages", :target => @testimonial %>
 <div id="success">
   <% if flash[:notice] %>
     <%= render :partial => 'shared/success', :locals => {:msg => flash[:notice]} %>

@@ -1,34 +1,41 @@
-ActionController::Routing::Routes.draw do |map|
-  
-  map.resources :contacts, :controller => :contact
-  map.namespace :blog do |blog|
-    blog.resources :archives
-    blog.resources :tags, :controller => :tagged
-  end
-  map.resources :feed
-  map.resources :blog_posts, :controller => "blog/archives", :member => { :create_comment => :post }
-  map.resources :comments
-  map.resources :services
-  
-  map.namespace :admin do |admin|
-    admin.resources :services
-    admin.resources :achievements
-    admin.resources :testimonials
-    admin.resources :blog_posts
-    admin.resources :comments, :collection => { :destroy_multiple => :delete }, 
-                               :member => { :approve => :put, :reject => :put }
+Kpdotcom::Application.routes.draw do
+  resource :user_session
+  resources :contacts
+  namespace :blog do
+    resources :archives
+    resources :tags
   end
 
-  map.connect '', :controller => "home"
-  
-  # Admin layout
-  map.connect '/admin', :controller => "admin_layout", :action => "index"
+  resources :feed
+  resources :blog_posts do
+    member do
+      post :create_comment
+    end
+  end
 
-  # Allow downloading Web Service WSDL as a file with an extension
-  # instead of a file named 'wsdl'
-  map.connect ':controller/service.wsdl', :action => 'wsdl'
+  resources :comments
+  resources :services
+  namespace :admin do
+    resources :services
+    resources :achievements
+    resources :testimonials
+    resources :blog_posts
+    resources :comments do
+      collection do
+        delete :destroy_multiple
+      end
+      member do
+        put :approve
+        put :reject
+      end
+    end
+  end
 
-  # Install the default route as the lowest priority.
-  map.connect ':controller/:action/:id.:format'
-  map.connect ':controller/:action/:id'
+  match '' => 'home#index'
+  match '/admin' => 'admin_layout#index'
+  match '/login' => 'user_sessions#new'
+  match '/logout' => 'user_sessions#destroy'
+  match '/contact' => 'contacts#new'
+  match ':controller/service.wsdl' => '#wsdl'
+  match '/:controller(/:action(/:id))'
 end

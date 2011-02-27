@@ -1,5 +1,7 @@
 class Admin::CommentsController < AdminLayoutController
   
+  before_filter :require_user
+  
   def index
     @rejected_comments = Comment.rejected
     @approved_comments = Comment.approved

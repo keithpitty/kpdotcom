@@ -9,7 +9,6 @@
   <!--[if IE]>
     <%= stylesheet_link_tag 'ie' %>
   <![endif]-->
-  <%= syntax_css 'mac_classic' %>
 </head>
 <body id="wrapper">
   <div id="container">
@@ -18,7 +17,7 @@
 	    Administration
 	  </div>
 	</div>
-	<% if logged_in? %>
+	<% if current_user %>
 	<div id="<%= @section %>">
 		<div id="mainNav">
 			<ul>
@@ -38,9 +37,9 @@
 	  </div>
 	  <div id="secondaryContent">
       <div id="secondaryText">
-    	  <% if logged_in? %>
+    	  <% if current_user %>
     		<%= yield :secondary_content %>
-  		  <p><%= link_to 'Log out', '/admin/account/logout' %></p>
+  		  <p><%= link_to 'Log out', '/logout' %></p>
         <% end %>
       </div>
 	  </div>
@@ -48,7 +47,7 @@
   </div>
   <div id="footer">
 	<span class="floatLeft">
-	 &nbsp; &copy; 2007-<%= Time.zone.now.year.to_s[2..3] %> Keith Pitty, all rights reserved.
+	 &nbsp; &copy; <%= Time.zone.now.year.to_s %> Keith Pitty, all rights reserved.
 	</span>
   </div>
 </body>

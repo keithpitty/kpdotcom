@@ -3,6 +3,6 @@ class BlogController < ApplicationController
 
   def index
     @section = 'blog'
-    @blog_posts = BlogPost.latest_published
+    @blog_posts = BlogPost.published.limit(5)
   end
 end
