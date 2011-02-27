@@ -106,7 +106,7 @@ DEPENDENCIES
   capistrano
   coderay
   mysql
-  rails (~> 3.0.4)
+  rails (~> 3.0.5)
   rakismet
   rspec
   rspec-rails
