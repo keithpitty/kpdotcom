@@ -9,7 +9,7 @@
   <![endif]-->
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
-  <%= auto_discovery_link_tag(:atom, {:controller => 'feed', :action => 'index'}) %>
+  <%= auto_discovery_link_tag(:atom, feed_path(:atom)) %>
 </head>
 <body id="wrapper">
   <div id="container">
