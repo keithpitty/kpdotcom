@@ -11,6 +11,7 @@ Kpdotcom::Application.routes.draw do
   end
 
   resources :feed
+  resources :blog_posts
 
   resources :comments
   resources :services
