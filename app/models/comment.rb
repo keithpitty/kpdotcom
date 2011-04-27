@@ -28,8 +28,7 @@ class Comment < ActiveRecord::Base
   end
   
   def check_for_spam
-    self.approved = self.spam?
-    true
+    self.approved = !self.spam?
   end
   
   def mark_as_spam!
