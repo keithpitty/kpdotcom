@@ -3,6 +3,7 @@ class BlogSweeper < ActionController::Caching::Sweeper
   
   def after_save(post)
     expire_cache_for(post)
+  end
   
   def after_destroy(post)
     expire_cache_for(post)
