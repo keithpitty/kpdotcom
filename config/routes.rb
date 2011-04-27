@@ -2,16 +2,15 @@ Kpdotcom::Application.routes.draw do
   resource :user_session
   resources :contacts
   namespace :blog do
-    resources :archives
+    resources :archives do
+      member do
+        post :create_comment
+      end
+    end
     resources :tags
   end
 
   resources :feed
-  resources :blog_posts do
-    member do
-      post :create_comment
-    end
-  end
 
   resources :comments
   resources :services

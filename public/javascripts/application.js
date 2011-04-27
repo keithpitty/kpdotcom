@@ -1,2 +1,5 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+$(document).ready(function() {
+  if ($('#postcomment').length > 0 && $('#errorExplanation').length > 0) {
+    window.location = window.location.href + "#postcomment";
+  }
+});

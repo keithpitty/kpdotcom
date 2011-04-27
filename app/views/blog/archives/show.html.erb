@@ -15,16 +15,6 @@
 <% end %>
 <div id="comments">
   <h2>Comments</h2>
-  <div id="success">
-    <% if flash[:notice] %>
-      <%= render :partial => 'shared/success', :locals => {:msg => flash[:notice]} %>
-    <% end %>
-  </div>
-  <div id="error">
-    <% if flash[:error] %>
-      <%= render :partial => 'shared/error', :locals => {:msg => flash[:error]} %>
-    <% end %>
-  </div>
   <% cache "comments_for_blog_post_#{@blog_post.id}" do%>
     <% if @blog_post.comments.approved.empty? %>
       <p>None yet.</p>

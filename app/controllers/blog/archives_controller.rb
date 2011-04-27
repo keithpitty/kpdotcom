@@ -23,7 +23,7 @@ class Blog::ArchivesController < ApplicationController
       else
         flash[:error] = "Unfortunately this comment is considered spam by Akismet. If it is not spam it will show up once it has been approved by the administrator."
       end
-      redirect_to "#{blog_post_path(@comment.blog_post)}#comments"
+      redirect_to "#{blog_archive_path(@comment.blog_post)}#comments"
     else
       @blog_post = BlogPost.find_by_param params[:id]
       render :action => "show"
