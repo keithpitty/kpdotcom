@@ -7,6 +7,7 @@ class BlogSweeper < ActionController::Caching::Sweeper
   
   def after_destroy(post)
     expire_cache_for(post)
+    expire_fragment "comments_for_blog_post_#{post.id}"
   end
   
   private
@@ -16,6 +17,5 @@ class BlogSweeper < ActionController::Caching::Sweeper
     expire_fragment :tag_cloud
     expire_fragment "blog_post_in_list_#{post.id}"
     expire_fragment "blog_post_detail_#{post.id}"
-    expire_fragment "comments_for_blog_post_#{post.id}"
   end
 end
