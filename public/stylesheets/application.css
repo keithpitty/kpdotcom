@@ -16,13 +16,12 @@ html, body {
 
 body { 
 	background: #fff url(/images/gradient.gif) repeat-x; 
-	color: #333;
-	font-size: 90%;
+	color: #444;
 	line-height: 1.5em;
 }
 
 body, p, ol, ul, td {
-  font-family: "Lucida Grande", verdana, arial, helvetica, sans-serif;
+  font-family: "calluna-1","calluna-2",serif;
 }
 
 p.blogPostFooter {
@@ -38,7 +37,7 @@ col#contactMethodCol {
 
 h1 {
 	color: #000066;
-	font-size: 140%;
+	font-size: 150%;
 	border-bottom: 1px solid #99CC00;
 }
 
@@ -57,7 +56,8 @@ h1.blog a:hover {
 h2 {
 	color: #000066;
 	text-transform: uppercase;
-	font-size: 90%;
+	font-size: 100%;
+	font-weight: bold;
 	margin: 3em 0 0 0;
 }
 
@@ -295,6 +295,7 @@ pre {
 	color: #eee;
 	background: #333366;
 	text-decoration: none;
+	font-family: "Lucida Grande", verdana, arial, helvetica, sans-serif;
 	font-size: 80%;
 	font-weight: bold;
 	border-right: 1px solid #292966;
