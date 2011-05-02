@@ -6,7 +6,7 @@
   <h6><%= @blog_post.created_at.to_date.to_formatted_s(:long_ordinal) %></h6>
   <%= textilize(coderay(@blog_post.post)) %>
   <% unless @blog_post.taggings.empty? %>
-    <p class="blogPostFooter">
+    <p class="blogPostFooter sans">
       Tags: <% @blog_post.tags.each do |t| %>
       <%= link_to t.name, "/blog?tag=#{t.name}" %>
       <% end %>

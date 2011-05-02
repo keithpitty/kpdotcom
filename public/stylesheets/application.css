@@ -21,7 +21,11 @@ body {
 }
 
 body, p, ol, ul, td {
-  font-family: "calluna-1","calluna-2",serif;
+  font-family: Calluna-Regular,Calluna-Bold,Calluna-It,serif;
+}
+
+.sans {
+  font-family: MuseoSans-300,sans-serif;
 }
 
 p.blogPostFooter {
@@ -295,7 +299,7 @@ pre {
 	color: #eee;
 	background: #333366;
 	text-decoration: none;
-	font-family: "Lucida Grande", verdana, arial, helvetica, sans-serif;
+	font-family: MuseoSans-300, verdana, arial, helvetica, sans-serif;
 	font-size: 80%;
 	font-weight: bold;
 	border-right: 1px solid #292966;
