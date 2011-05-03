@@ -24,6 +24,11 @@ body, p, ol, ul, td {
   font-family: Calluna-Regular,Calluna-Bold,Calluna-It,serif;
 }
 
+h1, h2, h3 {
+  font-family: Calluna-Bold,serif;
+  font-weight: normal;
+}
+
 .sans {
   font-family: MuseoSans-300,sans-serif;
 }
@@ -257,7 +262,7 @@ pre {
 	float: left;
 	color: #fff;
 	background: #333366;
-	border-top: 1px solid #292966;
+	border-top: 1px solid #
 }
 
 #home #mainNav .home a,
@@ -299,7 +304,7 @@ pre {
 	color: #eee;
 	background: #333366;
 	text-decoration: none;
-	font-family: MuseoSans-300, verdana, arial, helvetica, sans-serif;
+	font-family: helvetica, sans-serif;
 	font-size: 80%;
 	font-weight: bold;
 	border-right: 1px solid #292966;
