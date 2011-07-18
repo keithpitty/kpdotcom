@@ -53,3 +53,5 @@ namespace :deploy do
 end
 
 after "deploy:symlink", "deploy:create_symlinks"
+after "deploy", "deploy:cleanup"
+after "deploy:migrations", "deploy:cleanup"
