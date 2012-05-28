@@ -1,9 +1,9 @@
 source "http://rubygems.org"
 
-gem "rails"
+gem "rails", "3.0.9"
 gem "jquery-rails"
 gem "mysql"
-gem "RedCloth"
+gem "RedCloth", "~> 4.2.9"
 gem "coderay"
 gem "authlogic"
 gem "acts-as-taggable-on"
