@@ -1,7 +1,7 @@
 set :application, "kpdotcom"
 default_run_options[:pty] = true
 set :ssh_options, {:forward_agent => true}
-set :repository, "git@cockatoosoftware.unfuddle.com:cockatoosoftware/#{application}.git"
+set :repository, "git@github.com:keithpitty/#{application}.git"
 set :branch, "master"
 
 set :scm, :git
