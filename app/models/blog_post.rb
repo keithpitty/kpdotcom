@@ -35,6 +35,6 @@ class BlogPost < ActiveRecord::Base
   
   private
     def param_from_time(time)
-      "#{time.to_date.to_formatted_s(:db)}-#{title.downcase.gsub(/\s|\./,"-").gsub(',','')}"
+      "#{time.to_date.to_formatted_s(:db)}-#{title.downcase.gsub(/\s|\./,"-").gsub(',','').sub(/\?^/,'')}"
     end
 end
