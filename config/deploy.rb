@@ -14,7 +14,7 @@ role :db,  "keithpitty.com", :primary => true
 require "bundler/capistrano"
 
 set :user, "keith"
-set :runner, "keith"
+set :use_sudo, false
 
 # Copy database config file
 
