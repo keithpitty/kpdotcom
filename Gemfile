@@ -16,12 +16,20 @@ group :assets do
 end
 
 group :development do
-  gem "capistrano"
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'debugger'
+  gem 'awesome_print'
 end
 
 group :test do
-  gem "rspec"
-  gem "rspec-rails"
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'launchy'
+  gem 'minitest-matchers'
+  gem 'minitest-reporters'
 end
 
 group :deployment do
