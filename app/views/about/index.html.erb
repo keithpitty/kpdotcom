@@ -12,7 +12,8 @@
     </div>
 <% end %>
 <p>
-<img src="images/KeithJan2012.jpg" alt="photo" height="200" width="188" vspace="5" hspace="30" align="left" />Having commenced working in the industry in 1983, I have accumulated technical experience on a diverse range of platforms. My roles have covered the full life-cycle of software development. I have successfully led and contributed to teams that have delivered applications to corporate and government organisations in Australia and the United Kingdom.</p>
+  <%= image_tag("KeithJan2012.jpg", :alt => "photo", :height => "200", :width => "188", :vspace => "5", :hspace => "30", :align => "left" ) %>Having commenced working in the industry in 1983, I have accumulated technical experience on a diverse range of platforms. My roles have covered the full life-cycle of software development. I have successfully led and contributed to teams that have delivered applications to corporate and government organisations in Australia and the United Kingdom.
+</p>
 <p>Read on to learn more about my professional background and what others have had to say about my work.</p>
 <% @achievements.each do |achievement| %>
   <h2><%= h achievement.heading %></h2>
