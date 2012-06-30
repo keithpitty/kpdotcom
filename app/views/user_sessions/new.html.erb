@@ -4,6 +4,11 @@
     <%= render :partial => 'shared/success', :locals => {:msg => flash[:notice]} %>
   <% end %>
 </div>
+<div id="error">
+  <% if flash[:error] %>
+    <%= render :partial => 'shared/error', :locals => { :msg => flash[:error] } %>
+  <% end %>
+</div>
 <fieldset>
 <%= form_for @user_session, :as => :user_session, :url => user_session_path do |f| %>
   <ol>

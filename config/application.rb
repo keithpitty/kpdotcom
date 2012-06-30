@@ -2,7 +2,9 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-Bundler.require(:default, Rails.env) if defined?(Bundler)
+if defined?(Bundler)
+  Bundler.require *Rails.groups(:assets => %w(development test))
+end
 
 module Kpdotcom
   class Application < Rails::Application
@@ -20,5 +22,11 @@ module Kpdotcom
     config.generators do |g|
       g.test_framework :rspec
     end
+
+    # Enable the asset pipeline
+    config.assets.enabled = true
+
+    # Version of your assets, change this if you want to expire all your assets
+    config.assets.version = '1.0'
   end
 end
