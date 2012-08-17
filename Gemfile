@@ -1,6 +1,6 @@
 source :rubygems
 
-gem "rails", "~> 3.2.5"
+gem "rails", "~> 3.2.8"
 gem "jquery-rails"
 gem "mysql2", "~> 0.3.11"
 gem "RedCloth", "~> 4.2.9"
