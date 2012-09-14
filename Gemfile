@@ -37,5 +37,5 @@ group :deployment do
 end
 
 group :production do
-  gem 'therubyracer'
+  gem 'therubyracer', '~> 0.10.2', :require => 'v8'
 end
