@@ -27,17 +27,6 @@ namespace :deploy do
   after "deploy:update_code", "deploy:copy_db_config"
 end
 
-# Create symbolic link for expiring headers
-
-desc "Create symbolic link for expiring headers."
-namespace :deploy do
-  task :create_symlinks, :roles => :app do
-    run <<-CMD
-      ln -s #{release_path}/public #{release_path}/public/add_expires_header
-    CMD
-  end
-end
-
 # Override app start and restart for Passenger
 
 namespace :deploy do
@@ -52,6 +41,5 @@ namespace :deploy do
   end
 end
 
-after "deploy:symlink", "deploy:create_symlinks"
 after "deploy", "deploy:cleanup"
 after "deploy:migrations", "deploy:cleanup"
