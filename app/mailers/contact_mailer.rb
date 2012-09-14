@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class ContactMailer < ActionMailer::Base
   default :to => "keith@keithpitty.com"
   

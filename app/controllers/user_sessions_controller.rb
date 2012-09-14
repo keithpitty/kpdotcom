@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class UserSessionsController < AdminLayoutController
   before_filter :require_no_user, :only => [:create]
   before_filter :require_user, :only => :destroy

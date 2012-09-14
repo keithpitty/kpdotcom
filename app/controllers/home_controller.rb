@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class HomeController < ApplicationController
   before_filter :get_latest_posts
 

@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class Blog::ArchivesController < ApplicationController
   before_filter :get_tags, :set_section, :get_latest_posts
   
