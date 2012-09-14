@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class Admin::BlogPostsController < AdminLayoutController
   
   before_filter :require_user

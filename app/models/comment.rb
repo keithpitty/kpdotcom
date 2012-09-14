@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class Comment < ActiveRecord::Base
   include Rakismet::Model
   

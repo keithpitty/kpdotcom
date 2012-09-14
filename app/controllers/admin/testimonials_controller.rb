@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class Admin::TestimonialsController < AdminLayoutController
 
   before_filter :require_user

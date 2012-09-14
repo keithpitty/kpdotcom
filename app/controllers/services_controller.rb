@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class ServicesController < ApplicationController
   before_filter :get_services
   caches_page :show

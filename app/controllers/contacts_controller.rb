@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class ContactsController < ApplicationController
 
   def new

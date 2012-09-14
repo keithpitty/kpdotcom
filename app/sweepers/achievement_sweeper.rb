@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class AchievementSweeper < ActionController::Caching::Sweeper
   observe Achievement
   

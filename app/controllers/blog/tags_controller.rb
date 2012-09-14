@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class Blog::TagsController < ApplicationController
   before_filter :get_tags, :get_latest_posts
   

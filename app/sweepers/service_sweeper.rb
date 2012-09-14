@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class ServiceSweeper < ActionController::Caching::Sweeper
   observe Service
   

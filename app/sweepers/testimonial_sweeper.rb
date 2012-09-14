@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class TestimonialSweeper < ActionController::Caching::Sweeper
   observe Testimonial
   
