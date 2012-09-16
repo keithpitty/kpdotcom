@@ -1,8 +1,3 @@
-/*
-*= require_self
-*= require_tree .
-*/
-
 /******************************/
 /* Palette                    */
 /*                            */
@@ -16,26 +11,26 @@
 /******************************/
 
 html, body {
-	height: 100%;
+  height: 100%;
 }
 
 body { 
-	background: #fff url(<%= asset_path "gradient.gif" %>) repeat-x; 
-	color: #444;
-	line-height: 1.5em;
+  background: #fff url(<%= asset_path "gradient.gif" %>) repeat-x; 
+  color: #444;
+  line-height: 1.5em;
 }
 
 body, p, ol, ul, td {
-  font-family: Calluna-Regular,Calluna-Bold,Calluna-It,serif;
+  font-family: serif;
 }
 
 h1, h2, h3 {
-  font-family: Calluna-Bold,serif;
+  font-family: serif;
   font-weight: normal;
 }
 
 .sans {
-  font-family: MuseoSans-300,sans-serif;
+  font-family: sans-serif;
 }
 
 p.blogPostFooter {
@@ -45,8 +40,8 @@ p.blogPostFooter {
 }
 
 col#contactMethodCol {
-	width: 30em;
-	border: none;
+  width: 30em;
+  border: none;
 }
 
 col#contactDataCol {
@@ -55,9 +50,9 @@ col#contactDataCol {
 }
 
 h1 {
-	color: #000066;
-	font-size: 150%;
-	border-bottom: 1px solid #99CC00;
+  color: #000066;
+  font-size: 150%;
+  border-bottom: 1px solid #99CC00;
 }
 
 h1.blog {
@@ -73,18 +68,18 @@ h1.blog a:hover {
 }
 
 h2 {
-	color: #000066;
-	text-transform: uppercase;
-	font-size: 100%;
-	font-weight: bold;
-	margin: 3em 0 0 0;
+  color: #000066;
+  text-transform: uppercase;
+  font-size: 100%;
+  font-weight: bold;
+  margin: 3em 0 0 0;
 }
 
 h3 {
-	color: #000066;
-	font-size: 90%;
-	font-weight: bold;
-	margin: 2.5em 0 0 0;
+  color: #000066;
+  font-size: 90%;
+  font-weight: bold;
+  margin: 2.5em 0 0 0;
 }
 
 h6 {
@@ -94,11 +89,11 @@ h6 {
 }
 
 a, a:visited { 
-	color: #333366; 
+  color: #333366; 
 }
 
 a:hover { 
-	color: #CC3300;
+  color: #CC3300;
 }
 
 fieldset {
@@ -106,15 +101,15 @@ fieldset {
   float: left;
   clear: both;
   width: 100%;
-	margin: 0;
-	padding: 0;
-	border-style: none;
+  margin: 0;
+  padding: 0;
+  border-style: none;
 }
 
 legend {
   margin-left: 1em;
-	color: #000000;
-	font-weight: bold;
+  color: #000000;
+  font-weight: bold;
 }
 
 fieldset ol {
@@ -140,7 +135,7 @@ fieldset ol li textarea {
 
 label {
   display: block;
-	font-size: 90%;
+  font-size: 90%;
 }
 
 fieldset ol li button {
@@ -170,7 +165,7 @@ fieldset ol li button.submitBtn span {
 }
 
 input:focus, textarea:focus {
-	background: #E6E6FF;
+  background: #E6E6FF;
 }
 
 #errorExplanation {
@@ -209,7 +204,7 @@ th {
 }
 
 td a {
-	color: #333366;
+  color: #333366;
 }
 
 pre {
@@ -222,57 +217,56 @@ pre {
 }
 
 #banner {
-	height: 100px;
-	background: url(<%= asset_path 'banner.gif' %>) no-repeat left top;
-	color: #fff;
+  height: 100px;
+  background: url(<%= asset_path 'banner.gif' %>) no-repeat left top;
+  color: #fff;
 }
 
 #adminBanner {
-	height: 100px;
-	background: #333366;
-	color: #fff;
+  height: 100px;
+  background: #333366;
+  color: #fff;
 }
 
 #container {
-	position: relative;
-	min-height: 100%;
+  position: relative;
+  min-height: 100%;
 }
 
 * html #container {
-	height: 100%;
+  height: 100%;
 }
 
 #content {
-	width: 100%;
-	padding-bottom: 4em;
-	background-color: #fff;
-	float: left;
+  width: 100%;
+  padding-bottom: 4em;
+  background-color: #fff;
+  float: left;
 }
 
 #footer {
-	width: 100%;
-	clear: both;
-	font-size: 70%;
-	position: relative;
-	margin-top: -3.8em;
-	padding-bottom: 3em;
-	color: #333;
+  width: 100%;
+  clear: both;
+  font-size: 70%;
+  position: relative;
+  margin-top: -3.8em;
+  padding-bottom: 3em;
+  color: #333;
 }
 
 #footer a {
-	color: #333;
+  color: #333;
 }
 
 #footer a:hover {
-	color: #CC3300;
+  color: #CC3300;
 }
 
 #mainNav {
-	width: 100%;
-	float: left;
-	color: #fff;
-	background: #333366;
-	border-top: 1px solid #
+  width: 100%;
+  float: left;
+  color: #fff;
+  background: #333366;
 }
 
 #home #mainNav .home a,
@@ -287,62 +281,62 @@ pre {
 #admin_comments #mainNav .admin_comments a,
 #admin_testimonials #mainNav .admin_testimonials a {
   color: #99CC00;
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 #mainNav ul {
   float: left;
-	margin: 0;
-	list-style: none;
-	padding: 0 0 0 0.7em;
+  margin: 0;
+  list-style: none;
+  padding: 0 0 0 0.7em;
 }
 
 #mainNav ul a:hover {
-	color: #99CC00;
+  color: #99CC00;
 }
 
 #mainNav li {
-	float: left;
+  float: left;
 }
 
 #mainNav li a {
-	display: block;
-	padding: 0 3em;
-	line-height: 2.5em;
-	color: #999900;
-	background: #333366;
-	text-decoration: none;
-	font-family: helvetica, sans-serif;
-	font-size: 80%;
-	font-weight: bold;
+  display: block;
+  padding: 0 3em;
+  line-height: 2.5em;
+  color: #999900;
+  background: #333366;
+  text-decoration: none;
+  font-family: helvetica, sans-serif;
+  font-size: 80%;
+  font-weight: bold;
 }
 
 #mainContent {
-	width: 47em;
-	padding: 1em 1em 0 3em;
-	display: inline;
-	float: left;
+  width: 47em;
+  padding: 1em 1em 0 3em;
+  display: inline;
+  float: left;
 }
 
 #mainContent p a {
-	color: #333366;
+  color: #333366;
 }
 
 #mainContent p a:hover {
-	color: #99CC00;
+  color: #99CC00;
 }
 
 #mainContent ul {
-	list-style-image: url(<%= asset_path 'bullet.gif' %>);
+  list-style-image: url(<%= asset_path 'bullet.gif' %>);
 }
 
 #mainContent ul.archives {
   list-style: none;
-	padding-left: 0;
+  padding-left: 0;
 }
 
 #mainContent ul li a {
-	color: #333366;
+  color: #333366;
 }
 
 #mainContent ul li a:hover {
@@ -363,29 +357,29 @@ pre {
 }
 
 #secondaryContent {
-	width: 18em;
-	padding: 3em 1em 0 2em;
-	display: inline;
-	float: right;
+  width: 18em;
+  padding: 3em 1em 0 2em;
+  display: inline;
+  float: right;
 }
 
 #secondaryNav ul {
-	padding-top: 2em;
-	list-style-image: url(<%= asset_path 'bullet.gif' %>);
+  padding-top: 2em;
+  list-style-image: url(<%= asset_path 'bullet.gif' %>);
   padding-top: 0;
   margin-top: 0;
 }
 
 #secondaryNav ul li a {
-	text-decoration: none;
-	line-height: 2em;
-	font-size: 80%;
-	font-weight: bold;
-	color: #000066;
+  text-decoration: none;
+  line-height: 2em;
+  font-size: 80%;
+  font-weight: bold;
+  color: #000066;
 }
 
 #secondaryNav ul li a:hover {
-	color: #CC3300
+  color: #CC3300
 }  
 
 #secondaryNav .selected a {
@@ -394,14 +388,14 @@ pre {
 }
 
 #secondaryText {
-	padding-top: 0;
-	margin-top: 0;
-	font-size: 85%;
-	color: #333333;
+  padding-top: 0;
+  margin-top: 0;
+  font-size: 85%;
+  color: #333333;
 }
 
 #secondaryText h2 {
-	font-size: 100%;
+  font-size: 100%;
 }
 
 #secondaryText h2.top {
@@ -410,8 +404,8 @@ pre {
 }
 
 #secondaryText h3 {
-	font-size: 95%;
-	margin: 2em 0 0 0;
+  font-size: 95%;
+  margin: 2em 0 0 0;
 }
 
 #secondaryText p {
@@ -419,20 +413,20 @@ line-height: 1.5em;
 }
 
 #secondaryText a {
-	color: #333366;
+  color: #333366;
 }
 
 #secondaryText a:hover {
-	color: #99CC00;
+  color: #99CC00;
 }
 
 #secondaryText ul {
-	list-style-image: url(<%=asset_path 'bullet.gif' %>);
-	padding-left: 1.5em;
+  list-style-image: url(<%=asset_path 'bullet.gif' %>);
+  padding-left: 1.5em;
 }
 
 #secondaryText ul li a {
-	color: #333366;
+  color: #333366;
 }
 
 #secondaryText ul li a:hover {
@@ -446,8 +440,8 @@ line-height: 1.5em;
 }
 
 #wrapper {
-	width: 72em;
-	margin: 0 auto;
+  width: 72em;
+  margin: 0 auto;
 }
 
 .adminHeading {
@@ -458,28 +452,28 @@ line-height: 1.5em;
 }
 
 .floatLeft {
-	float: left;
+  float: left;
 }
 
 .floatRight {
-	float: right;
+  float: right;
 }
 
 .h2StyleRight {
-	color: #000066;
-	text-transform: uppercase;
-	text-align: right;
-	font-size: 90%;
-	font-weight: bold;
-	vertical-align: top;
+  color: #000066;
+  text-transform: uppercase;
+  text-align: right;
+  font-size: 90%;
+  font-weight: bold;
+  vertical-align: top;
 }
 
 .linkStyle a, a:visited {
-	color: #333366;
+  color: #333366;
 }
 
 .linkStyle a:hover {
-	color: #CC3300;
+  color: #CC3300;
 }
 
 .css1 { font-size: 1.0em; }

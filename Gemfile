@@ -35,3 +35,7 @@ end
 group :deployment do
   gem 'capistrano', '~> 2.13.3'
 end
+
+group :production do
+  gem 'therubyracer', '~> 0.10.2', :require => 'v8'
+end
