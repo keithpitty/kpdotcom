@@ -15,4 +15,7 @@ Kpdotcom::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
+
+  # Precompile additional assets
+  config.assets.precompile += %w( application-ie.css )
 end
