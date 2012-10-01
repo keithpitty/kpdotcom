@@ -26,6 +26,7 @@ group :test do
   gem 'minitest'
   gem 'capybara'
   gem 'turn'
+  gem 'factory_girl_rails'
 end
 
 group :deployment do
