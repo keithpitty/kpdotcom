@@ -1,13 +1,17 @@
 ENV["Rails.env"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
-require 'rails/test_help'
+require 'minitest/autorun'
+require 'capybara/rails'
+require 'active_support/testing/setup_and_teardown'
 
-class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
-  #
-  # Note: You'll currently still have to declare fixtures explicitly in integration tests
-  # -- they do not yet inherit this setting
-  fixtures :all
+class IntegrationTest < MiniTest::Spec
+  include Rails.application.routes.url_helpers
+  include Capybara::DSL
+  register_spec_type(/integration$/, self)
+end
 
-  # Add more helper methods to be used by all tests here...
+class HelperTest < MiniTest::Spec
+  include ActiveSupport::Testing::SetupAndTeardown
+  include ActionView::TestCase::Behavior
+  register_spec_type(/helper$/, self)
 end

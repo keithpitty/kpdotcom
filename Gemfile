@@ -23,13 +23,9 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara', '~> 1.1.2'
-  gem 'database_cleaner', '~> 0.8.0'
-  gem 'factory_girl_rails', '~> 4.0.0'
-  gem 'faker', '~> 1.0.1'
-  gem 'launchy', '~> 2.1.2'
-  gem 'minitest-matchers', '~> 1.2.0'
-  gem 'minitest-reporters', '~> 0.10.2'
+  gem 'minitest'
+  gem 'capybara'
+  gem 'turn'
 end
 
 group :deployment do
