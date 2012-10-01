@@ -6,7 +6,7 @@ class Admin::AchievementsController < AdminLayoutController
   cache_sweeper :achievement_sweeper, :only => [:create, :update, :destroy]
 
   def index
-    @achievements = Achievement.find :all, :order => "rank"
+    @achievements = Achievement.all
   end
 
   def new
