@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   factory :achievement do
     rank 10
     heading { Faker::Lorem.sentence }
@@ -13,5 +12,10 @@ FactoryGirl.define do
     rank 10
     provider_name { Faker::Name.name }
     provider_position { Faker::Lorem.words }
+  end
+  factory :user do
+    login 'adminuser'
+    password 'secret'
+    password_confirmation 'secret'
   end
 end
