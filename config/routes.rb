@@ -16,7 +16,6 @@ Kpdotcom::Application.routes.draw do
   resources :comments
   resources :services
   namespace :admin do
-    resources :services
     resources :achievements
     resources :testimonials
     resources :blog_posts
