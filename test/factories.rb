@@ -1,10 +1,17 @@
 FactoryGirl.define do
+
+  factory :achievement do
+    rank 10
+    heading { Faker::Lorem.sentence }
+    description { Faker::Lorem.paragraphs }
+  end
   factory :blog_post do
-    title { generate(:random_string) }
-    post { generate(:random_string) }
+    title { Faker::Lorem.sentence }
+    post { Faker::Lorem.paragraphs }
   end
   factory :testimonial do
-    provider_name { generate(:random_string) }
-    provider_position { generate(:random_string) }
+    rank 10
+    provider_name { Faker::Name.name }
+    provider_position { Faker::Lorem.words }
   end
 end

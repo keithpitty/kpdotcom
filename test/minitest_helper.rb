@@ -5,6 +5,7 @@ require 'capybara/rails'
 require 'active_support/testing/setup_and_teardown'
 require 'turn/autorun'
 require 'factory_girl_rails'
+require 'faker'
 
 class MiniTest::Unit::TestCase
   include FactoryGirl::Syntax::Methods
