@@ -1,7 +1,7 @@
 # coding: utf-8
 
 class Admin::AchievementsController < AdminLayoutController
-  
+
   before_filter :require_user
   cache_sweeper :achievement_sweeper, :only => [:create, :update, :destroy]
 
@@ -43,7 +43,7 @@ class Admin::AchievementsController < AdminLayoutController
     Achievement.destroy(params[:id])
     redirect_to admin_achievements_url
   end
-  
+
   protected
     def set_section
       @section = "admin_achievements"

@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
     @section = 'contact'
     @contact = Contact.new
   end
-  
+
   def create
     @contact = Contact.new(params[:contact])
     if @contact.save
@@ -16,5 +16,5 @@ class ContactsController < ApplicationController
       render :action => "new"
     end
   end
-  
+
 end

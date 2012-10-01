@@ -1,18 +1,18 @@
 # coding: utf-8
 
 class Admin::ServicesController < AdminLayoutController
-  
+
   before_filter :require_user
   cache_sweeper :service_sweeper, :only => [:create, :update, :destroy]
 
   def index
     @services = Service.find :all, :order => "rank"
   end
-  
+
   def new
     @service = Service.new
   end
-  
+
   def create
     @service = Service.new(params[:service])
     begin
@@ -23,11 +23,11 @@ class Admin::ServicesController < AdminLayoutController
       render :action => 'new'
     end
   end
-  
+
   def edit
     @service = Service.find_by_name(params[:id])
   end
-  
+
   def update
     @service = Service.find_by_name(params[:id])
     begin
@@ -39,14 +39,14 @@ class Admin::ServicesController < AdminLayoutController
       render :action => 'edit'
     end
   end
-  
+
   def destroy
     @service = Service.find_by_name(params[:id])
     @service.destroy
     flash[:notice] = 'Service was succesfully deleted!'
     redirect_to admin_services_path
   end
-  
+
   protected
     def set_section
       @section = "admin_services"

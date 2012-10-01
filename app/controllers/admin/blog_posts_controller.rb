@@ -1,18 +1,18 @@
 # coding: utf-8
 
 class Admin::BlogPostsController < AdminLayoutController
-  
+
   before_filter :require_user
   cache_sweeper :blog_sweeper, :only => [:create, :update, :destroy]
-  
+
   def index
     @blog_posts = BlogPost.find :all, :order => "created_at desc"
   end
-  
+
   def new
     @blog_post = BlogPost.new
   end
-  
+
   def create
     @blog_post = BlogPost.new(params[:blog_post])
     begin
@@ -23,13 +23,13 @@ class Admin::BlogPostsController < AdminLayoutController
       logger.debug(e.message)
       render :action => "new"
     end
-    
+
   end
-  
+
   def edit
     @blog_post = BlogPost.find_by_param(params[:id])
   end
-  
+
   def update
     @blog_post = BlogPost.find_by_param(params[:id])
     begin
@@ -39,9 +39,9 @@ class Admin::BlogPostsController < AdminLayoutController
     rescue
       render :action => "edit"
     end
-    
+
   end
-  
+
   def destroy
     blog_post = BlogPost.find_by_param(params[:id])
     blog_post.destroy
