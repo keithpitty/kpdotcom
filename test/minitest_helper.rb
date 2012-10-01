@@ -6,6 +6,7 @@ require 'active_support/testing/setup_and_teardown'
 require 'turn/autorun'
 require 'factory_girl_rails'
 require 'faker'
+require 'database_cleaner'
 
 class MiniTest::Unit::TestCase
   include FactoryGirl::Syntax::Methods
@@ -21,4 +22,11 @@ class HelperTest < MiniTest::Spec
   include ActiveSupport::Testing::SetupAndTeardown
   include ActionView::TestCase::Behavior
   register_spec_type(/helper$/, self)
+end
+
+DatabaseCleaner.strategy = :truncation
+class MiniTest::Spec
+  before :each do
+    DatabaseCleaner.clean
+  end
 end

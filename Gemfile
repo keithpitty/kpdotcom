@@ -28,6 +28,8 @@ group :test do
   gem 'turn'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'database_cleaner'
+  gem 'launchy'
   gem 'metrical'
   gem 'metric_fu', :git => "git://github.com/keithpitty/metric_fu.git"
 end
