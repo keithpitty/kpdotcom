@@ -6,7 +6,7 @@ class Admin::TestimonialsController < AdminLayoutController
   cache_sweeper :testimonial_sweeper, :only => [:create, :update, :destroy]
 
   def index
-    @testimonials = Testimonial.find :all, :order => "rank"
+    @testimonials = Testimonial.all
   end
 
   def new
