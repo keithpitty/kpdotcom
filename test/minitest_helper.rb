@@ -16,6 +16,13 @@ class IntegrationTest < MiniTest::Spec
   include Rails.application.routes.url_helpers
   include Capybara::DSL
   register_spec_type(/integration$/, self)
+  
+  def login
+    visit login_path
+    fill_in('user_session_login', with: 'adminuser')
+    fill_in('user_session_password', with: 'secret')
+    click_button('Log in')
+  end
 end
 
 class HelperTest < MiniTest::Spec
