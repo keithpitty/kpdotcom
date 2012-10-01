@@ -13,41 +13,41 @@
 </head>
 <body id="wrapper">
   <div id="container">
-	<a href="/">
-  	<div id="banner">
-  	</div>
-	</a>
-	<div id="<%= @section %>">
-		<div id="mainNav">
-			<ul>
-			  <li class="home"><a href="/">Home</a></li>
-			  <li class="services"><a href="/services">Services</a></li>
-			  <li class="blog"><a href="/blog">Blog</a></li>
-			  <li class="about"><a href="/about">About me</a></li>
-			  <li class="contact"><a href="/contact">Contact me</a></li>
-			</ul>
-		</div>
-	</div>
-	<div id="content">
-	  <div id="mainContent">
-	    <%= yield :layout %>
-	  </div>
-	  <div id="secondaryContent">
-		<%= yield :secondary_content %>
-	  </div>
+  <a href="/">
+    <div id="banner">
+    </div>
+  </a>
+  <div id="<%= @section %>">
+    <div id="mainNav">
+      <ul>
+        <li class="home"><a href="/">Home</a></li>
+        <li class="services"><a href="/services">Services</a></li>
+        <li class="blog"><a href="/blog">Blog</a></li>
+        <li class="about"><a href="/about">About me</a></li>
+        <li class="contact"><a href="/contact">Contact me</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="content">
+    <div id="mainContent">
+      <%= yield :layout %>
+    </div>
+    <div id="secondaryContent">
+      <%= yield :secondary_content %>
+    </div>
     </div>
   </div>
   <div id="footer">
-	<span class="floatLeft sans">
-	 &nbsp; &copy; <%= Time.zone.now.year.to_s %> Keith Pitty, all rights reserved.
-	</span>
-	<span class="floatRight sans">
-	 <%= link_to 'Home', "/" %> |
-	 <a href="/services">Services</a> |
-   <a href="/blog">Blog</a> |
-	 <a href="/about">About</a> |
-	 <a href="/contact">Contact</a>&nbsp;
-	</span>
+  <span class="floatLeft sans">
+    &nbsp; &copy; <%= Time.zone.now.year.to_s %> Keith Pitty, all rights reserved.
+  </span>
+  <span class="floatRight sans">
+    <%= link_to 'Home', "/" %> |
+    <a href="/services">Services</a> |
+    <a href="/blog">Blog</a> |
+    <a href="/about">About</a> |
+    <a href="/contact">Contact</a>&nbsp;
+  </span>
   </div>
   <script type="text/javascript">
   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
