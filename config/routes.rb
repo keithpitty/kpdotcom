@@ -32,6 +32,7 @@ Kpdotcom::Application.routes.draw do
   end
 
   match '' => 'home#index'
+  match '/about' => 'about#index'
   match '/admin' => 'admin_layout#index'
   match '/login' => 'user_sessions#new'
   match '/logout' => 'user_sessions#destroy'
