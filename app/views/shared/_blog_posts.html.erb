@@ -1,5 +1,5 @@
 <% content_for :secondary_content do %>
-  <%= render :partial => "shared/blog_sidebar" %>
+  <%= render "shared/blog_sidebar" %>
 <% end %>
 <% @blog_posts.each do |p| %>
   <% cache "blog_post_in_list_#{p.id}" do %>

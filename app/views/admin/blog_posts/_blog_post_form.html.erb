@@ -1,7 +1,7 @@
 <%= render "shared/error_messages", :target => @blog_post %>
 <div id="success">
   <% if flash[:notice] %>
-    <%= render :partial => 'shared/success', :locals => {:msg => flash[:notice]} %>
+    <%= render 'shared/success', :locals => {:msg => flash[:notice]} %>
   <% end %>
 </div>
 <fieldset>

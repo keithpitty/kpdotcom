@@ -1,5 +1,5 @@
 <% content_for :secondary_content do %>
-  <%= render :partial => "shared/blog_sidebar" %>
+  <%= render "shared/blog_sidebar" %>
 <% end %>
 <% cache "blog_post_detail_#{@blog_post.id}" do %>
   <h1 class="blog"><%= @blog_post.title %></h1>
@@ -24,5 +24,5 @@
       <p class="commentFooter"><%= "Posted by: #{c.footer_name} #{distance_of_time_in_words(@blog_post.created_at, c.created_at)} later".html_safe %></p>
     <% end %>
   <% end %>
-  <%= render :partial => "comment_form" %>
+  <%= render "comment_form" %>
 </div>

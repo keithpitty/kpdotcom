@@ -5,9 +5,9 @@
     <li class="sans"><%= link_to "Archives", "/blog/archives" %></li>
   </ul>
   <h2>Latest Blog Posts</h2>
-  <%= render :partial => "shared/latest_posts" %>
+  <%= render "shared/latest_posts" %>
   <h2>Syndication</h2>
-  <%= render :partial => "shared/syndication" %>
+  <%= render "shared/syndication" %>
   <h2>Tags</h2>
   <p class="sans">
     <% cache :tag_cloud do %>
