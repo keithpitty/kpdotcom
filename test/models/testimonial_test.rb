@@ -1,4 +1,4 @@
-require "test_helper"
+require "minitest_helper"
 
 describe Testimonial do
   it "displays provider using name and position" do
