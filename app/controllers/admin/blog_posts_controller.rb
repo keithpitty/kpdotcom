@@ -21,7 +21,7 @@ class Admin::BlogPostsController < AdminLayoutController
       redirect_to admin_blog_posts_url
     rescue Exception => e
       logger.debug(e.message)
-      render :action => "new"
+      render "new"
     end
 
   end
@@ -37,7 +37,7 @@ class Admin::BlogPostsController < AdminLayoutController
       flash[:notice] = "Blog post updated."
       redirect_to admin_blog_posts_url
     rescue
-      render :action => "edit"
+      render "edit"
     end
 
   end

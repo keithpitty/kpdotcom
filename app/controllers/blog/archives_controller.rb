@@ -28,7 +28,7 @@ class Blog::ArchivesController < ApplicationController
       redirect_to "#{blog_archive_path(@comment.blog_post)}#comments"
     else
       @blog_post = BlogPost.find_by_param params[:id]
-      render :action => "show"
+      render "show"
     end
   end
 

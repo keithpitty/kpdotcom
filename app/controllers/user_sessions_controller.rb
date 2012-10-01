@@ -20,7 +20,7 @@ class UserSessionsController < AdminLayoutController
       redirect_to(admin_url, :notice => msg)
     else
       flash[:error] = "Bad credentials, man!"
-      render :action => :new
+      render :new
     end
   end
 

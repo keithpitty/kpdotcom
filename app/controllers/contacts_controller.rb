@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
       flash[:notice] = "Message sent!"
       redirect_to '/contact'
     else
-      render :action => "new"
+      render "new"
     end
   end
 

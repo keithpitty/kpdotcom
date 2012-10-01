@@ -20,7 +20,7 @@ class Admin::AchievementsController < AdminLayoutController
       flash[:notice] = 'Achievement created'
       redirect_to admin_achievements_url
     rescue
-      render :action => 'new'
+      render 'new'
     end
   end
 
@@ -35,7 +35,7 @@ class Admin::AchievementsController < AdminLayoutController
       flash[:notice] = 'Achievement updated'
       redirect_to admin_achievements_url
     rescue
-      render :action => 'edit'
+      render 'edit'
     end
   end
 

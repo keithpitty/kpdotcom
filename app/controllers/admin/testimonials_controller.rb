@@ -20,7 +20,7 @@ class Admin::TestimonialsController < AdminLayoutController
       flash[:notice] = 'Testimonial was successfully created!'
       redirect_to admin_testimonials_url
     rescue
-      render :action => 'new'
+      render 'new'
     end
   end
 
@@ -35,7 +35,7 @@ class Admin::TestimonialsController < AdminLayoutController
       flash[:notice] = 'Testimonial was succesfully updated!'
       redirect_to admin_testimonials_url
     rescue
-      render :action => 'edit'
+      render 'edit'
     end
   end
 

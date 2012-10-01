@@ -6,7 +6,7 @@ class FeedController < ApplicationController
     @blog_posts = BlogPost.published.limit(15)
 
     respond_to do |format|
-      format.atom { render :action => 'index.atom.builder', :layout => false }
+      format.atom { render 'index.atom.builder', :layout => false }
     end
 
   end
