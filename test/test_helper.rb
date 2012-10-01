@@ -3,6 +3,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'minitest/autorun'
 require 'capybara/rails'
 require 'active_support/testing/setup_and_teardown'
+require 'turn/autorun'
 
 class IntegrationTest < MiniTest::Spec
   include Rails.application.routes.url_helpers
