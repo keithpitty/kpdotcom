@@ -8,6 +8,8 @@ gem 'coderay', '~> 1.0.7'
 gem 'authlogic', '~> 3.1.3'
 gem 'acts-as-taggable-on', '~> 2.3.3'
 gem 'rakismet', '~> 1.3.0'
+gem 'less-rails', '~> 2.2.6'
+gem 'twitter-bootstrap-rails', '~> 2.2.0'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.5'
