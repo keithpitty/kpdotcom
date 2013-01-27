@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'rails', '~> 3.2.8'
+gem 'rails', '~> 3.2.11'
 gem 'jquery-rails', '~> 2.1.2'
 gem 'mysql2', '~> 0.3.11'
 gem 'RedCloth', '~> 4.2.9'
@@ -18,7 +18,7 @@ end
 group :development, :test do
   gem 'pry', '~> 0.9.10'
   gem 'pry-doc', '~> 0.4.4'
-  gem 'debugger', '~> 1.2.0'
+  gem 'debugger', '~> 1.2.4'
   gem 'awesome_print', '~> 1.0.2'
 end
 
@@ -30,12 +30,10 @@ group :test do
   gem 'faker'
   gem 'database_cleaner'
   gem 'launchy'
-  gem 'metrical'
-  gem 'metric_fu', :git => "git://github.com/keithpitty/metric_fu.git"
 end
 
 group :deployment do
-  gem 'capistrano', '~> 2.13.3'
+  gem 'capistrano', '~> 2.14.1'
 end
 
 group :production do
