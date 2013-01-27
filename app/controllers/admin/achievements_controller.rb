@@ -1,12 +1,12 @@
 # coding: utf-8
 
 class Admin::AchievementsController < AdminLayoutController
-  
+
   before_filter :require_user
   cache_sweeper :achievement_sweeper, :only => [:create, :update, :destroy]
 
   def index
-    @achievements = Achievement.find :all, :order => "rank"
+    @achievements = Achievement.all
   end
 
   def new
@@ -20,7 +20,7 @@ class Admin::AchievementsController < AdminLayoutController
       flash[:notice] = 'Achievement created'
       redirect_to admin_achievements_url
     rescue
-      render :action => 'new'
+      render 'new'
     end
   end
 
@@ -35,7 +35,7 @@ class Admin::AchievementsController < AdminLayoutController
       flash[:notice] = 'Achievement updated'
       redirect_to admin_achievements_url
     rescue
-      render :action => 'edit'
+      render 'edit'
     end
   end
 
@@ -43,7 +43,7 @@ class Admin::AchievementsController < AdminLayoutController
     Achievement.destroy(params[:id])
     redirect_to admin_achievements_url
   end
-  
+
   protected
     def set_section
       @section = "admin_achievements"

@@ -3,7 +3,7 @@
 class UserSessionsController < AdminLayoutController
   before_filter :require_no_user, :only => [:create]
   before_filter :require_user, :only => :destroy
-  
+
   def new
     if current_user
       redirect_to admin_url
@@ -20,7 +20,7 @@ class UserSessionsController < AdminLayoutController
       redirect_to(admin_url, :notice => msg)
     else
       flash[:error] = "Bad credentials, man!"
-      render :action => :new
+      render :new
     end
   end
 

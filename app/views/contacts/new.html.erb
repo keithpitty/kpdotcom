@@ -2,56 +2,40 @@
 <% content_for :secondary_content do %>
     <div id="secondaryText">
       <table cellspacing="5" cellpadding="5">
-      	<colgroup>
-      	  <col id="contactMethodCol">
-      	  <col id="contactDataCol">
-      	</colgroup>
-      	<tbody>
-      	  <tr>
-        		<td scope="col" class="h2StyleRight">Telephone:</td>
-        		<td scope="col">+61 2 8005 1409</td>
-      	  </tr>
-      	  <tr>
-        		<td scope="col" class="h2StyleRight">Twitter:</td>
-        		<td scope="col" class="linkStyle"><a href="http://twitter.com/keithpitty">@keithpitty</a></td>
-      	  </tr>
-      	</tbody>
+        <colgroup>
+          <col id="contactMethodCol">
+          <col id="contactDataCol">
+        </colgroup>
+        <tbody>
+          <tr>
+            <td scope="col" class="h2StyleRight">Telephone:</td>
+            <td scope="col">+61 2 8005 1409</td>
+          </tr>
+          <tr>
+            <td scope="col" class="h2StyleRight">Twitter:</td>
+            <td scope="col" class="linkStyle"><a href="http://twitter.com/keithpitty">@keithpitty</a></td>
+          </tr>
+        </tbody>
       </table>
     </div>
 <% end %>
 <p>
-  For whatever professional reason, I would love to hear from you. Please complete the form below or make use of my contact details to the right. 
+  For whatever professional reason, I would love to hear from you. Please complete the form below or make use of the contact details provided.
 </p>
-<div id="success">
-  <% if flash[:notice] %>
-    <%= render :partial => 'shared/success', :locals => {:msg => flash[:notice]} %>
-  <% end %>
-</div>
-<%= form_for @contact do |f| %>
-  <%= render "shared/error_messages", :target => @contact %>
+
+<%= render "shared/alerts" %>
+
+<%= simple_form_for @contact, :html => { :class => 'form-horizontal' } do |f| %>
   <fieldset>
-    <ol>
-      <li>
-        <label for="name">Your name:</label>
-        <%= f.text_field :name %>
-      </li>
-      <li>
-        <label for="email">Your email:</label>
-        <%= f.text_field :email %>
-      </li>
-      <li>
-        <label for="subject">Subject:</label>
-        <%= f.text_field :subject %>
-      </li>
-      <li>
-        <label for="message">Message:</label>
-        <%= f.text_area :message %>
-      </li>
-      <li class="submitBtn">
-        <button value="submit" class="submitBtn">
-          <span>Send Message</span>
-        </button>
-      </li>
-    </ol>
+
+    <%= f.input :name, :input_html => { :class => "span3" } %>
+    <%= f.input :email, :input_html => { :class => "span3" } %>
+    <%= f.input :subject, :input_html => { :class => "span6" } %>
+    <%= f.input :message, :input_html => { :class => "span6" } %>
+
+    <div class="form-actions">
+      <%= f.submit 'Send Message', :class => 'btn btn-primary' %>
+    </div>
+
   </fieldset>
 <% end %>

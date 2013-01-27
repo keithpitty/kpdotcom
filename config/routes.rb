@@ -16,7 +16,6 @@ Kpdotcom::Application.routes.draw do
   resources :comments
   resources :services
   namespace :admin do
-    resources :services
     resources :achievements
     resources :testimonials
     resources :blog_posts
@@ -32,6 +31,7 @@ Kpdotcom::Application.routes.draw do
   end
 
   match '' => 'home#index'
+  match '/about' => 'about#index'
   match '/admin' => 'admin_layout#index'
   match '/login' => 'user_sessions#new'
   match '/logout' => 'user_sessions#destroy'

@@ -3,7 +3,7 @@ class ActsAsTaggableOnMigration < ActiveRecord::Migration
     # Remove old tables from acts_as_taggable_on_steriods plugin
     drop_table :taggings if table_exists? :taggings
     drop_table :tags if table_exists? :tags
-  
+
     create_table :tags do |t|
       t.string :name
     end

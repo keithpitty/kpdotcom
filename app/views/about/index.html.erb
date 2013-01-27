@@ -1,14 +1,16 @@
 <h1>About me</h1>
 <% content_for :secondary_content do %>
     <div id="secondaryText">
-	  <h2 class="top">How I can help you</h2>
-	  <p>If you haven't already, I invite you to read about the <%= link_to 'services', :controller => 'services' %> I offer. Alternatively, my background may suggest another service that I could provide to meet your needs.</p>
-	  <p>If you would like to know more about what I can do for you or would like to talk with one of my referees, please <%= link_to 'contact me', :controller => 'contact' %>.</p>
-	  <h2>Testimonials</h2>
-		<% @testimonials.each do |testimonial| %>
-		  <p><%= image_tag "start-quote.gif" %><%= h testimonial.recommendation %><%= image_tag "end-quote.gif" %></p>
-		  <p class="testimonialProvider"><%= h testimonial.provider %></p>
-		<% end %>	
+    <h3 class="top">How I can help you</h3>
+    <p>If you haven't already, I invite you to read about the <%= link_to 'services', :controller => 'services' %> I offer. Alternatively, my background may suggest another service that I could provide to meet your needs.</p>
+    <p>If you would like to know more about what I can do for you or would like to talk with one of my referees, please <%= link_to 'contact me', :controller => 'contact' %>.</p>
+    <h3>Testimonials</h3>
+    <% @testimonials.each do |testimonial| %>
+      <blockquote>
+        <p><%= h testimonial.recommendation %></p>
+        <small><%= h testimonial.provider %></small>
+      </blockquote>
+    <% end %>
     </div>
 <% end %>
 <p>
@@ -16,6 +18,6 @@
 </p>
 <p>Read on to learn more about my professional background and what others have had to say about my work.</p>
 <% @achievements.each do |achievement| %>
-  <h2><%= h achievement.heading %></h2>
+  <h3><%= h achievement.heading %></h3>
   <%= textilize(achievement.description) %>
 <% end %>

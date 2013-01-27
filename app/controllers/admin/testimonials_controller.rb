@@ -6,7 +6,7 @@ class Admin::TestimonialsController < AdminLayoutController
   cache_sweeper :testimonial_sweeper, :only => [:create, :update, :destroy]
 
   def index
-    @testimonials = Testimonial.find :all, :order => "rank"
+    @testimonials = Testimonial.all
   end
 
   def new
@@ -20,7 +20,7 @@ class Admin::TestimonialsController < AdminLayoutController
       flash[:notice] = 'Testimonial was successfully created!'
       redirect_to admin_testimonials_url
     rescue
-      render :action => 'new'
+      render 'new'
     end
   end
 
@@ -35,7 +35,7 @@ class Admin::TestimonialsController < AdminLayoutController
       flash[:notice] = 'Testimonial was succesfully updated!'
       redirect_to admin_testimonials_url
     rescue
-      render :action => 'edit'
+      render 'edit'
     end
   end
 
@@ -44,7 +44,7 @@ class Admin::TestimonialsController < AdminLayoutController
     @testimonial.destroy
     redirect_to admin_testimonials_url
   end
-  
+
   protected
     def set_section
       @section = "admin_testimonials"

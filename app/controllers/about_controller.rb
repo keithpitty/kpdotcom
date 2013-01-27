@@ -6,7 +6,7 @@ class AboutController < ApplicationController
 
   def index
     @section = 'about'
-    @testimonials = Testimonial.find :all, :order => 'rank'
-    @achievements = Achievement.find :all, :order => 'rank'
+    @testimonials = Testimonial.all
+    @achievements = Achievement.all
   end
 end
