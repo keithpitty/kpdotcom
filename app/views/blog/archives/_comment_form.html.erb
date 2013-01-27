@@ -2,12 +2,7 @@
   <h4>Post a Comment</h4>
   <p>Please use your real name and be respectful. <a href="http://hobix.com/textile/">Textile</a> formatting is supported.</p>
 
-  <% flash.each do |name, msg| %>
-    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
-      <a class="close" data-dismiss="alert">x</a>
-      <%= msg %>
-    </div>
-  <% end %>
+<%= render "shared/alerts" %>
 
   <%= simple_form_for @comment, :url => create_comment_blog_archive_path, :html => { :class => 'form-horizontal' } do |f| %>
     <fieldset>
