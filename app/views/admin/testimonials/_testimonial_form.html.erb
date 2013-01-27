@@ -1,32 +1,15 @@
 <h1>Testimonial Details</h1>
-<%= render "shared/error_messages", :target => @testimonial %>
-<div id="success">
-  <% if flash[:notice] %>
-    <%= render 'shared/success', :msg => flash[:notice] %>
-  <% end %>
-</div>
+
 <fieldset>
-  <ol>
-    <li>
-      <label for="rank">Rank:</label>
-      <%= f.text_field :rank %>
-    </li>
-    <li>
-      <label for="provider_name">Name:</label>
-      <%= f.text_field :provider_name %>
-    </li>
-    <li>
-      <label for="provider_position">Position:</label>
-      <%= f.text_field :provider_position %>
-    </li>
-    <li>
-      <label for="recommendation">Recommendation:</label>
-      <%= f.text_area :recommendation %>
-    </li>
-    <li class="submitBtn">
-      <button value="submit" class="submitBtn">
-        <span>Save Testimonial</span>
-      </button>
-    </li>
-  </ol>
+
+  <%= f.input :rank %>
+  <%= f.input :provider_name, :input_html => { :class => "span3" } %>
+  <%= f.input :provider_position, :input_html => { :class => "span6" } %>
+  <%= f.input :recommendation, :input_html => { :class => "span6" } %>
+
+  <div class="form-actions">
+    <%= f.submit 'Save Testimonial', :class => 'btn btn-primary' %>
+    <%= link_to 'Cancel', admin_testimonials_path, :class => "btn" %>
+  </div>
+
 </fieldset>

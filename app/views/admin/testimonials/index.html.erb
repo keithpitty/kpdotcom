@@ -1,15 +1,26 @@
 <% content_for :secondary_content do %>
-  <p><%= link_to 'Add testimonial', new_admin_testimonial_path %></p>
+  <p><%= link_to 'Add testimonial', new_admin_testimonial_path, :class => "btn btn-primary" %></p>
 <% end %>
 <h1>Testimonials</h1>
-<table cellspacing="5" cellpadding="5">
+<table class="table table-striped">
   <thead>
-    <tr><th>Rank</th><th>Name</th><th>Position</th><th>Actions</th></tr>
+    <tr>
+      <th>Rank</th>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Actions</th>
+    </tr>
   </thead>
   <tbody>
     <% @testimonials.each do |testimonial| %>
-      <tr><td><%= testimonial.rank %></td><td><%= testimonial.provider_name %></td><td><%= testimonial.provider_position %></td>
-        <td><%= link_to 'Edit', edit_admin_testimonial_path(testimonial) %> <%= link_to 'Delete', admin_testimonial_path(testimonial), :confirm => 'Are you sure?', :method => :delete %></td>
+      <tr>
+        <td><%= testimonial.rank %></td>
+        <td><%= testimonial.provider_name %></td>
+        <td><%= testimonial.provider_position %></td>
+        <td>
+          <%= link_to 'Edit', edit_admin_testimonial_path(testimonial), :class => "btn btn-mini" %>
+          <%= link_to 'Delete', admin_testimonial_path(testimonial), :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-mini btn-danger" %>
+        </td>
       </tr>
     <% end %>
   </tbody>

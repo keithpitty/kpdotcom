@@ -1,14 +1,14 @@
 <% if @rejected_comments.size > 0 %>
   <h1>Rejected Comments</h1>
-  <div id="success">
-    <% if flash[:notice] %>
-      <%= render 'shared/success', :msg => flash[:notice] %>
-    <% end %>
-  </div>
   <% form_tag destroy_multiple_admin_comments_path, :method => :delete do %>
-    <table cellspacing="5" cellpadding="5">
+    <table class="table table-striped">
       <thead>
-        <tr><th></th><th>Name</th><th>Comment</th><th>Action</th></tr>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Comment</th>
+          <th>Action</th>
+        </tr>
       </thead>
       <tbody>
         <% @rejected_comments.each do |comment| %>
@@ -20,26 +20,26 @@
               <td><%= link_to h(comment.name), h(comment.website) %></td>
             <% end %>
             <td><%= h truncate(comment.comment, :length => 30) %></td>
-            <td><%= link_to 'Not spam', approve_admin_comment_path(comment), :confirm => 'Are you sure?', :method => :put  %></td>
+            <td><%= link_to 'Not spam', approve_admin_comment_path(comment), :confirm => 'Are you sure?', :method => :put, :class => "btn btn-mini btn-primary"  %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
     <fieldset>
-      <ol>
-        <li class="submitBtn">
-          <button value="submit" class="submitBtn">
-            <span>Destroy Checked</span>
-          </button>
-        </li>
-      </ol>
+      <div class="form-actions">
+        <%= f.submit 'Destroy Checked', :class => 'btn btn-primary' %>
+      </div>
     </fieldset>
   <% end %>
 <% end %>
 <h1>Approved Comments</h1>
-<table cellspacing="5" cellpadding="5">
+<table class="table table-striped">
   <thead>
-    <tr><th>Name</th><th>Comment</th><th>Action</th></tr>
+    <tr>
+      <th>Name</th>
+      <th>Comment</th>
+      <th>Action</th>
+    </tr>
   </thead>
   <tbody>
     <% @approved_comments.each do |comment| %>
@@ -50,7 +50,7 @@
           <td><%= link_to h(comment.name), comment.website %></td>
         <% end %>
         <td><%= h truncate(comment.comment, :length => 50) %></td>
-        <td><%= link_to 'Spam', reject_admin_comment_path(comment), :confirm => 'Are you sure?', :method => :put  %></td>
+        <td><%= link_to 'Spam', reject_admin_comment_path(comment), :confirm => 'Are you sure?', :method => :put, :class => "btn btn-mini btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>

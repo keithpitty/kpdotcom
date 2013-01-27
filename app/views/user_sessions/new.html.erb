@@ -1,30 +1,14 @@
 <h1>Enter Credentials</h1>
-<div id="success">
-  <% if flash[:notice] %>
-    <%= render :partial => 'shared/success', :locals => {:msg => flash[:notice]} %>
-  <% end %>
-</div>
-<div id="error">
-  <% if flash[:error] %>
-    <%= render :partial => 'shared/error', :locals => { :msg => flash[:error] } %>
-  <% end %>
-</div>
+
 <fieldset>
-<%= form_for @user_session, :as => :user_session, :url => user_session_path do |f| %>
-  <ol>
-    <li>
-      <label for="login">Login:</label>
-      <%= f.text_field :login %>
-    </li>
-    <li>
-      <label for="password">Password:</label>
-      <%= f.password_field :password %>
-    </li>
-    <li class="submitBtn">
-      <button value="submit" class="submitBtn">
-        <span>Log in</span>
-      </button>
-    </li>
-  </ol>
-<% end %>
+  <%= simple_form_for @user_session, :as => :user_session, :url => user_session_path do |f| %>
+
+    <%= f.input :login %>
+    <%= f.input :password %>
+
+    <div class="form-actions">
+      <%= f.submit 'Log in', :class => 'btn btn-primary' %>
+    </div>
+    
+  <% end %>
 </fieldset>
