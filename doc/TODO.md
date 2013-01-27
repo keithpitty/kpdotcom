@@ -1,6 +1,5 @@
 TODO (Change to use Twitter Bootstrap)
 
-* Fix contact form
 * Test on different device emulators
 * Style tag cloud
 * Clean up unused code
