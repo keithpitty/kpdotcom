@@ -6,5 +6,4 @@ class Achievement < ActiveRecord::Base
   validates_numericality_of :rank
   validates_presence_of :heading
   validates_presence_of :description
-  validates_presence_of :recommendation
 end

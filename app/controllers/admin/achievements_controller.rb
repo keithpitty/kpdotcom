@@ -43,9 +43,4 @@ class Admin::AchievementsController < AdminLayoutController
     Achievement.destroy(params[:id])
     redirect_to admin_achievements_url
   end
-
-  protected
-    def set_section
-      @section = "admin_achievements"
-    end
 end

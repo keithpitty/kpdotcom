@@ -1,7 +1,7 @@
 # coding: utf-8
 
 class Blog::ArchivesController < ApplicationController
-  before_filter :get_tags, :set_section, :get_latest_posts
+  before_filter :get_tags, :get_latest_posts
 
   cache_sweeper :comment_sweeper, :only => :create_comment
 
@@ -31,10 +31,5 @@ class Blog::ArchivesController < ApplicationController
       render "show"
     end
   end
-
-  private
-    def set_section
-      @section = 'blog'
-    end
 
 end

@@ -27,9 +27,4 @@ class Admin::CommentsController < AdminLayoutController
     redirect_to admin_comments_path
   end
 
-  protected
-    def set_section
-      @section = "admin_comments"
-    end
-
 end

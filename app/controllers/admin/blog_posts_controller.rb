@@ -47,9 +47,4 @@ class Admin::BlogPostsController < AdminLayoutController
     blog_post.destroy
     redirect_to admin_blog_posts_path
   end
-
-  protected
-    def set_section
-      @section = "admin_blog_posts"
-    end
 end
