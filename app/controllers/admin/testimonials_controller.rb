@@ -44,9 +44,4 @@ class Admin::TestimonialsController < AdminLayoutController
     @testimonial.destroy
     redirect_to admin_testimonials_url
   end
-
-  protected
-    def set_section
-      @section = "admin_testimonials"
-    end
 end

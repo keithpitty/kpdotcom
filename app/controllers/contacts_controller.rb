@@ -3,7 +3,6 @@
 class ContactsController < ApplicationController
 
   def new
-    @section = 'contact'
     @contact = Contact.new
   end
 
