@@ -1,6 +1,6 @@
 <% if @rejected_comments.size > 0 %>
   <h1>Rejected Comments</h1>
-  <% form_tag destroy_multiple_admin_comments_path, :method => :delete do %>
+  <%= form_tag destroy_multiple_admin_comments_path, :method => :delete do %>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -27,7 +27,7 @@
     </table>
     <fieldset>
       <div class="form-actions">
-        <button type="submit" class="btn">Destroy Checked</button>
+        <button type="submit" class="btn btn-warning">Destroy Checked</button>
       </div>
     </fieldset>
   <% end %>
