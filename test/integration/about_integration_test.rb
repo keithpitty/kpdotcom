@@ -11,5 +11,7 @@ describe "About integration" do
     page.text.must_include 'Achievement 2'
     page.text.must_include 'Richie Benaud'
     page.text.must_include 'Ian Chappell'
+    page.text.must_include 'Top bloke!'
+    page.text.must_include 'Bloody good bloke!'
   end
 end
