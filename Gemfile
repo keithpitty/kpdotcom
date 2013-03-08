@@ -1,4 +1,4 @@
-source :rubygems
+source 'http://rubygems.org'
 
 gem 'rails', '~> 3.2.11'
 gem 'jquery-rails', '~> 2.1.2'
@@ -21,7 +21,7 @@ end
 group :development, :test do
   gem 'pry', '~> 0.9.10'
   gem 'pry-doc', '~> 0.4.4'
-  gem 'debugger', '~> 1.2.4'
+  gem 'debugger', '~> 1.4.0'
   gem 'awesome_print', '~> 1.0.2'
 end
 
