@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.2.12'
+gem 'rails', '~> 3.2.13'
 gem 'jquery-rails', '~> 2.1.2'
 gem 'mysql2', '~> 0.3.11'
 gem 'RedCloth', '~> 4.2.9'
