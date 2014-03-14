@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.2.13'
+gem 'rails', '~> 3.2.17'
 gem 'jquery-rails', '~> 2.1.2'
 gem 'mysql2', '~> 0.3.11'
 gem 'RedCloth', '~> 4.2.9'
@@ -21,7 +21,6 @@ end
 group :development, :test do
   gem 'pry', '~> 0.9.10'
   gem 'pry-doc', '~> 0.4.4'
-  gem 'debugger', '~> 1.4.0'
   gem 'awesome_print', '~> 1.0.2'
 end
 
@@ -40,5 +39,5 @@ group :deployment do
 end
 
 group :production do
-  gem 'therubyracer', '~> 0.10.2', :require => 'v8'
+  gem 'therubyracer', '~> 0.12.1', :require => 'v8'
 end
