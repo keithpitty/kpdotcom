@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '~> 3.2.17'
 gem 'jquery-rails', '~> 2.1.2'
-gem 'mysql2', '~> 0.3.11'
+gem 'pg', '~> 0.17.1'
 gem 'RedCloth', '~> 4.2.9'
 gem 'coderay', '~> 1.0.7'
 gem 'authlogic', '~> 3.1.3'
@@ -41,3 +41,5 @@ end
 group :production do
   gem 'therubyracer', '~> 0.12.1', :require => 'v8'
 end
+
+ruby "2.1.1"
