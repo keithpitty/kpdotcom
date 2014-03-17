@@ -40,6 +40,7 @@ end
 
 group :production do
   gem 'therubyracer', '~> 0.12.1', :require => 'v8'
+  gem 'rails_12factor'
 end
 
 ruby "2.1.1"
