@@ -42,6 +42,7 @@ group :production do
   gem 'therubyracer', '~> 0.12.1', :require => 'v8'
   gem 'rails_12factor'
   gem 'unicorn'
+  gem 'rack-timeout', '~> 0.0.4'
 end
 
 ruby "2.1.1"
