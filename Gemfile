@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.2.17'
+gem 'rails', '~> 3.2.18'
 gem 'jquery-rails', '~> 2.1.2'
 gem 'pg', '~> 0.17.1'
 gem 'RedCloth', '~> 4.2.9'
@@ -45,4 +45,4 @@ group :production do
   gem 'rack-timeout', '~> 0.0.4'
 end
 
-ruby "2.1.1"
+ruby "2.1.2"
