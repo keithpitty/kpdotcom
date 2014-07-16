@@ -4,6 +4,8 @@ class Admin::CommentsController < AdminLayoutController
 
   before_filter :require_user
 
+  cache_sweeper :comment_sweeper, :only => [ :destroy_multiple, :approve, :reject ]
+
   def index
     @rejected_comments = Comment.rejected
     @approved_comments = Comment.approved
