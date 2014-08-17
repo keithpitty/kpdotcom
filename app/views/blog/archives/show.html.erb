@@ -24,5 +24,9 @@
       <p><small><%= "Posted by: #{c.footer_name} #{distance_of_time_in_words(@blog_post.created_at, c.created_at)} later".html_safe %></small></p>
     <% end %>
   <% end %>
-  <%= render "comment_form" %>
+  <% if @blog_post.comments_open? %>
+    <%= render "comment_form" %>
+  <% else %>
+    <p>Comments are close for this post.</p>
+  <% end %>
 </div>
