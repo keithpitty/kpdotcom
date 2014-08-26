@@ -18,7 +18,11 @@ Kpdotcom::Application.routes.draw do
   namespace :admin do
     resources :achievements
     resources :testimonials
-    resources :blog_posts
+    resources :blog_posts do
+      member do
+        get :preview
+      end
+    end
     resources :comments do
       collection do
         delete :destroy_multiple
