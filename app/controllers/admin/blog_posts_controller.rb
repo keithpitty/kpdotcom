@@ -13,17 +13,24 @@ class Admin::BlogPostsController < AdminLayoutController
     @blog_post = BlogPost.new
   end
 
+  def preview
+
+  end
+
   def create
     @blog_post = BlogPost.new(params[:blog_post])
-    begin
-      @blog_post.save!
-      flash[:notice] = "Blog post created."
-      redirect_to admin_blog_posts_url
-    rescue Exception => e
-      logger.debug(e.message)
-      render "new"
+    if params[:preview_button]
+      render "preview"
+    else
+      begin
+        @blog_post.save!
+        flash[:notice] = "Blog post created."
+        redirect_to admin_blog_posts_url
+      rescue Exception => e
+        logger.debug(e.message)
+        render "new"
+      end
     end
-
   end
 
   def edit
@@ -32,14 +39,17 @@ class Admin::BlogPostsController < AdminLayoutController
 
   def update
     @blog_post = BlogPost.find_by_param(params[:id])
-    begin
-      @blog_post.update_attributes(params[:blog_post])
-      flash[:notice] = "Blog post updated."
-      redirect_to admin_blog_posts_url
-    rescue
-      render "edit"
+    if params[:preview_button]
+      render "preview"
+    else
+      begin
+        @blog_post.update_attributes(params[:blog_post])
+        flash[:notice] = "Blog post updated."
+        redirect_to admin_blog_posts_url
+      rescue
+        render "edit"
+      end
     end
-
   end
 
   def destroy

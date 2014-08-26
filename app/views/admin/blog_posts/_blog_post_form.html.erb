@@ -8,6 +8,7 @@
 
   <div class="form-actions">
     <%= f.submit 'Save Blog Post', :class => 'btn btn-primary' %>
+    <%= f.submit 'Preview Blog Post', name: 'preview_button', :class => "btn btn-info" %>
     <%= link_to 'Cancel', admin_blog_posts_path, :class => "btn" %>
   </div>
   
