@@ -32,6 +32,7 @@ Kpdotcom::Application.routes.draw do
         put :reject
       end
     end
+    resources :images
   end
 
   match '' => 'home#index'
