@@ -53,7 +53,7 @@ class Admin::BlogPostsController < AdminLayoutController
   end
 
   def destroy
-    blog_post = BlogPost.find_by_param(params[:id])
+    blog_post = BlogPost.find(params[:id])
     blog_post.destroy
     redirect_to admin_blog_posts_path
   end
