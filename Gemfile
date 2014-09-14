@@ -11,6 +11,8 @@ gem 'rakismet', '~> 1.3.0'
 gem 'less-rails', '~> 2.2.6'
 gem 'twitter-bootstrap-rails', '~> 2.2.0'
 gem 'simple_form', '~> 2.0.4'
+gem 'paperclip', '~> 4.2.0'
+gem 'aws-sdk', '~> 1.52.0'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.5'

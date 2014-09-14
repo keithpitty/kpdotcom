@@ -1,0 +1,10 @@
+<h1>New Image</h1>
+<%= simple_form_for @image, url: admin_images_path, html: { multipart: true } do |f| %>
+  <fieldset>
+    <%= f.input :picture, as: :file %>
+    <div class="form-actions">
+      <%= f.submit 'Save Image', :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', admin_images_path, :class => "btn" %>
+    </div>
+  </fieldset>
+<% end %>
