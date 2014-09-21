@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140827061143) do
+ActiveRecord::Schema.define(:version => 20140921120132) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "rank"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20140827061143) do
     t.datetime "updated_at"
     t.string   "param"
     t.boolean  "comments_open"
+    t.datetime "published_at"
   end
 
   create_table "comments", :force => true do |t|
