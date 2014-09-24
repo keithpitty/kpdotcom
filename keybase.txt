@@ -1,0 +1,66 @@
+==================================================================
+https://keybase.io/keithpitty
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://keithpitty.com
+  * I am keithpitty (https://keybase.io/keithpitty) on keybase.
+  * I have a public key with fingerprint BA16 B1B1 CE7A 067E 2334  1495 394A 7A64 3DCF 6481
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "ba16b1b1ce7a067e23341495394a7a643dcf6481",
+            "host": "keybase.io",
+            "key_id": "394a7a643dcf6481",
+            "uid": "a4d767afa273d276b3c87c2c9d0ac900",
+            "username": "keithpitty"
+        },
+        "service": {
+            "hostname": "keithpitty.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1411564659,
+    "expire_in": 157680000,
+    "prev": "703bdaa8ecf9dd52175032c20f21e93ac6bb857a5c25379bfd3fa6239e8ad05e",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v1.0.5
+Comment: https://keybase.io/crypto
+
+yMHmAnicO8LLzMDFWBso+yRDXmca4+kDX0sZQpSOFFcrJeWnVCpZVStlp4KptMy8
+9NSigqLMvBIlK6WkREOzJMMkw+RU80QDM/NUI2NjE0MTS1NjS5NE80QzE+OU5DQz
+EwtDJR2ljPxikA6gMUmJxal6mflAMSAnPjMFKIpFfSlYItEkxdzMPDEt0cjcOMXI
+3CzJONnCPNko2TLFIDHZ0sAApLA4tSgvMTcVbHhmSUZBZklJpVKtjhJQvCwzORXk
+apDlGGr0kvNzgfoLivJL8pPzc4ByGSUlBVYgrSWVBSC15alJ8VBT4pMy81KAfgdq
+KEstKs7Mz1OyMgSqTC7JBBlraGJoaGpmYmZqqaOUWlGQWZQanwlSYWpuZmEABCBr
+UsuARpobGCelJCZapCanWaakmBoZmpsaGBslGxmkGRmmWhonJpslJVmYmieaJhuZ
+GptbJqWlGKclmhkZW6ZaJKYYmKYqgfxVmJevZGUMdGZiOtDI4sz0vMSS0qJUpdpD
+B2JYGBi5GNhYmUCxx8DFKQCL09xm9r8SgXHZ3Pc0mhv0fu1W/L14e+kq5zC70wUJ
+/mf9S+Ju/j+fedQjm3Pv622/DgaZ1y7atPhZpNdVLrUK34UPyi8K8KwumD2RN4v/
++vmpOk22TvM2/T9x4NYKHjldx/or2z7et2v4nHtmxWKPFylvnq63P/DT8NOWn5Wf
+JhpNva3dGuJ+RfSGk7i7fvW1kIZXYvwmfhZLmI7nbtt6rt6GS3CpSs8Z1b3rCo4u
+qnJVjn9w1aBBepKZdHjZ+lvnN6gGvpJ7LJn5s7Es7V2AaRXTlHe6Wzpmz+3j0Jvt
+6OZcG12+bvfp2CvnS77O6fIsaM3oVRC2vOJa58plLqiTrXVM8ujEFi/dr5szoizq
+AvRl+gHEEhNH
+=M5MV
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/keithpitty
+
+==================================================================
+
