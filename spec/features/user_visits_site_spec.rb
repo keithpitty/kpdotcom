@@ -18,4 +18,10 @@ feature 'User visits site' do
     expect(page).to have_css 'h2', 'Navigation'
     expect(page).to have_css 'h2', 'Latest Blog Posts'
   end
+
+  scenario 'they visit the about page' do
+    visit '/'
+    click_link 'About'
+    expect(page).to have_css 'h1', 'About me'
+  end
 end
