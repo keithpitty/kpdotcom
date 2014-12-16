@@ -11,4 +11,11 @@ feature 'User visits site' do
     click_link 'Services'
     expect(page).to have_css 'h1', 'Services'
   end
+
+  scenario 'they visit the blog' do
+    visit '/'
+    click_link 'Blog'
+    expect(page).to have_css 'h2', 'Navigation'
+    expect(page).to have_css 'h2', 'Latest Blog Posts'
+  end
 end
