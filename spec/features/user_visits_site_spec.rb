@@ -5,4 +5,10 @@ feature 'User visits site' do
     visit '/'
     expect(page).to have_css 'h1', 'Home'
   end
+
+  scenario 'they visit the services page' do
+    visit '/'
+    click_link 'Services'
+    expect(page).to have_css 'h1', 'Services'
+  end
 end
