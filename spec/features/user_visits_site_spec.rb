@@ -24,4 +24,10 @@ feature 'User visits site' do
     click_link 'About'
     expect(page).to have_css 'h1', 'About me'
   end
+
+  scenario 'they visit the contact page' do
+    visit '/'
+    click_link 'Contact'
+    expect(page).to have_css 'h1', 'Contact me'
+  end
 end
