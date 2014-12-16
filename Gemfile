@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+ruby "2.1.5"
+
 gem 'rails', '~> 3.2.18'
 gem 'jquery-rails', '~> 2.1.2'
 gem 'pg', '~> 0.17.1'
@@ -24,20 +26,11 @@ group :development, :test do
   gem 'pry', '~> 0.9.10'
   gem 'pry-doc', '~> 0.4.4'
   gem 'awesome_print', '~> 1.0.2'
+  gem 'rspec-rails', '~> 3.1.0'
 end
 
 group :test do
-  gem 'minitest'
-  gem 'capybara'
-  gem 'turn'
-  gem 'factory_girl_rails'
-  gem 'faker'
-  gem 'database_cleaner'
-  gem 'launchy'
-end
-
-group :deployment do
-  gem 'capistrano', '~> 2.14.1'
+  gem 'capybara', '~> 2.4.4'
 end
 
 group :production do
@@ -46,5 +39,3 @@ group :production do
   gem 'unicorn'
   gem 'rack-timeout', '~> 0.0.4'
 end
-
-ruby "2.1.2"
