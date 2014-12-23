@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'User visits blog post' do
-
   let!(:blog_post) { create(:blog_post, title: 'Test post') }
 
   scenario 'they add a comment' do
@@ -13,6 +12,6 @@ feature 'User visits blog post' do
     fill_in 'Comment', with: 'I agree!'
     click_button 'Post Comment'
 
-    expect(page).to have_css('#comments p', 'I agree!') 
+    expect(page).to have_css('#comments p', 'I agree!')
   end
 end
