@@ -36,6 +36,7 @@ end
 
 group :test do
   gem 'capybara', '~> 2.4.4'
+  gem 'factory_girl_rails', '~> 4.5.0'
 end
 
 group :production do
