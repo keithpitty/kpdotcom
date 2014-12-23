@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 feature 'User visits blog post' do
-  let!(:blog_post) { create(:blog_post, title: 'Test post') }
+  background do
+    create(:blog_post, title: 'Test post')
+  end
 
   scenario 'they add a comment' do
     visit '/'
