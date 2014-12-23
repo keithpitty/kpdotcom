@@ -6,7 +6,7 @@ gem 'rails', '~> 3.2.18'
 gem 'jquery-rails', '~> 2.1.2'
 gem 'pg', '~> 0.17.1'
 gem 'RedCloth', '~> 4.2.9'
-gem 'coderay', '~> 1.0.7'
+gem 'coderay', '~> 1.1.0'
 gem 'authlogic', '~> 3.1.3'
 gem 'acts-as-taggable-on', '~> 2.3.3'
 gem 'rakismet', '~> 1.3.0'
@@ -23,10 +23,15 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'pry', '~> 0.9.10'
-  gem 'pry-doc', '~> 0.4.4'
+  gem 'pry', '~> 0.10.1'
+  gem 'pry-doc', '~> 0.6.0'
   gem 'awesome_print', '~> 1.0.2'
   gem 'rspec-rails', '~> 3.1.0'
+  gem 'guard-rspec', '~> 4.5.0'
+end
+
+group :development do
+  gem 'guard-ctags-bundler', '~> 1.3.1'
 end
 
 group :test do
