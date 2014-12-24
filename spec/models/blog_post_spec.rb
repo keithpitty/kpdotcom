@@ -26,4 +26,26 @@ describe BlogPost do
       expect(posts.map(&:tag_list).flatten).to eq(['tag1', 'tag1'])
     end
   end
+
+  describe '#set_param' do
+    it 'sets param from published_at for published post' do
+      post = create(:blog_post,
+                    title: 'Post',
+                    post: 'test',
+                    published: true,
+                    published_at: Date.parse('2014-12-18').to_datetime)
+      post.set_param
+      expect(post.param).to eq('2014-12-18-post')
+    end
+
+    it 'sets param from current time for draft post' do
+      post = create(:blog_post,
+                    title: 'Post',
+                    post: 'test',
+                    published: false)
+      post.set_param
+      today_str = Time.zone.now.to_date.to_formatted_s(:db)
+      expect(post.param).to eq("#{today_str}-post")
+    end
+  end
 end
