@@ -48,4 +48,17 @@ describe BlogPost do
       expect(post.param).to eq("#{today_str}-post")
     end
   end
+
+  describe '#set_published_at' do
+    it 'should set using Time.zone.now' do
+      post = create(:blog_post,
+                    title: 'Post',
+                    post: 'test',
+                    published: false)
+      Timecop.freeze(Time.now) do
+        post.set_published_at
+        expect(post.published_at).to eq(Time.zone.now)
+      end
+    end
+  end
 end
