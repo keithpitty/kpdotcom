@@ -5,6 +5,8 @@ guard 'ctags-bundler', :src_path => ["app", "lib", "spec/support"] do
   watch('Gemfile.lock')
 end
 
+notification :growl
+
 guard :rspec, cmd: "bundle exec rspec" do
   require "guard/rspec/dsl"
   dsl = Guard::RSpec::Dsl.new(self)

@@ -28,6 +28,7 @@ group :development, :test do
   gem 'awesome_print', '~> 1.0.2'
   gem 'rspec-rails', '~> 3.1.0'
   gem 'guard-rspec', '~> 4.5.0'
+  gem 'growl', '~> 1.0.3'
 end
 
 group :development do
