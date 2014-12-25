@@ -12,3 +12,10 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
 end
+
+def mock_user_session
+  user_session = double('user session')
+  user = double('user')
+  allow(UserSession).to receive(:find).and_return(user_session)
+  allow(user_session).to receive(:user).and_return(user)
+end
