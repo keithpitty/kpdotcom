@@ -12,6 +12,7 @@ class ContactsController < ApplicationController
       flash[:notice] = "Message sent!"
       redirect_to '/contact'
     else
+      flash[:error] = @contact.errors.full_messages
       render "new"
     end
   end
