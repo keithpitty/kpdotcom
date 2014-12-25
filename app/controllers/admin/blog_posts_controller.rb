@@ -1,4 +1,6 @@
 module Admin
+  # Public: Controller for administration of blog posts.
+  # Facilitates CRUD and preview actions.
   class BlogPostsController < AdminLayoutController
     before_filter :require_user
     cache_sweeper :blog_sweeper, only: [:create, :update, :destroy]
