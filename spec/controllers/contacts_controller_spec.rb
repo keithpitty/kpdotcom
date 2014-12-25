@@ -9,7 +9,7 @@ describe ContactsController do
                                  subject: 'Shot!',
                                  message: 'Great shot, man!' }
         expect(response).to render_template(:new)
-        expect(flash[:error].first).to match(/Email is invalid/)
+        expect(flash[:error]).to eq('Please fix the errors and try again.')
       end
     end
   end

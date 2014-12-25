@@ -1,7 +1,4 @@
-# coding: utf-8
-
 class ContactsController < ApplicationController
-
   def new
     @contact = Contact.new
   end
@@ -9,12 +6,11 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(params[:contact])
     if @contact.save
-      flash[:notice] = "Message sent!"
+      flash[:notice] = 'Message sent!'
       redirect_to '/contact'
     else
-      flash[:error] = @contact.errors.full_messages
-      render "new"
+      flash[:error] = 'Please fix the errors and try again.'
+      render :new
     end
   end
-
 end
