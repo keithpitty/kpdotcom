@@ -6,4 +6,10 @@ FactoryGirl.define do
     comments_open true
     param '2014-12-01-test-post'
   end
+
+  factory :user do
+    login 'someone@example.com'
+    password 'password'
+    password_confirmation 'password'
+  end
 end
