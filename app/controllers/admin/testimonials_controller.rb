@@ -29,7 +29,7 @@ module Admin
 
     def update
       @testimonial = Testimonial.find(params[:id])
-      @testimonial.update_attributes!(params[:testimonial])
+      @testimonial.update_attributes(params[:testimonial])
       if @testimonial.save
         flash[:notice] = 'Testimonial updated.'
         redirect_to admin_testimonials_url

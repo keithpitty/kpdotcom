@@ -29,7 +29,7 @@ describe Admin::TestimonialsController do
 
     describe '#update' do
       it 'updates a testimonial' do
-        expect(testimonial).to receive(:update_attributes!)
+        expect(testimonial).to receive(:update_attributes)
         expect(testimonial).to receive(:save).and_return(true)
         post :update, testimonial: { id: '1',
                                      rank: '10',
