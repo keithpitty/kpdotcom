@@ -8,7 +8,7 @@
   <% unless @blog_post.taggings.empty? %>
     <p class="blogPostFooter sans">
       Tags: <% @blog_post.tags.each do |t| %>
-      <%= link_to t.name, "/blog?tag=#{t.name}" %>
+      <%= link_to t.name, "/blog/tags/#{t.name}" %>
       <% end %>
     </p>
   <% end %>

@@ -1,27 +1,28 @@
-# coding: utf-8
+module Admin
+  # Public: Controller for administration of images.
+  # Facilitates creation and removal of images.
+  class ImagesController < AdminLayoutController
+    before_filter :require_user
 
-class Admin::ImagesController < AdminLayoutController
+    def index
+      @images = Image.all
+    end
 
-  before_filter :require_user
+    def new
+      @image = Image.new
+    end
 
-  def index
-    @images = Image.all
+    def create
+      @image = Image.create(params[:image])
+      flash[:notice] = 'Image saved.'
+      redirect_to admin_images_url
+    end
+
+    def destroy
+      image = Image.find(params[:id])
+      image.destroy
+      flash[:notice] = 'Image deleted.'
+      redirect_to admin_images_path
+    end
   end
-
-  def new
-    @image = Image.new
-  end
-
-  def create
-    @image = Image.create(params[:image])
-    flash[:notice] = "Image saved."
-    redirect_to admin_images_url
-  end
-
-  def destroy
-    image = Image.find(params[:id])
-    image.destroy
-    redirect_to admin_images_path
-  end
-
 end

@@ -5,3 +5,4 @@ config/.DS_Store
 tmp/
 .rvmrc
 public/system
+.rspec

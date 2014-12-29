@@ -1,8 +1,6 @@
-# coding: utf-8
-
 class UserSessionsController < AdminLayoutController
-  before_filter :require_no_user, :only => [:create]
-  before_filter :require_user, :only => :destroy
+  before_filter :require_no_user, only: [:create]
+  before_filter :require_user, only: :destroy
 
   def new
     if current_user
@@ -15,17 +13,17 @@ class UserSessionsController < AdminLayoutController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      logger.info "User session created."
-      msg = "Login successful!"
-      redirect_to(admin_url, :notice => msg)
+      logger.info 'User session created.'
+      msg = 'Login successful!'
+      redirect_to(admin_url, notice: msg)
     else
-      flash[:error] = "Bad credentials, man!"
+      flash[:error] = 'Bad credentials, man!'
       render :new
     end
   end
 
   def destroy
     current_user_session.destroy
-    redirect_to(login_url, :notice => "Logout successful!")
+    redirect_to(login_url, notice: 'Logout successful!')
   end
 end

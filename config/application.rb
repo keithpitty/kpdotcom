@@ -31,5 +31,8 @@ module Kpdotcom
 
     # For Heroku
     config.assets.initialize_on_precompile = false
+
+    # Skip locale validation
+    config.i18n.enforce_available_locales = false
   end
 end
