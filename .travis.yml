@@ -4,3 +4,4 @@ addons:
 before_script:
   - psql -c 'create database kpdotcom_test;' -U postgres
   - cp config/database.yml.travis config/database.yml
+  - bundle exec rake db:schema:load
