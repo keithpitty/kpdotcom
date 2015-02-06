@@ -4,7 +4,7 @@
 <% @blog_posts.each do |p| %>
   <% cache "blog_post_in_list_#{p.id}" do %>
     <h1 class="blog"><%= link_to p.title, blog_archive_path(p) %></h1>
-    <h6><%= p.created_at.to_date.to_formatted_s(:long_ordinal) %></h6>
+    <h6><%= p.published_at.to_date.to_formatted_s(:long_ordinal) %></h6>
     <%= textilize(coderay(p.post)) %>
     <p class="blogPostFooter sans">
       <% unless p.taggings.empty? %>

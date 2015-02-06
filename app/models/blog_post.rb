@@ -1,7 +1,6 @@
 # coding: utf-8
 
 class BlogPost < ActiveRecord::Base
-  default_scope order: 'created_at DESC'
   has_many :comments
   validates_presence_of :title
   validates_presence_of :post
