@@ -4,6 +4,6 @@
 <h1>Archives</h1>
 <ul>
   <% @blog_posts.each do |p| %>
-    <li class="sans"><%= "#{link_to p.title, blog_archive_path(p)} (#{p.created_at.to_date.to_formatted_s(:rfc822)})".html_safe %></li>
+    <li class="sans"><%= "#{link_to p.title, blog_archive_path(p)} (#{p.published_at.to_date.to_formatted_s(:rfc822)})".html_safe %></li>
   <% end %>
 </ul>

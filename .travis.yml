@@ -1,0 +1,9 @@
+language: ruby
+addons:
+  postgresql: "9.3"
+before_script:
+  - psql -c 'create database kpdotcom_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
+  - bundle exec rake db:schema:load
+script:
+  - CODECLIMATE_REPO_TOKEN=eca569d89e2a8d954a3e28ef958ce10e912eef6570bbdabbb28297e11948efa8 bundle exec rake
