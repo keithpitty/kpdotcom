@@ -6,7 +6,7 @@ module Admin
     cache_sweeper :blog_sweeper, only: [:create, :update, :destroy]
 
     def index
-      @blog_posts = BlogPost.order('created_at DESC')
+      @blog_posts = BlogPost.draft + BlogPost.published
     end
 
     def new

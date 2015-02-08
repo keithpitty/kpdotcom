@@ -6,6 +6,7 @@ class BlogPost < ActiveRecord::Base
   validates_presence_of :post
   acts_as_taggable
   scope :published, conditions: { published: true }, order: "published_at DESC"
+  scope :draft, conditions: { published: false }, order: "updated_at DESC"
   before_save :set_published_at, if: :being_published?
   before_save :set_param
 
