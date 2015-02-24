@@ -20,6 +20,7 @@ class Blog::ArchivesController < ApplicationController
     @comment.request = request
     if @comment.save
       if @comment.approved?
+        CommentMailer.comment(@comment).deliver if @comment.approved?
         flash[:notice] = "Thanks for your comment."
         expire_fragment(:fragment => "blog_home")
       else
