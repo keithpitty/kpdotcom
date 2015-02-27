@@ -16,7 +16,7 @@ module Admin
     end
 
     def create
-      @blog_post = BlogPost.new(params[:blog_post])
+      @blog_post = BlogPost.new(blog_post_params)
       if params[:preview_button]
         render :preview
       else
@@ -30,7 +30,7 @@ module Admin
 
     def update
       if params[:preview_button]
-        @blog_post = BlogPost.new(params[:blog_post])
+        @blog_post = BlogPost.new(blog_post_params)
         render :preview
       else
         handle_update
@@ -48,6 +48,10 @@ module Admin
 
     private
 
+    def blog_post_params
+      params.require(:blog_post).permit(:title, :post, :published, :comments_open)  
+    end
+
     def handle_create
       if @blog_post.save
         expire_fragment_caches
@@ -61,7 +65,7 @@ module Admin
 
     def handle_update
       @blog_post = BlogPost.find_by_param(params[:id])
-      @blog_post.update_attributes(params[:blog_post])
+      @blog_post.update_attributes(blog_post_params)
       if @blog_post.save
         expire_fragment_caches
         flash[:notice] = 'Blog post updated.'

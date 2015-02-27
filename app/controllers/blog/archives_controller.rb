@@ -14,7 +14,7 @@ class Blog::ArchivesController < ApplicationController
   end
 
   def create_comment
-    @comment = Comment.new(params[:comment])
+    @comment = Comment.new(comment_params)
     @comment.blog_post = BlogPost.find(params[:blog_id])
     @comment.request = request
     if @comment.save
@@ -31,6 +31,12 @@ class Blog::ArchivesController < ApplicationController
       @blog_post = BlogPost.find_by_param params[:id]
       render "show"
     end
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:name, :email, :website, :comment)
   end
 
 end

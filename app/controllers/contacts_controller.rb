@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(params[:contact])
+    @contact = Contact.new(contact_params)
     if @contact.save
       ContactMailer.contact_message(@contact).deliver
       flash[:notice] = 'Message sent!'
@@ -13,5 +13,11 @@ class ContactsController < ApplicationController
       flash[:error] = 'Please fix the errors and try again.'
       render :new
     end
+  end
+
+  private
+
+  def contact_params
+    params.require(:contact).permit(:name, :email, :subject, :message)
   end
 end

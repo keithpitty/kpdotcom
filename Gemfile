@@ -2,25 +2,24 @@ source 'http://rubygems.org'
 
 ruby "2.1.5"
 
-gem 'rails', '~> 3.2.18'
+gem 'rails', '~> 4.2.0'
 gem 'jquery-rails', '~> 2.1.2'
 gem 'pg', '~> 0.17.1'
 gem 'RedCloth', '~> 4.2.9'
 gem 'coderay', '~> 1.1.0'
-gem 'authlogic', '~> 3.1.3'
-gem 'acts-as-taggable-on', '~> 2.3.3'
+gem 'authlogic', '~> 3.4.4'
+gem 'acts-as-taggable-on', '~> 3.4.4'
 gem 'rakismet', '~> 1.3.0'
 gem 'less-rails', '~> 2.2.6'
 gem 'twitter-bootstrap-rails', '~> 2.2.0'
-gem 'simple_form', '~> 2.0.4'
-gem 'paperclip', '~> 4.2.0'
+gem 'simple_form', '~> 3.1.0'
+gem 'paperclip', '~> 4.2.1'
 gem 'aws-sdk', '~> 1.52.0'
+gem 'sass-rails', '~> 5.0.1'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'uglifier', '~> 1.3.0'
 
-group :assets do
-  gem 'sass-rails', '~> 3.2.5'
-  gem 'coffee-rails', '~> 3.2.2'
-  gem 'uglifier', '~> 1.3.0'
-end
+gem 'rails4_upgrade'
 
 group :development, :test do
   gem 'pry', '~> 0.10.1'
@@ -36,7 +35,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '~> 2.4.4'
+  gem 'capybara'
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'timecop', '~> 0.7.1'
   gem "codeclimate-test-reporter", require: nil

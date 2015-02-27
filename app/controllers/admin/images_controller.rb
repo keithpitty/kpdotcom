@@ -13,7 +13,7 @@ module Admin
     end
 
     def create
-      @image = Image.create(params[:image])
+      @image = Image.create(image_params)
       flash[:notice] = 'Image saved.'
       redirect_to admin_images_url
     end
@@ -23,6 +23,12 @@ module Admin
       image.destroy
       flash[:notice] = 'Image deleted.'
       redirect_to admin_images_path
+    end
+
+    private
+
+    def image_params
+      params.require(:image).permit(:picture_file_name, :picture_content_type, :picture_file_size)
     end
   end
 end
