@@ -3,7 +3,6 @@ module Admin
   # Facilitate CRUD actions.
   class AchievementsController < AdminLayoutController
     before_filter :require_user
-    cache_sweeper :achievement_sweeper, only: [:create, :update, :destroy]
 
     def index
       @achievements = Achievement.all
@@ -17,6 +16,7 @@ module Admin
       @achievement = Achievement.new(params[:achievement])
       begin
         @achievement.save!
+        expire_achievements_fragment
         flash[:notice] = 'Achievement created.'
         redirect_to admin_achievements_url
       rescue
@@ -32,6 +32,7 @@ module Admin
       @achievement = Achievement.find(params[:id])
       @achievement.update_attributes(params[:achievement])
       if @achievement.save
+        expire_achievements_fragment
         flash[:notice] = 'Achievement updated.'
         redirect_to admin_achievements_url
       else
@@ -43,6 +44,12 @@ module Admin
       Achievement.destroy(params[:id])
       flash[:notice] = 'Achievement deleted.'
       redirect_to admin_achievements_url
+    end
+
+    private
+
+    def expire_achievements_fragment
+      expire_fragment "achievements"
     end
   end
 end

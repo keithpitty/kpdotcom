@@ -18,8 +18,10 @@
 </p>
 <p>Read on to learn more about my professional background and what others have had to say about my work.</p>
 <div class="pull-left">
-  <% @achievements.each do |achievement| %>
-    <h3><%= h achievement.heading %></h3>
-    <%= textilize(achievement.description) %>
+  <% cache "achievements" do %>
+    <% @achievements.each do |achievement| %>
+      <h3><%= h achievement.heading %></h3>
+      <%= textilize(achievement.description) %>
+    <% end %>
   <% end %>
 </div>
