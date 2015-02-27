@@ -49,7 +49,7 @@ module Admin
     private
 
     def blog_post_params
-      params.require(:blog_post).permit(:title, :post, :published, :comments_open)  
+      params.require(:blog_post).permit(:title, :post, :published, :comments_open, :tag_list)  
     end
 
     def handle_create
