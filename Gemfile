@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby "2.1.5"
+ruby "2.2.0"
 
 gem 'rails', '~> 4.2.0'
 gem 'jquery-rails', '~> 2.1.2'
@@ -18,8 +18,6 @@ gem 'aws-sdk', '~> 1.52.0'
 gem 'sass-rails', '~> 5.0.1'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'uglifier', '~> 1.3.0'
-
-gem 'rails4_upgrade'
 
 group :development, :test do
   gem 'pry', '~> 0.10.1'
