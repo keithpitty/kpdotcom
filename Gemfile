@@ -39,9 +39,12 @@ group :test do
   gem "codeclimate-test-reporter", require: nil
 end
 
+group :staging, :production do
+  gem 'rails_12factor'
+end
+
 group :production do
   gem 'therubyracer', '~> 0.12.1', :require => 'v8'
-  gem 'rails_12factor'
   gem 'unicorn'
   gem 'rack-timeout', '~> 0.0.4'
 end

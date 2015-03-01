@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user_session, :current_user
 
+  http_basic_authenticate_with name: ENV['STAGING_NAME'], password: ENV['STAGING_PASSWORD'] if Rails.env == 'staging'
+
   protected
     def require_user
       unless current_user
