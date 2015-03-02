@@ -10,7 +10,9 @@ module ApplicationHelper
 
   def coderay(text)
     text.gsub(/^\<code(?: lang='(.+?)')?\>(.+?)\<\/code\>/m) do
-      "\n<notextile>#{CodeRay.scan($2, $1).div(css: :class)}</notextile>"
+      lang = $1 || 'text'
+      code = $2
+      "\n<notextile>#{CodeRay.scan(code, lang).div(css: :class)}</notextile>"
     end
   end
 
