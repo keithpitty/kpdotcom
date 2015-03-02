@@ -1,9 +1,8 @@
 # coding: utf-8
 
 class Blog::ArchivesController < ApplicationController
+  include CacheMethods
   before_filter :get_tags, :get_latest_posts
-
-  cache_sweeper :comment_sweeper, :only => :create_comment
 
   def index
     @blog_posts = BlogPost.published
@@ -15,11 +14,13 @@ class Blog::ArchivesController < ApplicationController
   end
 
   def create_comment
-    @comment = Comment.new(params[:comment])
+    @comment = Comment.new(comment_params)
     @comment.blog_post = BlogPost.find(params[:blog_id])
     @comment.request = request
     if @comment.save
       if @comment.approved?
+        expire_fragment_caches_for_comment
+        CommentMailer.comment(@comment).deliver_now if @comment.approved?
         flash[:notice] = "Thanks for your comment."
         expire_fragment(:fragment => "blog_home")
       else
@@ -30,6 +31,12 @@ class Blog::ArchivesController < ApplicationController
       @blog_post = BlogPost.find_by_param params[:id]
       render "show"
     end
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:name, :email, :website, :comment)
   end
 
 end

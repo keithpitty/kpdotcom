@@ -2,8 +2,6 @@
 
 class AboutController < ApplicationController
 
-  caches_page :index
-
   def index
     @testimonials = Testimonial.all
     @achievements = Achievement.all

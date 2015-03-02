@@ -1,29 +1,33 @@
 require 'rails_helper'
 
 describe BlogPost do
+
+  def create_blog_post(params)
+    blog_post = create(:blog_post,
+                       title: params[:title],
+                       post: params[:post],
+                       published: true)
+    blog_post.tag_list.add(params[:tag_list], parse: true)
+    blog_post.save
+  end
+
   describe '.find_published_tagged_with' do
     before do
-      create(:blog_post,
-             title: 'Post 1',
-             post: 'test',
-             tag_list: 'tag1',
-             published: true)
-      create(:blog_post,
-             title: 'Post 2',
-             post: 'test',
-             tag_list: 'tag1',
-             published: true)
-      create(:blog_post,
-             title: 'Post 3',
-             post: 'test',
-             tag_list: 'tag2',
-             published: true)
+      create_blog_post(title: 'Post 1',
+                       post: 'test',
+                       tag_list: 'tag1')
+      create_blog_post(title: 'Post 2',
+                       post: 'test',
+                       tag_list: 'tag1, tag4')
+      create_blog_post(title: 'Post 3',
+                       post: 'test',
+                       tag_list: 'tag3')
     end
 
     it 'returns published posts with tag' do
       posts = BlogPost.find_published_tagged_with('tag1')
       expect(posts.count).to eq(2)
-      expect(posts.map(&:tag_list).flatten).to eq(['tag1', 'tag1'])
+      expect(posts.map(&:tag_list).flatten).to eq(['tag4', 'tag1', 'tag1'])
     end
   end
 

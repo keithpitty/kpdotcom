@@ -31,11 +31,10 @@ describe Admin::TestimonialsController do
       it 'updates a testimonial' do
         expect(testimonial).to receive(:update_attributes)
         expect(testimonial).to receive(:save).and_return(true)
-        post :update, testimonial: { id: '1',
-                                     rank: '10',
-                                     provider_name: 'Joe Bloggs',
-                                     provider_position: 'Developer',
-                                     recommendation: 'Knows his stuff.' }
+        post :update, id: '1', testimonial: { rank: '10',
+                                              provider_name: 'Joe Bloggs',
+                                              provider_position: 'Developer',
+                                              recommendation: 'Knows his stuff.' }
         expect(response).to redirect_to('/admin/testimonials')
         expect(flash[:notice]).to eq('Testimonial updated.')
       end

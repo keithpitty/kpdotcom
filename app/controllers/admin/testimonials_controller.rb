@@ -3,7 +3,6 @@ module Admin
   # Facilitates CRUD actions.
   class TestimonialsController < AdminLayoutController
     before_filter :require_user
-    cache_sweeper :testimonial_sweeper, only: [:create, :update, :destroy]
 
     def index
       @testimonials = Testimonial.all
@@ -14,8 +13,9 @@ module Admin
     end
 
     def create
-      @testimonial = Testimonial.new(params[:testimonial])
+      @testimonial = Testimonial.new(testimonial_params)
       if @testimonial.save
+        expire_testimonials_cache
         flash[:notice] = 'Testimonial created.'
         redirect_to admin_testimonials_url
       else
@@ -29,8 +29,9 @@ module Admin
 
     def update
       @testimonial = Testimonial.find(params[:id])
-      @testimonial.update_attributes(params[:testimonial])
+      @testimonial.update_attributes(testimonial_params)
       if @testimonial.save
+        expire_testimonials_cache
         flash[:notice] = 'Testimonial updated.'
         redirect_to admin_testimonials_url
       else
@@ -42,7 +43,18 @@ module Admin
       @testimonial = Testimonial.find(params[:id])
       flash[:notice] = 'Testimonial deleted.'
       @testimonial.destroy
+      expire_testimonials_cache
       redirect_to admin_testimonials_url
+    end
+
+    private
+
+    def testimonial_params
+      params.require(:testimonial).permit(:provider_name, :provider_position, :recommendation, :rank)
+    end
+
+    def expire_testimonials_cache
+      expire_fragment "testimonials" 
     end
   end
 end

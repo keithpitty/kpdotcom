@@ -4,9 +4,7 @@ Kpdotcom::Application.configure do
   config.consider_all_requests_local = true
   config.action_controller.perform_caching             = false
   config.action_mailer.delivery_method = :test
-
-  # Raise exception on mass assignment protection for Active Record models
-  config.active_record.mass_assignment_sanitizer = :strict
+  config.eager_load = false
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
