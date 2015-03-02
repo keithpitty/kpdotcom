@@ -2,8 +2,8 @@
 <% content_for :secondary_content do %>
     <div id="secondaryText">
     <h3 class="top">How I can help you</h3>
-    <p>If you haven't already, I invite you to read about the <%= link_to 'services', :controller => 'services' %> I offer. Alternatively, my background may suggest another service that I could provide to meet your needs.</p>
-    <p>If you would like to know more about what I can do for you or would like to talk with one of my referees, please <%= link_to 'contact me', :controller => 'contact' %>.</p>
+    <p>If you haven't already, I invite you to read about the <%= link_to 'services', services_path %> I offer. Alternatively, my background may suggest another service that I could provide to meet your needs.</p>
+    <p>If you would like to know more about what I can do for you or would like to talk with one of my referees, please <%= link_to 'contact me', '/contact'%>.</p>
     <h3>Testimonials</h3>
     <% cache "testimonials" do %>
       <% @testimonials.each do |testimonial| %>

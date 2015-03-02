@@ -13,7 +13,7 @@ module Admin
     end
 
     def create
-      @testimonial = Testimonial.new(params[:testimonial])
+      @testimonial = Testimonial.new(testimonial_params)
       if @testimonial.save
         expire_testimonials_cache
         flash[:notice] = 'Testimonial created.'
@@ -29,7 +29,7 @@ module Admin
 
     def update
       @testimonial = Testimonial.find(params[:id])
-      @testimonial.update_attributes(params[:testimonial])
+      @testimonial.update_attributes(testimonial_params)
       if @testimonial.save
         expire_testimonials_cache
         flash[:notice] = 'Testimonial updated.'
@@ -48,6 +48,10 @@ module Admin
     end
 
     private
+
+    def testimonial_params
+      params.require(:testimonial).permit(:provider_name, :provider_position, :recommendation, :rank)
+    end
 
     def expire_testimonials_cache
       expire_fragment "testimonials" 

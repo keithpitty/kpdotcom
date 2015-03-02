@@ -16,8 +16,8 @@ class Comment < ActiveRecord::Base
                  :content => :comment,
                  :permalink => proc { blog_post.param }
   before_create :check_for_spam
-  scope :approved, :conditions => {:approved => true}, :order => "created_at desc"
-  scope :rejected, :conditions => {:approved => false}, :order => "created_at desc"
+  scope :approved, -> { where(approved: true).order("created_at desc") }
+  scope :rejected, -> { where(approved: false).order("created_at desc") }
 
   def footer_name
     website.blank? ? name : "<a href=\"#{website}\">#{name}</a>"
