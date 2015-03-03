@@ -5,7 +5,7 @@ module Admin
     before_filter :require_user
 
     def index
-      @images = Image.all
+      @images = Image.order(created_at: :desc)
     end
 
     def new
