@@ -1,4 +1,4 @@
-<% cache :recent_posts do %>
+<% cache "recent_posts" do %>
   <ul>
     <% @latest_posts.each do |p| %>
       <li class="sans"><%= link_to p.title, blog_archive_path(p) %></li>

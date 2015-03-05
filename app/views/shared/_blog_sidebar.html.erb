@@ -10,7 +10,7 @@
   <%= render "shared/syndication" %>
   <h2>Tags</h2>
   <p class="sans">
-    <% cache :tag_cloud do %>
+    <% cache "tag_cloud" do %>
       <% tag_cloud @tags, %w(css1 css2 css3 css4) do |tag, css_class| %>
         <%= link_to tag.name, blog_tag_path(tag.name.gsub(' ', '-')), :class => css_class %>
       <% end %>
