@@ -27,13 +27,13 @@ class ApplicationController < ActionController::Base
     end
 
     def get_tags
-      if !fragment_exist? :tag_cloud
+      unless fragment_exist? "tag_cloud"
         @tags = BlogPost.tag_counts_on(:tags).sort {|x,y| x.name <=> y.name}
       end
     end
 
     def get_latest_posts
-      if !fragment_exist? :recent_posts
+      unless fragment_exist? "recent_posts"
         @latest_posts = BlogPost.published.limit(5)
       end
     end

@@ -76,8 +76,8 @@ module Admin
     end
 
     def expire_fragment_caches
-      expire_fragment :recent_posts
-      expire_fragment :tag_cloud
+      expire_fragment "recent_posts"
+      expire_fragment "tag_cloud"
       expire_fragment "blog_post_in_list_#{@blog_post.id}"
       expire_fragment "blog_post_detail_#{@blog_post.id}"
     end
