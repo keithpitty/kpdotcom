@@ -21,7 +21,7 @@
     <% end %>
     <% @blog_post.comments.approved.each do |c| %>
       <%= textilize(coderay(c.comment)) %>
-      <p><small><%= "Posted by: #{c.footer_name} #{distance_of_time_in_words(@blog_post.created_at, c.created_at)} later".html_safe %></small></p>
+      <p><small><%= "Posted by: #{c.footer_name} #{distance_of_time_in_words(@blog_post.published_at, c.created_at)} later".html_safe %></small></p>
     <% end %>
   <% end %>
   <% if @blog_post.comments_open? %>
