@@ -22,7 +22,6 @@ class Blog::ArchivesController < ApplicationController
         expire_fragment_caches_for_comment
         CommentMailer.comment(@comment).deliver_now if @comment.approved?
         flash[:notice] = "Thanks for your comment."
-        expire_fragment(:fragment => "blog_home")
       else
         flash[:error] = "Unfortunately this comment is considered spam by Akismet. If it is not spam it will show up once it has been approved by the administrator."
       end
