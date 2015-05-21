@@ -7,7 +7,8 @@ describe ContactsController do
         post :create, contact: { name: 'Brian Lara',
                                  email: 'invalid',
                                  subject: 'Shot!',
-                                 message: 'Great shot, man!' }
+                                 message: 'Great shot, man!' },
+                      honeypot: ''
         expect(response).to render_template(:new)
         expect(flash[:error]).to eq('Please fix the errors and try again.')
       end
