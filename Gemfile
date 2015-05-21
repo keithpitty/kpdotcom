@@ -21,6 +21,7 @@ gem 'uglifier', '~> 1.3.0'
 gem 'dalli', '~> 2.7.2'
 
 group :development, :test do
+  gem 'minitest'
   gem 'pry'
   gem 'pry-doc'
   gem 'pry-byebug'

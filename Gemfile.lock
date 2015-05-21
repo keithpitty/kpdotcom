@@ -315,6 +315,7 @@ DEPENDENCIES
   guard-rspec
   jquery-rails (~> 4.0.3)
   less-rails (~> 2.6.0)
+  minitest
   paperclip (~> 4.2.1)
   pg (~> 0.18.1)
   pry
