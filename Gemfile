@@ -19,6 +19,7 @@ gem 'sass-rails', '~> 5.0.3'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'uglifier', '~> 1.3.0'
 gem 'dalli', '~> 2.7.2'
+gem 'gemoji'
 
 group :development, :test do
   gem 'minitest'
