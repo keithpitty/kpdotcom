@@ -52,4 +52,12 @@ EOF
       expect(actual).to eq(expected)
     end
   end
+
+  describe '#textilize' do
+    it "derives link" do
+      expected = "<p><a href=\"http://github.com\">GitHub</a></p>"
+      actual = textilize("\"GitHub\":http://github.com")
+      expect(actual).to eq(expected)
+    end   
+  end
 end
