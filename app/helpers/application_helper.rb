@@ -5,7 +5,7 @@ module ApplicationHelper
   include ActsAsTaggableOn::TagsHelper
 
   def textilize(text)
-    RedCloth.new(text).to_html.html_safe unless text.blank?
+    RedCloth.new(emojify(text)).to_html.html_safe unless text.blank?
   end
 
   def coderay(text)
