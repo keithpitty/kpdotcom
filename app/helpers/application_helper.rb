@@ -3,10 +3,10 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   include ActsAsTaggableOn::TagsHelper
+  include EmojiHelper
 
   def textilize(text)
-    emojified_text = emojify(text).gsub("&quot;", '"')
-    RedCloth.new(emojified_text).to_html.html_safe unless text.blank?
+    RedCloth.new(emojify(text)).to_html.html_safe unless text.blank?
   end
 
   def coderay(text)

@@ -6,6 +6,6 @@ module EmojiHelper
       else
         match
       end
-    end if content.present?
+    end.gsub("&quot;", '"') if content.present?
   end
 end
