@@ -6,6 +6,6 @@ module EmojiHelper
       else
         match
       end
-    end.html_safe if content.present?
+    end if content.present?
   end
 end
