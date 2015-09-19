@@ -1,3 +1,6 @@
+# coding: utf-8
+
+# Method to translate emoji text into image
 module EmojiHelper
   def emojify(content)
     h(content).to_str.gsub(/:([\w+-]+):/) do |match|
