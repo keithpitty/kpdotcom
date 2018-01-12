@@ -32,6 +32,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'guard-rspec'
   gem 'growl'
+  gem 'rake', '< 11.0'
 end
 
 group :development do
