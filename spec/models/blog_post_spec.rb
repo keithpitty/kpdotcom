@@ -27,7 +27,7 @@ describe BlogPost do
     it 'returns published posts with tag' do
       posts = BlogPost.find_published_tagged_with('tag1')
       expect(posts.count).to eq(2)
-      expect(posts.map(&:tag_list).flatten).to eq(['tag4', 'tag1', 'tag1'])
+      expect(posts.map(&:tag_list).flatten.sort).to eq(['tag1', 'tag1', 'tag4'])
     end
   end
 
