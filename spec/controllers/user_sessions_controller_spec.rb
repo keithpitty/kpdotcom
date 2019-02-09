@@ -9,7 +9,7 @@ describe UserSessionsController do
       expect(flash[:error]).to eq('Bad credentials, man!')
     end
 
-    it 'creates a session for a use with valid credentials' do
+    it 'creates a session for a user with valid credentials' do
       user = create(:user)
       post(:create, user_session: { login: user.login,
                                     password: user.password })
