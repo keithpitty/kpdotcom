@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 2.3.8
 addons:
-  postgresql: "9.3"
+  postgresql: "9.6"
 before_script:
   - psql -c 'create database kpdotcom_test;' -U postgres
   - cp config/database.yml.travis config/database.yml
