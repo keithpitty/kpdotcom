@@ -1,14 +1,14 @@
 source 'http://rubygems.org'
 
-ruby "2.3.3"
+ruby "2.3.8"
 
 gem 'rails', '~> 4.2.10'
 gem 'jquery-rails', '~> 4.0.3'
 gem 'pg', '~> 0.18.1'
 gem 'RedCloth', '~> 4.2.9'
 gem 'coderay', '~> 1.1.0'
-gem 'authlogic', '~> 3.4.4'
-gem 'acts-as-taggable-on', '~> 3.4.4'
+gem 'authlogic', '~> 4.4.2'
+gem 'acts-as-taggable-on', '~> 3.5.0'
 gem 'rakismet', '~> 1.5.0'
 gem 'less-rails', '~> 3.0.0'
 gem 'twitter-bootstrap-rails', '~> 2.2.0'

@@ -11,7 +11,7 @@ class UserSessionsController < AdminLayoutController
   end
 
   def create
-    @user_session = UserSession.new(params[:user_session])
+    @user_session = UserSession.new(user_session_params.to_h)
     if @user_session.save
       logger.info 'User session created.'
       msg = 'Login successful!'
@@ -25,5 +25,11 @@ class UserSessionsController < AdminLayoutController
   def destroy
     current_user_session.destroy
     redirect_to(login_url, notice: 'Logout successful!')
+  end
+
+  private
+
+  def user_session_params
+    params.require(:user_session).permit(:login, :password)
   end
 end
