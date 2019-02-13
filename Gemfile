@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
-ruby "2.3.8"
+ruby "2.4.5"
 
-gem 'rails', '~> 4.2.10'
+gem 'rails', '~> 4.2.11'
 gem 'jquery-rails', '~> 4.0.3'
 gem 'pg', '~> 0.18.1'
 gem 'RedCloth', '~> 4.2.9'
@@ -51,7 +51,7 @@ group :staging, :production do
 end
 
 group :production do
-  gem 'therubyracer', '~> 0.12.1', :require => 'v8'
+  gem 'therubyracer', '~> 0.12.3', :require => 'v8'
   gem 'unicorn'
   gem 'rack-timeout', '~> 0.0.4'
 end
