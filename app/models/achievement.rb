@@ -1,6 +1,6 @@
 # coding: utf-8
 
-class Achievement < ActiveRecord::Base
+class Achievement < ApplicationRecord
   default_scope { order('rank ASC') }
   validates_presence_of :rank
   validates_numericality_of :rank

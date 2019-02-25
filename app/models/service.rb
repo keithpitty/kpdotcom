@@ -1,6 +1,6 @@
 # coding: utf-8
 
-class Service < ActiveRecord::Base
+class Service < ApplicationRecord
   def to_param
     name
   end
