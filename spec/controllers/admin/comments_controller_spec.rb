@@ -12,7 +12,7 @@ describe Admin::CommentsController do
     it 'destroys multiple comments' do
       allow(Comment).to receive(:find) { comment }
       expect(Comment).to receive(:destroy).and_return(true)
-      post :destroy_multiple, comment_ids: %w(1 2)
+      post :destroy_multiple, params: { comment_ids: %w(1 2) }
       expect(response).to redirect_to('/admin/comments')
       expect(flash[:notice]).to eq('Comments deleted.')
     end
@@ -25,7 +25,7 @@ describe Admin::CommentsController do
     describe '#approve' do
       it 'marks a comment as approved' do
         expect(comment).to receive(:mark_as_ham!)
-        post :approve, id: '1'
+        post :approve, params: { id: '1' }
         expect(response).to redirect_to('/admin/comments')
         expect(flash[:notice]).to eq('Comment approved.')
       end
@@ -34,7 +34,7 @@ describe Admin::CommentsController do
     describe '#reject' do
       it 'rejects a comment' do
         expect(comment).to receive(:mark_as_spam!)
-        post :reject, id: '1'
+        post :reject, params: { id: '1' }
         expect(response).to redirect_to('/admin/comments')
         expect(flash[:notice]).to eq('Comment rejected.')
       end

@@ -5,21 +5,25 @@ describe Admin::BlogPostsController do
 
   describe '#create' do
     it 'shows a preview of a post' do
-      post :create, blog_post: { title: 'Test Post',
-                                 post: 'Testing',
-                                 published: '0',
-                                 comments_open: '0',
-                                 tag_list: '' },
-                    preview_button: 'Preview Blog Post'
+      post :create, params: {
+                              blog_post: { title: 'Test Post',
+                                           post: 'Testing',
+                                           published: '0',
+                                           comments_open: '0',
+                                           tag_list: '' },
+                              preview_button: 'Preview Blog Post'
+                            }
       expect(response).to render_template :preview
     end
 
     it 'saves a post' do
-      post :create, blog_post: { title: 'Test Post',
-                                 post: 'Testing',
-                                 published: '0',
-                                 comments_open: '0',
-                                 tag_list: '' }
+      post :create, params: {
+                              blog_post: { title: 'Test Post',
+                                           post: 'Testing',
+                                           published: '0',
+                                           comments_open: '0',
+                                           tag_list: '' }
+                            }
       expect(response).to redirect_to('/admin/blog_posts')
       expect(flash[:notice]).to eq('Blog post created.')
     end
@@ -40,9 +44,12 @@ describe Admin::BlogPostsController do
       it 'updates a post' do
         expect(blog_post).to receive(:update_attributes)
         expect(blog_post).to receive(:save).and_return(true)
-        post :update, id: '1', blog_post: { title: 'Test',
-                                            post: 'Testing',
-                                            published: '1' }
+        post :update, params: {
+                                id: '1',
+                                blog_post: { title: 'Test',
+                                             post: 'Testing',
+                                             published: '1' }
+                              }
         expect(response).to redirect_to('/admin/blog_posts')
         expect(flash[:notice]).to eq('Blog post updated.')
       end
@@ -51,7 +58,7 @@ describe Admin::BlogPostsController do
     describe '#destroy' do
       it 'destroys a post' do
         expect(blog_post).to receive(:destroy)
-        post :destroy, id: '1'
+        post :destroy, params: { id: '1' }
         expect(response).to redirect_to('/admin/blog_posts')
         expect(flash[:notice]).to eq('Blog post deleted.')
       end
