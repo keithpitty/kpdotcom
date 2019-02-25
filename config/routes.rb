@@ -1,4 +1,4 @@
-Kpdotcom::Application.routes.draw do
+Rails.application.routes.draw do
   resource :user_session
   resources :contacts
   namespace :blog do
