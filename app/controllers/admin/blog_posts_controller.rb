@@ -2,7 +2,7 @@ module Admin
   # Public: Controller for administration of blog posts.
   # Facilitates CRUD and preview actions.
   class BlogPostsController < AdminLayoutController
-    before_filter :require_user
+    before_action :require_user
 
     def index
       @blog_posts = BlogPost.draft + BlogPost.published

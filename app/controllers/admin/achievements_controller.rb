@@ -2,7 +2,7 @@ module Admin
   # Public: Controller for adminstration of achievements.
   # Facilitate CRUD actions.
   class AchievementsController < AdminLayoutController
-    before_filter :require_user
+    before_action :require_user
 
     def index
       @achievements = Achievement.all

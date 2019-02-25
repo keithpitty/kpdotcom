@@ -2,7 +2,7 @@ module Admin
   # Public: Controller for administration of images.
   # Facilitates creation and removal of images.
   class ImagesController < AdminLayoutController
-    before_filter :require_user
+    before_action :require_user
 
     def index
       @images = Image.order(created_at: :desc)

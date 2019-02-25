@@ -2,7 +2,7 @@ module Admin
   # Public: Controller for administration of testimonials.
   # Facilitates CRUD actions.
   class TestimonialsController < AdminLayoutController
-    before_filter :require_user
+    before_action :require_user
 
     def index
       @testimonials = Testimonial.all

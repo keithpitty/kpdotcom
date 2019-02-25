@@ -2,7 +2,7 @@
 
 class Blog::ArchivesController < ApplicationController
   include CacheMethods
-  before_filter :get_tags, :get_latest_posts
+  before_action :get_tags, :get_latest_posts
 
   def index
     @blog_posts = BlogPost.published
