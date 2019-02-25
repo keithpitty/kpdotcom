@@ -32,7 +32,5 @@ module Kpdotcom
 
     # Skip locale validation
     config.i18n.enforce_available_locales = false
-
-    config.active_record.raise_in_transactional_callbacks = true
   end
 end
