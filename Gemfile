@@ -33,6 +33,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'growl'
   gem 'rake', '< 11.0'
+  gem 'rails-controller-testing'
 end
 
 group :development do
