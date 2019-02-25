@@ -1,5 +1,5 @@
 require 'capybara/rspec'
-require 'factory_girl_rails'
+require 'factory_bot_rails'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -10,7 +10,7 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
 end
 
 def mock_user_session

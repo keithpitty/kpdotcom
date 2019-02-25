@@ -42,7 +42,7 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'timecop'
   gem "codeclimate-test-reporter", require: nil
 end

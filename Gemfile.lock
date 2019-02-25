@@ -779,11 +779,11 @@ GEM
     docile (1.1.5)
     erubis (2.7.0)
     execjs (2.7.0)
-    factory_girl (4.9.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.9.0)
-      factory_girl (~> 4.9.0)
-      railties (>= 3.0.0)
+    factory_bot (5.0.2)
+      activesupport (>= 4.2.0)
+    factory_bot_rails (5.0.1)
+      factory_bot (~> 5.0.0)
+      railties (>= 4.2.0)
     ffi (1.10.0)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
@@ -1016,7 +1016,7 @@ DEPENDENCIES
   coderay (~> 1.1.0)
   coffee-rails (~> 4.1.0)
   dalli (~> 2.7.2)
-  factory_girl_rails
+  factory_bot_rails
   gemoji
   growl
   guard-ctags-bundler
