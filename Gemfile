@@ -17,7 +17,7 @@ gem 'paperclip', '~> 6.1.0'
 gem 'aws-sdk'
 gem 'sass-rails', '~> 5.0.7'
 gem 'coffee-rails', '~> 4.1.0'
-gem 'uglifier', '~> 1.3.0'
+gem 'uglifier', '~> 2.7'
 gem 'dalli', '~> 2.7.2'
 gem 'gemoji'
 

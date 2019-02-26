@@ -845,7 +845,6 @@ GEM
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
-    multi_json (1.13.1)
     nenv (0.3.0)
     nio4r (2.3.1)
     nokogiri (1.10.1)
@@ -989,9 +988,9 @@ GEM
       railties (>= 3.1)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (1.3.0)
+    uglifier (2.7.2)
       execjs (>= 0.3.0)
-      multi_json (~> 1.0, >= 1.0.2)
+      json (>= 1.8.0)
     unicorn (5.4.1)
       kgio (~> 2.6)
       raindrops (~> 0.7)
@@ -1043,7 +1042,7 @@ DEPENDENCIES
   therubyracer (~> 0.12.3)
   timecop
   twitter-bootstrap-rails (~> 2.2.0)
-  uglifier (~> 1.3.0)
+  uglifier (~> 2.7)
   unicorn
 
 RUBY VERSION
