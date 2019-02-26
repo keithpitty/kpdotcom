@@ -1,7 +1,7 @@
 # coding: utf-8
 
 class BlogController < ApplicationController
-  before_filter :get_tags, :get_latest_posts
+  before_action :get_tags, :get_latest_posts
 
   def index
     @blog_posts = BlogPost.published.limit(5)

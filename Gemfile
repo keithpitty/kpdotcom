@@ -2,17 +2,17 @@ source 'http://rubygems.org'
 
 ruby "2.4.5"
 
-gem 'rails', '~> 4.2.11'
-gem 'jquery-rails', '~> 4.0.3'
+gem 'rails', '~> 5.0.7.1'
+gem 'jquery-rails', '~> 4.3.3'
 gem 'pg', '~> 0.18.1'
 gem 'RedCloth', '~> 4.2.9'
 gem 'coderay', '~> 1.1.0'
 gem 'authlogic', '~> 4.4.2'
-gem 'acts-as-taggable-on', '~> 3.5.0'
+gem 'acts-as-taggable-on', '~> 6.0.0'
 gem 'rakismet', '~> 1.5.0'
-gem 'less-rails', '~> 3.0.0'
+gem 'less-rails', '~> 4.0.0'
 gem 'twitter-bootstrap-rails', '~> 2.2.0'
-gem 'simple_form', '~> 3.1.0'
+gem 'simple_form', '~> 4.1.0'
 gem 'paperclip', '~> 6.1.0'
 gem 'aws-sdk'
 gem 'sass-rails', '~> 5.0.7'
@@ -33,6 +33,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'growl'
   gem 'rake', '< 11.0'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -41,7 +42,7 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'timecop'
   gem "codeclimate-test-reporter", require: nil
 end

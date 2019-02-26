@@ -8,7 +8,7 @@ describe Admin::ImagesController do
 
     it 'creates an image' do
       expect(Image).to receive(:create)
-      post :create, image: { picture: picture }
+      post :create, params: { image: { picture: picture } }
       expect(response).to redirect_to('/admin/images')
       expect(flash[:notice]).to eq('Image saved.')
     end
@@ -20,7 +20,7 @@ describe Admin::ImagesController do
     it 'destroys an image' do
       expect(Image).to receive(:find).and_return(image)
       expect(image).to receive(:destroy)
-      post :destroy, id: '1'
+      post :destroy, params: { id: '1' }
       expect(response).to redirect_to('/admin/images')
       expect(flash[:notice]).to eq('Image deleted.')
     end

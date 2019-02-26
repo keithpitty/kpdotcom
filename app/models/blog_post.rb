@@ -1,6 +1,6 @@
 # coding: utf-8
 
-class BlogPost < ActiveRecord::Base
+class BlogPost < ApplicationRecord
   has_many :comments
   validates_presence_of :title
   validates_presence_of :post

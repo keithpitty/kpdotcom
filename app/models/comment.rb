@@ -1,6 +1,6 @@
 # coding: utf-8
 
-class Comment < ActiveRecord::Base
+class Comment < ApplicationRecord
   include Rakismet::Model
 
   belongs_to :blog_post

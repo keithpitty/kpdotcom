@@ -1,6 +1,6 @@
 # coding: utf-8
 
-class Testimonial < ActiveRecord::Base
+class Testimonial < ApplicationRecord
   default_scope { order('rank ASC') }
   validates_presence_of :rank
   validates_numericality_of :rank

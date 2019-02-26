@@ -3,7 +3,7 @@ module Admin
   # Facilitates approval, rejection and removal of comments.
   class CommentsController < AdminLayoutController
     include CacheMethods
-    before_filter :require_user
+    before_action :require_user
 
     def index
       @rejected_comments = Comment.rejected

@@ -14,6 +14,6 @@ feature 'User visits blog post' do
     fill_in 'Comment', with: 'I agree!'
     click_button 'Post Comment'
 
-    expect(page).to have_css('#comments p', 'I agree!')
+    expect(page).to have_css('#comments p')
   end
 end

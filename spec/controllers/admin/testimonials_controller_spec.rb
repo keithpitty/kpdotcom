@@ -5,10 +5,12 @@ describe Admin::TestimonialsController do
 
   describe '#create' do
     it 'creates a testimonial' do
-      post :create, testimonial: { rank: '10',
-                                   provider_name: 'Joe Bloggs',
-                                   provider_position: 'Developer',
-                                   recommendation: 'Knows his stuff.' }
+      post :create, params: {
+                              testimonial: { rank: '10',
+                                             provider_name: 'Joe Bloggs',
+                                             provider_position: 'Developer',
+                                             recommendation: 'Knows his stuff.' }
+                            }
       expect(response).to redirect_to('/admin/testimonials')
       expect(flash[:notice]).to eq('Testimonial created.')
     end
@@ -31,10 +33,13 @@ describe Admin::TestimonialsController do
       it 'updates a testimonial' do
         expect(testimonial).to receive(:update_attributes)
         expect(testimonial).to receive(:save).and_return(true)
-        post :update, id: '1', testimonial: { rank: '10',
-                                              provider_name: 'Joe Bloggs',
-                                              provider_position: 'Developer',
-                                              recommendation: 'Knows his stuff.' }
+        post :update, params: {
+                                id: '1',
+                                testimonial: { rank: '10',
+                                               provider_name: 'Joe Bloggs',
+                                               provider_position: 'Developer',
+                                               recommendation: 'Knows his stuff.' }
+                              }
         expect(response).to redirect_to('/admin/testimonials')
         expect(flash[:notice]).to eq('Testimonial updated.')
       end
@@ -43,7 +48,7 @@ describe Admin::TestimonialsController do
     describe '#destroy' do
       it 'destroys a testimonial' do
         expect(testimonial).to receive(:destroy).and_return(true)
-        post :destroy, id: 1
+        post :destroy, params: { id: 1 }
         expect(response).to redirect_to('/admin/testimonials')
         expect(flash[:notice]).to eq('Testimonial deleted.')
       end
