@@ -6,12 +6,5 @@
     <h1 class="blog"><%= p.title %></h1>
     <h6><%= p.published_at.to_date.to_formatted_s(:long_ordinal) %></h6>
     <%= textilize(coderay(p.post)) %>
-    <p class="blogPostFooter sans">
-      <% unless p.taggings.empty? %>
-        Tags: <% p.tags.each do |t| %>
-          <%= link_to t.name, blog_tag_path(t.name.gsub(' ', '-')) %>
-        <% end %> | <%= link_to "Permalink", blog_archive_path(p) %> | <%= link_to "Comments (#{p.comments.approved.size})", "#{blog_archive_path(p)}#comments" %>
-      <% end %>
-    </p>
   <% end %>
 <% end %>

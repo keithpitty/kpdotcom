@@ -26,12 +26,6 @@ class ApplicationController < ActionController::Base
       @current_user = current_user_session && current_user_session.user
     end
 
-    def get_tags
-      unless fragment_exist? "tag_cloud"
-        @tags = BlogPost.tag_counts_on(:tags).sort {|x,y| x.name <=> y.name}
-      end
-    end
-
     def get_latest_posts
       unless fragment_exist? "recent_posts"
         @latest_posts = BlogPost.published.limit(5)
