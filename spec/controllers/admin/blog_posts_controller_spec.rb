@@ -9,8 +9,7 @@ describe Admin::BlogPostsController do
                               blog_post: { title: 'Test Post',
                                            post: 'Testing',
                                            published: '0',
-                                           comments_open: '0',
-                                           tag_list: '' },
+                                           comments_open: '0' },
                               preview_button: 'Preview Blog Post'
                             }
       expect(response).to render_template :preview
@@ -21,8 +20,7 @@ describe Admin::BlogPostsController do
                               blog_post: { title: 'Test Post',
                                            post: 'Testing',
                                            published: '0',
-                                           comments_open: '0',
-                                           tag_list: '' }
+                                           comments_open: '0' },
                             }
       expect(response).to redirect_to('/admin/blog_posts')
       expect(flash[:notice]).to eq('Blog post created.')
