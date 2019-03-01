@@ -39,8 +39,6 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    acts-as-taggable-on (6.0.0)
-      activerecord (~> 5.0)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
     arel (7.1.4)
@@ -1006,7 +1004,6 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth (~> 4.2.9)
-  acts-as-taggable-on (~> 6.0.0)
   authlogic (~> 4.4.2)
   awesome_print
   aws-sdk

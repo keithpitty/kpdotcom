@@ -4,15 +4,10 @@ class BlogPost < ApplicationRecord
   has_many :comments
   validates_presence_of :title
   validates_presence_of :post
-  acts_as_taggable
   scope :published, -> { where(published: true).order("published_at DESC") }
   scope :draft, -> { where(published: false).order("updated_at DESC") }
   before_save :set_published_at, if: :being_published?
   before_save :set_param
-
-  def self.find_published_tagged_with(tag)
-    tagged_with(tag).select(&:published).sort { |x, y| y.created_at <=> x.created_at }
-  end
 
   def set_param
     published? ? set_param_from_published_at : set_param_from_now
