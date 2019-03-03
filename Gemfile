@@ -19,6 +19,7 @@ gem 'coffee-rails', '~> 4.2.2'
 gem 'uglifier', '~> 2.7'
 gem 'dalli', '~> 2.7.2'
 gem 'gemoji'
+gem 'bootsnap'
 
 group :development, :test do
   gem 'minitest'
