@@ -58,6 +58,18 @@ EOF
       expected = "<p><a href=\"http://github.com\">GitHub</a></p>"
       actual = textilize("\"GitHub\":http://github.com")
       expect(actual).to eq(expected)
-    end   
+    end
+
+    it "derives heading" do
+      expected = "<h2>A second level heading</h2>"
+      actual = textilize("h2. A second level heading")
+      expect(actual).to eq(expected)
+    end
+
+    it "derives expected HTML containing emoji" do
+      expected = "<p>Congratulations! <img alt=\"tada\" src=\"/images/emoji/unicode/1f389.png\" style=\"vertical-align:middle\" width=\"20\" height=\"20\" /></p>"
+      actual = textilize("p. Congratulations! :tada:")
+      expect(actual).to eq(expected)
+    end
   end
 end
