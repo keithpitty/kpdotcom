@@ -5,7 +5,7 @@ ruby "2.4.5"
 gem 'rails', '~> 5.2.2'
 gem 'jquery-rails', '~> 4.3.3'
 gem 'pg', '~> 0.18.1'
-gem 'RedCloth', '~> 4.2.9'
+gem 'RedCloth', '~> 4.3.2'
 gem 'coderay', '~> 1.1.0'
 gem 'authlogic', '~> 4.4.2'
 gem 'rakismet', '~> 1.5.0'
