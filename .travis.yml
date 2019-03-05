@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.4.5
+  - 2.6.1
 addons:
   postgresql: "9.6"
 before_script:
