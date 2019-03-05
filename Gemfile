@@ -30,7 +30,7 @@ group :development, :test do
   gem 'pry-stack_explorer'
   gem 'awesome_print'
   gem 'rspec-rails'
-  gem 'guard-rspec'
+  gem 'guard-rspec', require: false
   gem 'growl'
   gem 'rake', '< 11.0'
   gem 'rails-controller-testing'
