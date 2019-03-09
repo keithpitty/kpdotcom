@@ -14,6 +14,7 @@ addons:
       - postgresql-11
       - postgresql-client-11
 before_script:
+  - psql --version
   - psql -c 'create database kpdotcom_test;' -U postgres
   - cp config/database.yml.travis config/database.yml
   - bundle exec rake db:schema:load
