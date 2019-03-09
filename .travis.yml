@@ -5,6 +5,8 @@ before_install:
 rvm:
   - 2.6.1
 dist: xenial
+services:
+  - postgresql
 addons:
   postgresql: "11.2"
 before_script:
