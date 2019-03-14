@@ -12,10 +12,6 @@ addons:
   apt:
     packages:
       - postgresql-11
-      - postgresql-client-11
-env:
-  global:
-    - PGPORT=5432
 before_script:
   - psql --version
   - psql -c 'create database kpdotcom_test;' -U postgres
