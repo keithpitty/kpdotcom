@@ -1,3 +1,6 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=eca569d89e2a8d954a3e28ef958ce10e912eef6570bbdabbb28297e11948efa8
 language: ruby
 before_install:
   - gem update --system
@@ -10,5 +13,10 @@ before_script:
   - psql -c 'create database kpdotcom_test;' -U postgres
   - cp config/database.yml.travis config/database.yml
   - bundle exec rake db:schema:load
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script:
-  - CODECLIMATE_REPO_TOKEN=eca569d89e2a8d954a3e28ef958ce10e912eef6570bbdabbb28297e11948efa8 bundle exec rake
+  - bundle exec rake
+after_script:
+  - ./cc-test-reporter after-build -t simplecov --exit-code $TRAVIS_TEST_RESULT
