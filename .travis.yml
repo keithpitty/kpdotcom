@@ -2,15 +2,20 @@ env:
   global:
     - CC_TEST_REPORTER_ID=eca569d89e2a8d954a3e28ef958ce10e912eef6570bbdabbb28297e11948efa8
 language: ruby
-before_install:
-  - gem update --system
-  - gem install bundler
 rvm:
   - 2.6.2
-addons:
-  postgresql: "9.6"
+before_install:
+  - sudo apt-get update
+  - sudo apt-get --yes remove postgresql\*
+  - sudo apt-get install -y postgresql-11 postgresql-client-11
+  - sudo cp /etc/postgresql/{9.6,11}/main/pg_hba.conf
+  - sudo service postgresql restart 11
+  - gem update --system
+  - gem install bundler
 before_script:
-  - psql -c 'create database kpdotcom_test;' -U postgres
+  - psql --version
+  - psql -c 'CREATE DATABASE kpdotcom_test;' -U postgres
+  - psql -c 'CREATE ROLE travis SUPERUSER LOGIN CREATEDB;' -U postgres
   - cp config/database.yml.travis config/database.yml
   - bundle exec rake db:schema:load
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -18,5 +23,9 @@ before_script:
   - ./cc-test-reporter before-build
 script:
   - bundle exec rake
+services:
+  - postgresql
+addons:
+  postgresql: "11.2"
 after_script:
   - ./cc-test-reporter after-build -t simplecov --exit-code $TRAVIS_TEST_RESULT
