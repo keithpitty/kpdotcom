@@ -29,6 +29,22 @@ class BlogPost < ApplicationRecord
     status == "Published" ? self.published = true : self.published = false
   end
 
+  def has_previous_post?
+    BlogPost.where("published = ? and published_at < ?", "1", self.published_at).exists?
+  end
+
+  def has_next_post?
+    BlogPost.where("published= ? and published_at > ?", "1", self.published_at).exists?
+  end
+
+  def previous
+    BlogPost.where("published = ? and published_at < ?", "1", self.published_at).last
+  end
+
+  def next
+    BlogPost.where("published = ? and published_at > ?", "1", self.published_at).first
+  end
+
   private
 
   def param_from_time(time)
