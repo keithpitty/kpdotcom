@@ -30,22 +30,30 @@ class BlogPost < ApplicationRecord
   end
 
   def has_previous_post?
-    BlogPost.where("published = ? and published_at < ?", "1", self.published_at).exists?
+    previous_posts.exists?
   end
 
   def has_next_post?
-    BlogPost.where("published= ? and published_at > ?", "1", self.published_at).exists?
+    future_posts.exists?
   end
 
   def previous
-    BlogPost.where("published = ? and published_at < ?", "1", self.published_at).last
+    previous_posts.last
   end
 
   def next
-    BlogPost.where("published = ? and published_at > ?", "1", self.published_at).first
+    future_posts.first
   end
 
   private
+
+  def previous_posts
+    BlogPost.where("published = ? and published_at < ?", "1", self.published_at)
+  end
+
+  def future_posts
+    BlogPost.where("published= ? and published_at > ?", "1", self.published_at)
+  end
 
   def param_from_time(time)
     "#{time.to_date.to_formatted_s(:db)}-#{title.downcase.gsub(/\s|\./, '-').gsub(',', '').sub(/\?$/, '')}"
