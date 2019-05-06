@@ -29,7 +29,31 @@ class BlogPost < ApplicationRecord
     status == "Published" ? self.published = true : self.published = false
   end
 
+  def has_previous_post?
+    previous_posts.exists?
+  end
+
+  def has_next_post?
+    future_posts.exists?
+  end
+
+  def previous
+    previous_posts.last
+  end
+
+  def next
+    future_posts.first
+  end
+
   private
+
+  def previous_posts
+    BlogPost.where("published = ? and published_at < ?", "1", self.published_at)
+  end
+
+  def future_posts
+    BlogPost.where("published= ? and published_at > ?", "1", self.published_at)
+  end
 
   def param_from_time(time)
     "#{time.to_date.to_formatted_s(:db)}-#{title.downcase.gsub(/\s|\./, '-').gsub(',', '').sub(/\?$/, '')}"

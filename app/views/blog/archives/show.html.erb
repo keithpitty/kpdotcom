@@ -23,3 +23,14 @@
     <p>Comments are closed for this post.</p>
   <% end %>
 </div>
+<hr />
+<div id="navigation">
+  <% if @blog_post.has_previous_post? %>
+    <% previous_post = @blog_post.previous %>
+    <p>Previous post: <%= link_to previous_post.title, blog_archive_path(previous_post) %></p>
+  <% end %>
+  <% if @blog_post.has_next_post? %>
+    <% next_post = @blog_post.next %>
+    <p>More recently: <%= link_to next_post.title, blog_archive_path(next_post) %></p>
+  <% end %>
+</div>

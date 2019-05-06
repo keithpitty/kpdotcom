@@ -59,4 +59,63 @@ describe BlogPost do
       end
     end
   end
+
+  context 'has existing posts' do
+    let!(:post_1) {
+      create(:blog_post,
+             title: 'Post',
+             post: 'test',
+             published: true,
+             published_at: Date.parse('2014-12-18').to_datetime)
+    }
+    let!(:post_2) {
+      create(:blog_post,
+             title: 'Post',
+             post: 'test',
+             published: true,
+             published_at: Date.parse('2018-12-18').to_datetime)
+    }
+
+    describe '#has_previous_post?' do
+
+      context 'has previous post' do
+        it 'returns true' do
+          expect(post_2.has_previous_post?).to be true
+        end
+      end
+
+      context 'has no previous posts' do
+        it 'returns false' do
+          expect(post_1.has_previous_post?).to be false
+        end
+      end
+    end
+
+    describe '#has_next_post?' do
+
+      context 'has next post' do
+        it 'returns true' do
+          expect(post_1.has_next_post?).to be true
+        end
+      end
+
+      context 'has no next posts' do
+        it 'returns false' do
+          expect(post_2.has_next_post?).to be false
+        end
+      end
+    end
+
+    describe '#previous' do
+      it 'returns previous post' do
+        expect(post_2.previous).to eq(post_1)
+      end
+    end
+
+    describe '#next' do
+      it 'returns next post' do
+        expect(post_1.next).to eq(post_2)
+      end
+    end
+  end
 end
