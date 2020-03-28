@@ -3,7 +3,7 @@ env:
     - CC_TEST_REPORTER_ID=eca569d89e2a8d954a3e28ef958ce10e912eef6570bbdabbb28297e11948efa8
 language: ruby
 rvm:
-  - 2.6.4
+  - 2.6.5
 before_install:
   - sudo apt-get update
   - sudo apt-get --yes remove postgresql\*
