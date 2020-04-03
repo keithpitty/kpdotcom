@@ -1181,11 +1181,6 @@ GEM
     thread_safe (0.3.6)
     tilt (2.0.10)
     timecop (0.9.1)
-    twitter-bootstrap-rails (2.2.8)
-      actionpack (>= 3.1)
-      execjs
-      rails (>= 3.1)
-      railties (>= 3.1)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
@@ -1241,7 +1236,6 @@ DEPENDENCIES
   simplecov
   therubyracer (~> 0.12.3)
   timecop
-  twitter-bootstrap-rails (~> 2.2.0)
   uglifier (~> 2.7)
   unicorn
 
