@@ -19,6 +19,7 @@ gem 'uglifier', '~> 2.7'
 gem 'dalli', '~> 2.7.10'
 gem 'gemoji'
 gem 'bootsnap'
+gem 'webpacker'
 
 group :development, :test do
   gem 'minitest'
