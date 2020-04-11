@@ -8,7 +8,6 @@ feature 'User visits blog post' do
   scenario 'they add a comment' do
     visit '/'
     click_link 'Blog'
-    first(:link, 'Test post').click
     fill_in 'Name', with: 'A Tester'
     fill_in 'Email', with: 'a.tester@example.com'
     fill_in 'Comment', with: 'I agree!'
