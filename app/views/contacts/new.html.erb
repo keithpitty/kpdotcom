@@ -1,41 +1,21 @@
 <h1>Contact me</h1>
-<% content_for :secondary_content do %>
-    <div id="secondaryText">
-      <table cellspacing="5" cellpadding="5">
-        <colgroup>
-          <col id="contactMethodCol">
-          <col id="contactDataCol">
-        </colgroup>
-        <tbody>
-          <tr>
-            <td scope="col" class="h2StyleRight">Twitter:</td>
-            <td scope="col" class="linkStyle"><a href="http://twitter.com/keithpitty">@keithpitty</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-<% end %>
 <p>
 Please complete the form below and I will endeavour to reply within 24 hours. That is, unless you are selling SEO services, in which case your message will be allowed through to the keeper, i.e. ignored.
 </p>
 
 <%= render "shared/alerts" %>
 
-<%= simple_form_for @contact, :html => { :class => 'form-horizontal' } do |f| %>
-  <fieldset>
+<%= simple_form_for @contact do |f| %>
+  <div class="hidden">
+    <label for="honeypot">If you are human, leave me blank.</label>
+    <input type="text" id="honeypot" name="honeypot" class="text" value="" />
+  </div>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :subject %>
+  <%= f.input :message %>
 
-    <div class="hidden">
-      <label for="honeypot">If you are human, leave me blank.</label>
-      <input type="text" id="honeypot" name="honeypot" class="text" value="" />
-    </div>
-    <%= f.input :name, :input_html => { :class => "span3" } %>
-    <%= f.input :email, :input_html => { :class => "span3" } %>
-    <%= f.input :subject, :input_html => { :class => "span6" } %>
-    <%= f.input :message, :input_html => { :class => "span6" } %>
-
-    <div class="form-actions">
-      <%= f.submit 'Send Message', :class => 'btn btn-primary' %>
-    </div>
-
-  </fieldset>
+  <button class="btn btn-blue btn-form">
+    Send Message
+  </button>
 <% end %>

@@ -1,6 +1,3 @@
-<% content_for :secondary_content do %>
-  <%= render "shared/blog_sidebar" %>
-<% end %>
 <% @blog_posts.each do |p| %>
   <% cache "blog_post_in_list_#{p.id}", skip_digest: true do %>
     <h1 class="blog"><%= p.title %></h1>
