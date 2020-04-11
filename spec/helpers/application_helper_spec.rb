@@ -5,13 +5,14 @@ describe ApplicationHelper, type: :helper do
     it 'derives active navbar item' do
       allow(controller).to receive(:controller_name).and_return('contacts')
       actual = navbar_item('Contact', '/contact')
-      expected = '<li class="active"><a href="/contact">Contact</a></li>'
+      expected = '<a class="text-white hover:text-white pr-4" href="/contact">Contact</a>'
       expect(actual).to eq(expected)
     end
 
     it 'derives non-active navbar item' do
+      allow(request).to receive(:path).and_return('/contact')
       actual = navbar_item('Contact', '/contact')
-      expect(actual).to eq('<li><a href="/contact">Contact</a></li>')
+      expect(actual).to eq('<a class="text-blue-300 hover:text-white pr-4" href="/contact">Contact</a>')
     end
   end
 
