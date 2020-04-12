@@ -10,7 +10,7 @@ $(document).ready(function() {
 });
 
 function closeAlert(event){
-  let element = event.target;
+  var element = event.target;
   while (element.nodeName !== "BUTTON"){
     element = element.parentNode;
   }
