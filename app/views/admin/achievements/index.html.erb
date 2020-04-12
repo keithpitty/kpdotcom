@@ -1,8 +1,8 @@
-<% content_for :secondary_content do %>
-  <p><%= link_to 'Add achievement', new_admin_achievement_path, :class => "btn btn-primary" %></p>
-<% end %>
 <h1>Achievements</h1>
-<table class="table table-striped">
+<div class="py-6">
+  <%= link_to 'Add achievement', new_admin_achievement_path, :class => "btn btn-blue" %>
+</div>
+<table class="table-auto">
   <thead>
     <tr>
       <th>Rank</th>

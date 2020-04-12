@@ -1,0 +1,113 @@
+@tailwind base;
+
+p {
+  @apply font-serif py-2 leading-snug;
+}
+.code {
+  @apply font-mono text-sm;
+}
+pre {
+  @apply font-mono text-sm;
+}
+h1 {
+  @apply text-4xl font-bold text-blue-900 pt-3;
+}
+h2 {
+  @apply text-2xl font-bold pt-8 pb-2 text-blue-900;
+}
+h3 {
+  @apply text-xl font-bold pt-4 pb-2 text-blue-900;
+}
+h4 {
+  @apply text-lg font-bold py-4 text-blue-900;
+}
+h6 {
+  @apply text-sm font-bold py-4;
+}
+a {
+  @apply text-blue-700;
+}
+a:hover {
+  @apply text-blue-500;
+}
+.btn {
+  @apply font-sans bg-gray-700 py-2 px-4 text-white rounded;
+}
+.btn:hover {
+  @apply bg-gray-500 text-white;
+}
+.btn-blue {
+  @apply bg-blue-900 text-white;
+}
+.btn-blue:hover {
+  @apply bg-blue-700;
+}
+.btn-info {
+  @apply bg-teal-500 text-white;
+}
+.btn-info:hover {
+  @apply bg-teal-300;
+}
+.btn-form {
+  @apply mt-4 mr-2;
+}
+.btn-mini {
+  @apply text-sm font-light bg-gray-500 text-white py-1 px-2;
+}
+.btn-danger {
+  @apply bg-red-700;
+}
+.form-actions {
+  @apply flex flex-row 
+}
+ul {
+  @apply list-disc pl-10 font-serif leading-snug;
+}
+nav ul {
+  @apply list-none font-sans;
+}
+ol {
+  @apply list-decimal font-serif pl-10;
+}
+blockquote {
+  @apply text-lg italic font-thin pl-4 mb-2;
+}
+blockquote.testimonial {
+  @apply mb-8;
+} 
+blockquote cite {
+  @apply text-sm pl-4;
+}
+img {
+  @apply inline;
+}
+form label {
+  @apply block text-gray-700 mt-2;
+}
+form input {
+  @apply form-input mt-1 block w-full;
+}
+form textarea {
+  @apply form-textarea mt-1 block w-full;
+}
+.alert-error {
+  @apply bg-red-500 border-0 text-white px-6 py-4 mb-4 rounded relative;
+}
+.alert-success {
+  @apply bg-green-500 border-0 text-white px-6 py-4 mb-4 rounded relative;
+}
+.btn-close {
+  @apply absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none;
+}
+.error {
+  @apply text-red-700 pb-2;
+}
+th {
+  @apply px-4 py-2;
+}
+td {
+  @apply border text-sm px-4 py-2;
+}
+
+@tailwind components;
+@tailwind utilities;

@@ -5,5 +5,6 @@ class HomeController < ApplicationController
 
   def index
     @show_detail = false
+    @blog_posts = BlogPost.published.limit(3)
   end
 end

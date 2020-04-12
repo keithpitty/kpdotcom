@@ -1,6 +1,3 @@
-<% content_for :secondary_content do %>
-  <%= render "shared/blog_sidebar" %>
-<% end %>
 <% cache "blog_post_detail_#{@blog_post.id}", skip_digest: true do %>
   <h1 class="blog"><%= @blog_post.title %></h1>
   <h6><%= @blog_post.published_at.to_date.to_formatted_s(:long_ordinal) %></h6>
@@ -26,7 +23,7 @@
   </div>
 <% end %>
 <hr />
-<div id="navigation">
+<div>
   <h4>Other posts</h4>
   <% if @blog_post.has_previous_post? %>
     <% previous_post = @blog_post.previous %>

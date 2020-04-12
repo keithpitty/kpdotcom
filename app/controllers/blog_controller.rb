@@ -4,6 +4,6 @@ class BlogController < ApplicationController
   before_action :get_latest_posts
 
   def index
-    @blog_posts = BlogPost.published.limit(5)
+    redirect_to blog_archive_path(BlogPost.published.first)
   end
 end

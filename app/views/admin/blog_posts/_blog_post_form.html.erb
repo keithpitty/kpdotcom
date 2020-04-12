@@ -1,14 +1,14 @@
 <fieldset>
 
-  <%= f.input :title, :input_html => { :class => "span6" } %>
-  <%= f.input :post, :input_html => { :class => "span6 form-control", :rows => "10" } %>
-  <%= f.input :published %>
-  <%= f.input :comments_open %>
+  <%= f.input :title %>
+  <%= f.input :post, :input_html => { :rows => "10" } %>
+  <%= f.input :published, :input_html => { class: "form-checkbox" }  %>
+  <%= f.input :comments_open, :input_html => { class: "form-checkbox" } %>
 
   <div class="form-actions">
-    <%= f.submit 'Save Blog Post', :class => 'btn btn-primary' %>
-    <%= f.submit 'Preview Blog Post', name: 'preview_button', :class => "btn btn-info" %>
-    <%= link_to 'Cancel', admin_blog_posts_path, :class => "btn" %>
+    <button class="btn btn-blue btn-form">Save Blog Post</button>
+    <button class="btn btn-info btn-form" name="preview_button">Preview Blog Post</button>
+    <%= link_to 'Cancel', admin_blog_posts_path, :class => "btn btn-form" %>
   </div>
   
 </fieldset>

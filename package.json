@@ -1,0 +1,14 @@
+{
+  "name": "kpdotcom_package",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.1.0",
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "tailwindcss": "^1.2.0",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "@rails/webpacker": "5.0.1"
+  }
+}

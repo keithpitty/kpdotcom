@@ -18,9 +18,11 @@ class Blog::ArchivesController < ApplicationController
     @comment.blog_post = BlogPost.find(params[:blog_id])
     @comment.request = request
     if @comment.save
+      flash[:notice] = 'Comment posted!'
       redirect_to "#{blog_archive_path(@comment.blog_post)}#comments"
     else
       @blog_post = BlogPost.find_by_param params[:id]
+      flash[:error] = 'Please fix the errors and try again'
       render "show"
     end
   end

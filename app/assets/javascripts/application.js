@@ -1,6 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require_self
 //= require_tree .
 
@@ -9,3 +8,11 @@ $(document).ready(function() {
     window.location = window.location.href + "#postcomment";
   }
 });
+
+function closeAlert(event){
+  let element = event.target;
+  while (element.nodeName !== "BUTTON"){
+    element = element.parentNode;
+  }
+  element.parentNode.parentNode.removeChild(element.parentNode);
+}

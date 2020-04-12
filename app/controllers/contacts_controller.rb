@@ -22,6 +22,7 @@ class ContactsController < ApplicationController
   end
 
   def valid_input?
+    flash.clear
     flash[:error] = 'Spam detected' if params[:honeypot].length > 0
     flash[:error] = 'Spam detected. If you are human, try entering a message without a hyperlink.' if params[:contact][:message] =~ /(<a href=)|(http:\/\/)|(https:\/\/)/
     flash[:error] = 'Please fix the errors and try again.' unless @contact.valid?

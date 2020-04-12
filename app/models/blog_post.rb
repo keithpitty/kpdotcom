@@ -38,21 +38,21 @@ class BlogPost < ApplicationRecord
   end
 
   def previous
-    previous_posts.last
+    previous_posts.first
   end
 
   def next
-    future_posts.first
+    future_posts.last
   end
 
   private
 
   def previous_posts
-    BlogPost.where("published = ? and published_at < ?", "1", self.published_at)
+    BlogPost.published.where("published_at < ?", self.published_at)
   end
 
   def future_posts
-    BlogPost.where("published= ? and published_at > ?", "1", self.published_at)
+    BlogPost.published.where("published_at > ?", self.published_at)
   end
 
   def param_from_time(time)

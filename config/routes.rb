@@ -41,5 +41,6 @@ Rails.application.routes.draw do
   get '/login', to: 'user_sessions#new'
   get '/logout', to: 'user_sessions#destroy'
   get '/blog', to: 'blog#index'
+  get '/testimonials', to: 'testimonials#index'
   get '/contact', to: 'contacts#new'
 end

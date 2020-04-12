@@ -13,7 +13,7 @@
       <tbody>
         <% @rejected_comments.each do |comment| %>
           <tr>
-            <td><%= check_box_tag "comment_ids[]", comment.id, true %></td>
+            <td><%= check_box_tag "comment_ids[]", comment.id, true, class: 'form-checkbox'  %></td>
             <% if comment.website.blank? %>
               <td><%= h(comment.name) %></td>
             <% else %>
