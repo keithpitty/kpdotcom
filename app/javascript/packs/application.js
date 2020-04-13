@@ -17,7 +17,6 @@ const imagePath = (name) => images(name, true)
 
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
-import '../src/rails.js'
 import '../src/application.js'
 import '../src/application.css'
 import '../src/coderay.css'
