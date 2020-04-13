@@ -7,8 +7,11 @@
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.0",
+    "@rails/webpacker": "5.0.1",
     "@tailwindcss/custom-forms": "^0.2.1",
-    "tailwindcss": "^1.2.0",
-    "@rails/webpacker": "5.0.1"
+    "core-js": "^3.6.5",
+    "jquery": "^3.5.0",
+    "regenerator-runtime": "^0.13.5",
+    "tailwindcss": "^1.2.0"
   }
 }

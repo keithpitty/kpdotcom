@@ -16,6 +16,8 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
 end
 
+RSpec::Mocks.configuration.allow_message_expectations_on_nil = true
+
 def mock_user_session
   user_session = double('user session')
   user = double('user')
