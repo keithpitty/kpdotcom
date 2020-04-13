@@ -16,8 +16,11 @@
         <td><%= image_tag image.picture.url(:thumb) %></td>
         <td><%= link_to image.picture.url, image.picture.url %></td>
         <td>
-          <%= link_to 'Edit', edit_admin_image_path(image), :class => "btn btn-mini" %>
-          <%= link_to 'Delete', admin_image_path(image), :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-mini btn-danger" %></td>
+          <div class="flex flex-row">
+            <%= link_to 'Edit', edit_admin_image_path(image), :class => "btn btn-mini" %>
+            <%= link_to 'Delete', admin_image_path(image), :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-mini btn-danger ml-1" %>
+          </div>
+        </td>
       </tr>
     <% end %>
   </tbody>
