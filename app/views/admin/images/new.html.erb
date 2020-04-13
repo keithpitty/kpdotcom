@@ -3,8 +3,8 @@
   <fieldset>
     <%= f.input :picture, as: :file %>
     <div class="form-actions">
-      <%= f.submit 'Save Image', :class => 'btn btn-primary' %>
-      <%= link_to 'Cancel', admin_images_path, :class => "btn" %>
+      <button class="btn btn-blue btn-form">Save Image</button>
+      <%= link_to 'Cancel', admin_images_path, :class => "btn btn-form" %>
     </div>
   </fieldset>
 <% end %>
