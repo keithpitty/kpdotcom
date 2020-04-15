@@ -8,6 +8,7 @@
       <th>Rank</th>
       <th>Name</th>
       <th>Position</th>
+      <th>Year</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -17,6 +18,7 @@
         <td><%= testimonial.rank %></td>
         <td><%= testimonial.provider_name %></td>
         <td><%= testimonial.provider_position %></td>
+        <td><%= testimonial.recommendation_year %></td>
         <td>
           <%= link_to 'Edit', edit_admin_testimonial_path(testimonial), :class => "btn btn-mini" %>
           <%= link_to 'Delete', admin_testimonial_path(testimonial), :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-mini btn-danger" %>

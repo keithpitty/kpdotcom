@@ -50,7 +50,7 @@ module Admin
     private
 
     def testimonial_params
-      params.require(:testimonial).permit(:provider_name, :provider_position, :recommendation, :rank)
+      params.require(:testimonial).permit(:provider_name, :provider_position, :recommendation, :rank, :recommendation_year)
     end
 
     def expire_testimonials_cache
