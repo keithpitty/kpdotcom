@@ -29,7 +29,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'guard-rspec', require: false
   gem 'growl'
-  gem 'rake', '< 11.0'
+  gem 'rake', '< 13.0'
   gem 'rails-controller-testing'
 end
 
