@@ -1020,7 +1020,7 @@ GEM
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    loofah (2.4.0)
+    loofah (2.5.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     lumberjack (1.2.4)
@@ -1141,7 +1141,7 @@ GEM
       ffi-compiler (>= 1.0, < 2.0)
     semantic_range (2.3.0)
     shellany (0.0.1)
-    simple_form (4.1.0)
+    simple_form (5.0.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
     simplecov (0.18.5)
@@ -1163,7 +1163,7 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     timecop (0.9.1)
-    tzinfo (1.2.6)
+    tzinfo (1.2.7)
       thread_safe (~> 0.1)
     unicorn (5.5.4)
       kgio (~> 2.6)
@@ -1214,7 +1214,7 @@ DEPENDENCIES
   rake (< 11.0)
   rakismet (~> 1.5.4)
   rspec-rails
-  simple_form (~> 4.1.0)
+  simple_form (~> 5.0.0)
   simplecov
   therubyracer (~> 0.12.3)
   timecop
