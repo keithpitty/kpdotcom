@@ -15,7 +15,7 @@ jobs:
           RAILS_ENV: test
       - image: circleci/postgres:11.7
         environment:
-          POSTGRES_USER: circleci-demo-ruby
+          POSTGRES_USER: kpdotcom
           POSTGRES_DB: kpdotcom_test
           POSTGRES_PASSWORD: ""
           POSTGRES_HOST_AUTH_METHOD: trust
