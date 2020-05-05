@@ -4,7 +4,7 @@ jobs:
     parallelism: 1
     working_directory: ~/kpdotcom
     docker:
-      - image: circleci/ruby:2.6.6-node-browser
+      - image: circleci/ruby:2.6.6-node-browsers
         environment:
           BUNDLER_VERSION: 2.0.1
           BUNDLE_JOBS: 3
