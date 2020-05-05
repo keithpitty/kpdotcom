@@ -56,6 +56,9 @@ jobs:
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run:
           name: Database setup
+          command: bundle exec rails db:schema:load --trace
+      - run:
+          name: Asset compilation
           command: bundle exec rake assets:precompile && yarn webpack:prod
       - run:
           name: Run rspec in parallel
