@@ -1,0 +1,70 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.6.6-node-browser
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
+          PGHOST: 127.0.0.1
+          PGUSER: circleci-demo-ruby
+          RAILS_ENV: test
+      - image: circleci/postgres:11.7
+        environment:
+          POSTGRES_USER: circleci-demo-ruby
+          POSTGRES_DB: kpdotcom_test
+          POSTGRES_PASSWORD: ""
+    steps:
+      - checkout
+      - run:
+        name: Configure Bundler
+        command: |
+          echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+          source $BASH_ENV
+          gem install bundler -v 2.0.1
+      - run:
+          name: Which bundler?
+          command: bundle -v
+      - restore_cache:
+        keys:
+          - kpdotcom-bundle{{ checksum "Gemfile.lock" }}
+          - kpdotcom-bundle-
+      - run:
+        name: Bundle Install
+        command: bundle check || bundle install
+      - save_cache:
+        key: kpdotcom-bundle{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+      - restore_cache:
+        keys:
+          - yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+        name: Install Yarn
+        command: curl -o- -L https://yarnpkg.com/install.sh | bash && $HOME/.yarn/bin/yarn install --frozen-lockfile
+      - save_cache:
+        name: Save Yarn Package Cache
+        key: yarn-packages-{{ checksum "yarn.lock" }}
+        paths:
+          - ~/.cache/yarn
+      - run:
+        name: Wait for DB
+        command: dockerize -wait tcp://localhost:5432 -timeout 1m
+      - run:
+        name: Database setup
+        command: bundle exec rake assets:precompile && yarn webpack:prod
+      - run:
+        name: Run rspec in parallel
+        command: |
+          bundle exec rspec --profile 10 \
+          --color \
+          --format documentation \
+          --out test_results/rspec.xml \
+          --format progress \
+          $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+      - store_test_results:
+        path: test_results
+      - store_artifacts:
+        path: ~/kpdotcom/tmp/capybara
+
