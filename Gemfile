@@ -51,5 +51,5 @@ end
 group :production do
   gem 'therubyracer', '~> 0.12.3', :require => 'v8'
   gem 'unicorn'
-  gem 'rack-timeout', '~> 0.0.4'
+  gem 'rack-timeout', '~> 0.6.0'
 end
