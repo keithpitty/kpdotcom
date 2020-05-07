@@ -1185,7 +1185,7 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth (~> 4.3.2)
-  authlogic (~> 4.4.2)
+  authlogic
   awesome_print
   aws-sdk
   bootsnap
