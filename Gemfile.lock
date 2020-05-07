@@ -1072,7 +1072,7 @@ GEM
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
-    rack-timeout (0.0.4)
+    rack-timeout (0.6.0)
     rails (5.2.4.2)
       actioncable (= 5.2.4.2)
       actionmailer (= 5.2.4.2)
@@ -1207,7 +1207,7 @@ DEPENDENCIES
   pry-doc
   pry-rescue
   pry-stack_explorer
-  rack-timeout (~> 0.0.4)
+  rack-timeout (~> 0.6.0)
   rails (~> 5.2.4)
   rails-controller-testing
   rails_12factor
