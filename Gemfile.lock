@@ -1050,7 +1050,7 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
-    pg (1.1.4)
+    pg (1.2.3)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -1201,7 +1201,7 @@ DEPENDENCIES
   less-rails (~> 5.0.0)
   minitest
   paperclip (~> 6.1.0)
-  pg (~> 1.1.4)
+  pg (~> 1.2.3)
   pry
   pry-byebug
   pry-doc
