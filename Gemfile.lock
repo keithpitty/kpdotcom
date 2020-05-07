@@ -46,11 +46,11 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     arel (9.0.0)
-    authlogic (4.4.3)
-      activerecord (>= 4.2, < 5.3)
-      activesupport (>= 4.2, < 5.3)
+    authlogic (6.0.0)
+      activemodel (>= 5.2, < 6.1)
+      activerecord (>= 5.2, < 6.1)
+      activesupport (>= 5.2, < 6.1)
       request_store (~> 1.0)
-      scrypt (>= 1.2, < 4.0)
     awesome_print (1.8.0)
     aws-eventstream (1.0.3)
     aws-partitions (1.290.0)
@@ -976,9 +976,6 @@ GEM
       factory_bot (~> 5.2.0)
       railties (>= 4.2.0)
     ffi (1.12.2)
-    ffi-compiler (1.0.1)
-      ffi (>= 1.0.0)
-      rake
     formatador (0.2.5)
     gemoji (3.0.1)
     globalid (0.4.2)
@@ -1137,8 +1134,6 @@ GEM
       rspec-mocks (~> 3.9)
       rspec-support (~> 3.9)
     rspec-support (3.9.2)
-    scrypt (3.0.7)
-      ffi-compiler (>= 1.0, < 2.0)
     semantic_range (2.3.0)
     shellany (0.0.1)
     simple_form (5.0.2)
@@ -1185,7 +1180,7 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth (~> 4.3.2)
-  authlogic (~> 4.4.2)
+  authlogic (~> 6.0.0)
   awesome_print
   aws-sdk
   bootsnap
