@@ -17,6 +17,7 @@ gem 'dalli', '~> 2.7.10'
 gem 'gemoji'
 gem 'bootsnap'
 gem 'webpacker'
+gem "scrypt", "~> 3.0"
 
 group :development, :test do
   gem 'minitest'

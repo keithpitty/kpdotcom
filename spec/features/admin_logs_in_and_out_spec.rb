@@ -4,8 +4,7 @@ feature 'Admin logs in and out' do
   background do
     create(:user,
            login: 'admin',
-           password: 'password',
-           password_confirmation: 'password') 
+           password: 'password')
   end
 
   scenario 'they log in and log out' do

@@ -46,11 +46,11 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     arel (9.0.0)
-    authlogic (4.4.3)
-      activerecord (>= 4.2, < 5.3)
-      activesupport (>= 4.2, < 5.3)
+    authlogic (6.1.0)
+      activemodel (>= 5.2, < 6.1)
+      activerecord (>= 5.2, < 6.1)
+      activesupport (>= 5.2, < 6.1)
       request_store (~> 1.0)
-      scrypt (>= 1.2, < 4.0)
     awesome_print (1.8.0)
     aws-eventstream (1.0.3)
     aws-partitions (1.290.0)
@@ -1214,6 +1214,7 @@ DEPENDENCIES
   rake
   rakismet (~> 1.5.4)
   rspec-rails
+  scrypt (~> 3.0)
   simple_form (~> 5.0.2)
   simplecov
   therubyracer (~> 0.12.3)
