@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 ruby "2.6.6"
 
 gem 'rails', '~> 5.2.4'
-gem 'jquery-rails', '~> 4.3.5'
+gem 'jquery-rails', '~> 4.4.0'
 gem 'pg', '~> 1.2.3'
 gem 'RedCloth', '~> 4.3.2'
 gem 'coderay', '~> 1.1.2'
