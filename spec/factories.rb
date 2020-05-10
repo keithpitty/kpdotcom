@@ -10,6 +10,5 @@ FactoryBot.define do
   factory :user do
     login { 'someone@example.com' }
     password { 'password' }
-    password_confirmation { 'password' }
   end
 end

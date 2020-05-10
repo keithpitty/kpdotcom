@@ -4,8 +4,7 @@ feature 'Admin adds blog post' do
   background do
     create(:user,
            login: 'admin',
-           password: 'password',
-           password_confirmation: 'password') 
+           password: 'password')
   end
 
   scenario 'they add and save a blog post' do

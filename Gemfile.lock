@@ -976,6 +976,9 @@ GEM
       factory_bot (~> 5.2.0)
       railties (>= 4.2.0)
     ffi (1.12.2)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
     formatador (0.2.5)
     gemoji (3.0.1)
     globalid (0.4.2)
@@ -1134,6 +1137,8 @@ GEM
       rspec-mocks (~> 3.9)
       rspec-support (~> 3.9)
     rspec-support (3.9.2)
+    scrypt (3.0.7)
+      ffi-compiler (>= 1.0, < 2.0)
     semantic_range (2.3.0)
     shellany (0.0.1)
     simple_form (5.0.2)
@@ -1209,6 +1214,7 @@ DEPENDENCIES
   rake
   rakismet (~> 1.5.4)
   rspec-rails
+  scrypt (~> 3.0)
   simple_form (~> 5.0.2)
   simplecov
   therubyracer (~> 0.12.3)
