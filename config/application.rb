@@ -10,9 +10,7 @@ require 'action_mailer/railtie'
 require 'action_view/railtie'
 
 
-if defined?(Bundler)
-  Bundler.require *Rails.groups(:assets => %w(development test))
-end
+Bundler.require *Rails.groups(:assets => %w(development test))
 
 module Kpdotcom
   class Application < Rails::Application
