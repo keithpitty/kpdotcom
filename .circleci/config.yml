@@ -4,9 +4,9 @@ jobs:
     parallelism: 1
     working_directory: ~/kpdotcom
     docker:
-      - image: circleci/ruby:2.6.6-node-browsers
+      - image: circleci/ruby:2.7.1-node-browsers
         environment:
-          BUNDLER_VERSION: 2.0.1
+          BUNDLER_VERSION: 2.1.4
           BUNDLE_JOBS: 3
           BUNDLE_RETRY: 3
           BUNDLE_PATH: vendor/bundle
@@ -26,7 +26,7 @@ jobs:
           command: |
             echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
             source $BASH_ENV
-            gem install bundler -v 2.0.1
+            gem install bundler -v 2.1.4
       - run:
           name: Which bundler?
           command: bundle -v
