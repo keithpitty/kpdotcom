@@ -31,7 +31,6 @@ group :development, :test do
   gem 'guard-rspec', require: false
   gem 'growl'
   gem 'rake'
-  gem 'rails-controller-testing'
 end
 
 group :development do
