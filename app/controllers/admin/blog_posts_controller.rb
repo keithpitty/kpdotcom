@@ -65,7 +65,7 @@ module Admin
 
     def handle_update
       @blog_post = BlogPost.find_by_param(params[:id])
-      @blog_post.update_attributes(blog_post_params)
+      @blog_post.update(blog_post_params)
       if @blog_post.save
         expire_fragment_caches
         flash[:notice] = 'Blog post updated.'
