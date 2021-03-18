@@ -51,7 +51,7 @@ GEM
       activerecord (>= 5.2, < 6.2)
       activesupport (>= 5.2, < 6.2)
       request_store (~> 1.0)
-    awesome_print (1.8.0)
+    awesome_print (1.9.2)
     aws-eventstream (1.1.1)
     aws-partitions (1.434.0)
     aws-sdk (3.0.2)
