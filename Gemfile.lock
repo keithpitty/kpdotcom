@@ -1143,9 +1143,9 @@ GEM
       ffi-compiler (>= 1.0, < 2.0)
     semantic_range (3.0.0)
     shellany (0.0.1)
-    simple_form (5.0.2)
-      actionpack (>= 5.0)
-      activemodel (>= 5.0)
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     simplecov (0.21.2)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -1219,7 +1219,7 @@ DEPENDENCIES
   rakismet (~> 1.5.4)
   rspec-rails
   scrypt (~> 3.0)
-  simple_form (~> 5.0.2)
+  simple_form (~> 5.1.0)
   simplecov
   therubyracer (~> 0.12.3)
   timecop
