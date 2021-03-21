@@ -3,7 +3,6 @@
 class AboutController < ApplicationController
 
   def index
-    @testimonials = Testimonial.all
     @achievements = Achievement.all
   end
 end
