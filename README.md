@@ -97,7 +97,7 @@ I'll provide some notes below about the codebase with more focus on the back-end
 *  `ApplicationController` contains common methods used by other controllers;
 *  `BlogController` redirects to the latest published post;
 *  `BlogPostsController` redirects a request to show a blog post to the `Blog::ArchivesController`;
-*  `ContactsController` enables a message from the Contact page to be saved and emailed (this is currently broken);
+*  `ContactsController` enables a message from the Contact page to be saved and emailed;
 *  `HomeController` supports the home page by retrieving the latest three published posts;
 *  `TestimonialsController` supports the Testimonials page;
 *  `UserSessionsController` supports sessions for the admin user
@@ -145,7 +145,7 @@ Specs are supported by the `factory_bot_rails` gem.
 
 ### Opportunities for improvement
 
-* fix broken email configuration;
 * fix broken RSS feed;
 * replace use of deprecated `paperclip` gem with `ActiveStorage`;
 * remove artifacts that are left over from features that are no longer supported;
+* improve usability of Admin UI by introducing React components
