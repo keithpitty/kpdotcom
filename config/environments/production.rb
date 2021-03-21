@@ -92,7 +92,7 @@ Rails.application.configure do
   }
   
   # Configure memcachier
-  config.cache_store =  :dalli_store,
+  config.cache_store =  :mem_cache_store,
   (ENV["MEMCACHIER_SERVERS"] || "").split(","),
   { :username => ENV["MEMCACHIER_USERNAME"],
     :password => ENV["MEMCACHIER_PASSWORD"],
