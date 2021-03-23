@@ -4,7 +4,7 @@ class AddRequestColumnsToComments < ActiveRecord::Migration[5.2]
     add_column :comments, :user_agent, :string
     add_column :comments, :referrer, :string
     add_column :comments, :approved, :boolean, :default => false, :null => false
-    Comment.update_all("approved=1")
+    Comment.update_all("approved=true")
   end
 
   def self.down
