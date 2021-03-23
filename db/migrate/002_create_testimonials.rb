@@ -1,4 +1,4 @@
-class CreateTestimonials < ActiveRecord::Migration
+class CreateTestimonials < ActiveRecord::Migration[5.2]
   def self.up
     create_table :testimonials do |t|
       t.column :provider_name, :string

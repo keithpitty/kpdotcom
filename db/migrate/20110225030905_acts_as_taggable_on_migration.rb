@@ -1,4 +1,4 @@
-class ActsAsTaggableOnMigration < ActiveRecord::Migration
+class ActsAsTaggableOnMigration < ActiveRecord::Migration[5.2]
   def self.up
     # Remove old tables from acts_as_taggable_on_steriods plugin
     drop_table :taggings if table_exists? :taggings
