@@ -1,4 +1,4 @@
-class CreateContacts < ActiveRecord::Migration
+class CreateContacts < ActiveRecord::Migration[5.2]
   def self.up
     create_table :contacts do |t|
       t.string :name, :email, :subject

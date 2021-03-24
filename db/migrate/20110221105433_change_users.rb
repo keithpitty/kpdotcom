@@ -1,4 +1,4 @@
-class ChangeUsers < ActiveRecord::Migration
+class ChangeUsers < ActiveRecord::Migration[5.2]
   def self.up
     change_column :users, :login, :string, :null => false
     remove_column :users, :email

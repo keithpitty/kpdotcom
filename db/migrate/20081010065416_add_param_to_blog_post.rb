@@ -1,4 +1,4 @@
-class AddParamToBlogPost < ActiveRecord::Migration
+class AddParamToBlogPost < ActiveRecord::Migration[5.2]
   def self.up
     add_column :blog_posts, :param, :string
   end

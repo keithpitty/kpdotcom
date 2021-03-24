@@ -1,4 +1,4 @@
-class AddRankToTestimonial < ActiveRecord::Migration
+class AddRankToTestimonial < ActiveRecord::Migration[5.2]
   def self.up
     add_column :testimonials, :rank, :integer
   end
