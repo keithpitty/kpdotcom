@@ -49,7 +49,7 @@ a:hover {
   @apply bg-teal-300;
 }
 .btn-form {
-  @apply mt-4 mr-2;
+  @apply mr-2;
 }
 .btn-mini {
   @apply text-sm font-light bg-gray-500 text-white py-1 px-2;
@@ -80,6 +80,10 @@ blockquote cite {
 }
 img {
   @apply inline;
+}
+form.button_to input {
+  border-width: 0;
+  margin: 0;
 }
 form label {
   @apply block text-gray-700 mt-2;

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :achievements
     resources :testimonials
-    resources :blog_posts do
+    resources :blog_posts, except: :show do
       member do
         get :preview
       end
