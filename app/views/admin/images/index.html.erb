@@ -15,8 +15,8 @@
       <tr>
         <td><%= image_tag image.picture.url(:thumb) %></td>
         <td><%= link_to image.picture.url, image.picture.url %></td>
-        <td>
-          <%= link_to 'Delete', admin_image_path(image), :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-mini btn-danger ml-1" %>
+        <td class="form-actions">
+          <%= button_to 'Delete', admin_image_path(image), :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-mini btn-danger btn-form ml-1" %>
         </td>
       </tr>
     <% end %>
