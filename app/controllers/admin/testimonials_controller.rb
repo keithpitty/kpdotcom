@@ -29,7 +29,7 @@ module Admin
 
     def update
       @testimonial = Testimonial.find(params[:id])
-      @testimonial.update_attributes(testimonial_params)
+      @testimonial.update(testimonial_params)
       if @testimonial.save
         expire_testimonials_cache
         flash[:notice] = 'Testimonial updated.'
