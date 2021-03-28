@@ -16,9 +16,9 @@
       <tr>
         <td><%= post.published_at.present? ? post.published_at.to_date.to_formatted_s(:rfc822) : '' %></td>
         <td><%= post.title %></td></td><td><%= post.status %></td>
-        <td>
-          <%= link_to 'Edit', edit_admin_blog_post_path(post), :class => "btn btn-mini" %>
-          <%= link_to 'Delete', admin_blog_post_path(post), :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-mini btn-danger" %></td>
+        <td class="form-actions">
+          <%= link_to 'Edit', edit_admin_blog_post_path(post), :class => "btn btn-mini btn-form" %>
+          <%= button_to 'Delete', admin_blog_post_path(post), :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-mini btn-danger btn-form"%></td>
       </tr>
     <% end %>
   </tbody>

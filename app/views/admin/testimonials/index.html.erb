@@ -19,9 +19,9 @@
         <td><%= testimonial.provider_name %></td>
         <td><%= testimonial.provider_position %></td>
         <td><%= testimonial.recommendation_year %></td>
-        <td>
-          <%= link_to 'Edit', edit_admin_testimonial_path(testimonial), :class => "btn btn-mini" %>
-          <%= link_to 'Delete', admin_testimonial_path(testimonial), :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-mini btn-danger" %>
+        <td class="form-actions">
+          <%= link_to 'Edit', edit_admin_testimonial_path(testimonial), :class => "btn btn-mini btn-form" %>
+          <%= button_to 'Delete', admin_testimonial_path(testimonial), :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-mini btn-danger btn-form" %>
         </td>
       </tr>
     <% end %>
