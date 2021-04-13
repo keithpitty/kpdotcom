@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository holds the codebase that supports [my website](https://keithpitty.com). It is written in Ruby on Rails, currently using version 5.2. 
+This repository holds the codebase that supports [my website](https://keithpitty.com). It is written in Ruby on Rails, currently using version 6.1.3.1. 
 
 These days the application runs on Heroku using a Postgres database, MemCachier for caching, Papertrail for logging, and Twilio SendGrid for sending emails. I forget where I initially deployed it to back in 2007!
 
@@ -12,7 +12,7 @@ Below I explain the features of the application, its history, and some notes abo
 
 _Keith Pitty_
 
-_21 March, 2021_
+_28 March, 2021_
 
 ## Features
 
@@ -61,7 +61,7 @@ I've endeavoured to maintain and upgrade the application since then. Some blog p
 * An admission that web design is not a skill in my sweetspot with the resultant [switch to Twitter Bootstrap](https://keithpitty.com/blog/archives/2011-02-27-upgrading-to-rails-3);
 * How I [adopted Tailwind CSS](https://keithpitty.com/blog/archives/2020-04-14-adopting-tailwind-css)
 
-I'll provide some notes below about the codebase with more focus on the back-end. Meanwhile, I note that whilst the site currently runs on Rails 5.2, I intend to complete upgrading it to Rails 6.1 in the near future.
+I'll provide some notes below about the codebase with more focus on the back-end.
 
 ## Notes about the codebase
 

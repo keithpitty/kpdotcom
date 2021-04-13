@@ -30,7 +30,7 @@ module Admin
 
     def update
       @achievement = Achievement.find(params[:id])
-      @achievement.update_attributes(achievement_params)
+      @achievement.update(achievement_params)
       if @achievement.save
         expire_achievements_fragment
         flash[:notice] = 'Achievement updated.'

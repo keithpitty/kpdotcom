@@ -27,7 +27,7 @@ describe Admin::AchievementsController do
 
     describe '#update' do
       it 'should update an achievement' do
-        expect(achievement).to receive(:update_attributes)
+        expect(achievement).to receive(:update)
         expect(achievement).to receive(:save).and_return(true)
         post :update, params: {
                                 id: '1', achievement: { rank: '10',

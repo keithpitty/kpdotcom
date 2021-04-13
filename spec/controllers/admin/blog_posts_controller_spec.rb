@@ -40,7 +40,7 @@ describe Admin::BlogPostsController do
 
     describe '#update' do
       it 'updates a post' do
-        expect(blog_post).to receive(:update_attributes)
+        expect(blog_post).to receive(:update)
         expect(blog_post).to receive(:save).and_return(true)
         post :update, params: {
                                 id: '1',
