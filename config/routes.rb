@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   resources :blog_posts
 
   resources :comments
-  resources :services
   namespace :admin do
     resources :achievements
     resources :testimonials
