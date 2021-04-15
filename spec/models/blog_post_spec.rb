@@ -7,22 +7,7 @@ describe BlogPost do
                        title: params[:title],
                        post: params[:post],
                        published: true)
-    blog_post.tag_list.add(params[:tag_list], parse: true)
     blog_post.save
-  end
-
-  describe '.find_published_tagged_with' do
-    before do
-      create_blog_post(title: 'Post 1',
-                       post: 'test',
-                       tag_list: 'tag1')
-      create_blog_post(title: 'Post 2',
-                       post: 'test',
-                       tag_list: 'tag1, tag4')
-      create_blog_post(title: 'Post 3',
-                       post: 'test',
-                       tag_list: 'tag3')
-    end
   end
 
   describe '#set_param' do
