@@ -49,7 +49,7 @@ module Admin
     private
 
     def blog_post_params
-      params.require(:blog_post).permit(:title, :post, :published, :comments_open, :tag_list)  
+      params.require(:blog_post).permit(:title, :post, :published, :comments_open)
     end
 
     def handle_create
@@ -77,7 +77,6 @@ module Admin
 
     def expire_fragment_caches
       expire_fragment "recent_posts"
-      expire_fragment "tag_cloud"
       expire_fragment "blog_post_in_list_#{@blog_post.id}"
       expire_fragment "blog_post_detail_#{@blog_post.id}"
     end
