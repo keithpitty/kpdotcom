@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_28_104435) do
+ActiveRecord::Schema.define(version: 2021_04_15_122457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,13 +100,6 @@ ActiveRecord::Schema.define(version: 2021_03_28_104435) do
     t.string "picture_content_type", limit: 255
     t.integer "picture_file_size"
     t.datetime "picture_updated_at"
-  end
-
-  create_table "services", id: :serial, force: :cascade do |t|
-    t.string "name", limit: 255
-    t.string "heading", limit: 255
-    t.text "description"
-    t.integer "rank"
   end
 
   create_table "testimonials", id: :serial, force: :cascade do |t|
