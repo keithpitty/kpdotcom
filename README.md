@@ -12,7 +12,7 @@ Below I explain the features of the application, its history, and some notes abo
 
 _Keith Pitty_
 
-_28 March, 2021_
+_15 April, 2021_
 
 ## Features
 
@@ -46,7 +46,6 @@ The repository contains some redundant code for features that are no longer supp
 
 * tags
 * an RSS feed
-* a page showing services I offered when I was freelancing
 
 One day I intend to clean these up. Perhaps I'll revive the RSS feed.
 
