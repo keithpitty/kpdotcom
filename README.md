@@ -12,7 +12,7 @@ Below I explain the features of the application, its history, and some notes abo
 
 _Keith Pitty_
 
-_28 March, 2021_
+_15 April, 2021_
 
 ## Features
 
@@ -40,15 +40,13 @@ The admin UI provides me, when logged in, to:
 * view comments and remove those that have been caught as spam;
 * add images
 
-### Redundant features
+### Redundant feature
 
-The repository contains some redundant code for features that are no longer supported:
+The repository contains some redundant code for a feature that is no longer supported:
 
-* tags
 * an RSS feed
-* a page showing services I offered when I was freelancing
 
-One day I intend to clean these up. Perhaps I'll revive the RSS feed.
+One day I may revive it.
 
 ## History
 
@@ -147,5 +145,4 @@ Specs are supported by the `factory_bot_rails` gem.
 
 * fix broken RSS feed;
 * replace use of deprecated `paperclip` gem with `ActiveStorage`;
-* remove artifacts that are left over from features that are no longer supported;
 * improve usability of Admin UI by introducing React components
