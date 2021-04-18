@@ -1,6 +1,6 @@
 <% cache "blog_post_detail_#{@blog_post.id}", skip_digest: true do %>
   <h1 class="blog"><%= @blog_post.title %></h1>
-  <h6><%= @blog_post.published_at.to_date.to_formatted_s(:long_ordinal) %></h6>
+  <h6><%= @blog_post.published_at.to_date.to_formatted_s(:full_australian) %></h6>
   <%= textilize(coderay(@blog_post.post)) %>
 <% end %>
 <% if @blog_post.comments_open? || @blog_post.comments.any? %>

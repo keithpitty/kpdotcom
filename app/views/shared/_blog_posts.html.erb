@@ -1,7 +1,7 @@
 <% @blog_posts.each do |p| %>
   <% cache "blog_post_in_list_#{p.id}", skip_digest: true do %>
     <h1 class="blog"><%= p.title %></h1>
-    <h6><%= p.published_at.to_date.to_formatted_s(:long_ordinal) %></h6>
+    <h6><%= p.published_at.to_date.to_formatted_s(:full_australian) %></h6>
     <%= textilize(coderay(p.post)) %>
   <% end %>
 <% end %>
