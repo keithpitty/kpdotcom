@@ -25,10 +25,6 @@ class BlogPost < ApplicationRecord
     published? ? "Published" : "Draft"
   end
 
-  def status=(status)
-    status == "Published" ? self.published = true : self.published = false
-  end
-
   def has_previous_post?
     previous_posts.exists?
   end
