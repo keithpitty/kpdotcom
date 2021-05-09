@@ -23,7 +23,7 @@ group :development, :test do
   gem 'minitest'
   gem 'pry'
   gem 'pry-doc'
-  gem 'pry-byebug'
+  gem 'pry-byebug', '~> 3.9.0'
   gem 'pry-rescue'
   gem 'pry-stack_explorer'
   gem 'awesome_print'
