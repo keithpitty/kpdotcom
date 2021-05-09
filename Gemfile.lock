@@ -1230,12 +1230,12 @@ GEM
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
     pg (1.2.3)
-    pry (0.14.1)
+    pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    pry-byebug (3.8.0)
+    pry-byebug (3.9.0)
       byebug (~> 11.0)
-      pry (~> 0.10)
+      pry (~> 0.13.0)
     pry-doc (1.1.0)
       pry (~> 0.11)
       yard (~> 0.9.11)
@@ -1387,7 +1387,7 @@ DEPENDENCIES
   paperclip (~> 6.1.0)
   pg (~> 1.2.3)
   pry
-  pry-byebug
+  pry-byebug (~> 3.9.0)
   pry-doc
   pry-rescue
   pry-stack_explorer
