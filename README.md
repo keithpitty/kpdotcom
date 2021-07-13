@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository holds the codebase that supports [my website](https://keithpitty.com). It is written in Ruby on Rails, currently using version 6.1.3.2.
+This repository holds the codebase that supports [my website](https://keithpitty.com). It is written in Ruby on Rails, currently using version 6.1.4.
 
 These days the application runs on Heroku using a Postgres database, MemCachier for caching, Papertrail for logging, and Twilio SendGrid for sending emails. I forget where I initially deployed it to back in 2007!
 
@@ -12,7 +12,7 @@ Below I explain the features of the application, its history, and some notes abo
 
 _Keith Pitty_
 
-_9 May, 2021_
+_13 July, 2021_
 
 ## Code Health
 
