@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby "2.7.3"
+ruby "3.0.2"
 
 gem 'rails', '~> 6.1.3'
 gem 'jquery-rails', '~> 4.4.0'
@@ -21,17 +21,12 @@ gem "scrypt", "~> 3.0"
 
 group :development, :test do
   gem 'minitest'
-  gem 'pry'
-  gem 'pry-doc'
-  gem 'pry-byebug', '~> 3.9.0'
-  gem 'pry-rescue'
-  gem 'pry-stack_explorer'
   gem 'awesome_print'
   gem 'rspec-rails'
   gem 'guard-rspec', require: false
-  gem 'growl'
   gem 'rake'
   gem 'rails-controller-testing'
+  gem 'webrick'
 end
 
 group :development do
