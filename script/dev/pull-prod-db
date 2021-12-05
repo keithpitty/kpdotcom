@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -euo pipefail
+
+dropdb kpdotcom_development
+
+PGUSER=kpdotcom heroku pg:pull DATABASE kpdotcom_development -a kpdotcom-prod
