@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby "2.7.4"
+ruby "2.7.5"
 
 gem 'rails', '~> 6.1.4.1'
 gem 'jquery-rails', '~> 4.4.0'
@@ -9,7 +9,6 @@ gem 'RedCloth', '~> 4.3.2'
 gem 'coderay', '~> 1.1.3'
 gem 'authlogic'
 gem 'rakismet', '~> 1.5.4'
-gem 'less-rails', '~> 5.0.0'
 gem 'simple_form', '~> 5.1.0'
 gem 'paperclip', '~> 6.1.0'
 gem 'aws-sdk'
@@ -18,6 +17,7 @@ gem 'gemoji'
 gem 'bootsnap'
 gem 'webpacker'
 gem "scrypt", "~> 3.0"
+gem 'sass-rails'
 
 group :development, :test do
   gem 'minitest'
@@ -45,7 +45,6 @@ group :staging, :production do
 end
 
 group :production do
-  gem 'therubyracer', '~> 0.12.3', :require => 'v8'
   gem 'unicorn'
   gem 'rack-timeout', '~> 0.6.0'
 end
