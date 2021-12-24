@@ -17,7 +17,6 @@ gem 'gemoji'
 gem 'bootsnap'
 gem 'webpacker'
 gem "scrypt", "~> 3.0"
-gem 'sass-rails'
 
 group :development, :test do
   gem 'minitest'
