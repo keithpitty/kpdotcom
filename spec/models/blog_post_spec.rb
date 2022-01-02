@@ -38,9 +38,10 @@ describe BlogPost do
                     title: 'Post',
                     post: 'test',
                     published: false)
-      Timecop.freeze(Time.now) do
+      time_now = Time.local(2022, 1, 1, 12, 0, 0)
+      Timecop.freeze(time_now) do
         post.set_published_at
-        expect(post.published_at).to eq(Time.zone.now)
+        expect(post.published_at).to eq(time_now)
       end
     end
   end
