@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 ruby "2.7.5"
 
-gem 'rails', '~> 7.0.0'
+gem 'rails', '~> 7.0.1'
 gem 'jquery-rails', '~> 4.4.0'
 gem 'pg', '~> 1.2.3'
 gem 'RedCloth', '~> 4.3.2'
