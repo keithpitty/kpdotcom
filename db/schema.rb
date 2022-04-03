@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_02_104953) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_01_02_104953) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,8 +18,8 @@ ActiveRecord::Schema.define(version: 2022_01_02_104953) do
     t.integer "rank"
     t.string "heading", limit: 255
     t.text "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -28,7 +27,7 @@ ActiveRecord::Schema.define(version: 2022_01_02_104953) do
     t.string "record_type", null: false
     t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
-    t.datetime "created_at", null: false
+    t.datetime "created_at", precision: nil, null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
@@ -41,7 +40,7 @@ ActiveRecord::Schema.define(version: 2022_01_02_104953) do
     t.string "service_name", null: false
     t.bigint "byte_size", null: false
     t.string "checksum"
-    t.datetime "created_at", null: false
+    t.datetime "created_at", precision: nil, null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
@@ -55,19 +54,19 @@ ActiveRecord::Schema.define(version: 2022_01_02_104953) do
     t.integer "user_id", null: false
     t.string "title", limit: 255
     t.text "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
   end
 
   create_table "blog_posts", id: :serial, force: :cascade do |t|
     t.string "title", limit: 255
     t.text "post"
     t.boolean "published"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
     t.string "param", limit: 255
     t.boolean "comments_open"
-    t.datetime "published_at"
+    t.datetime "published_at", precision: nil
   end
 
   create_table "comments", id: :serial, force: :cascade do |t|
@@ -76,8 +75,8 @@ ActiveRecord::Schema.define(version: 2022_01_02_104953) do
     t.string "email", limit: 255
     t.string "website", limit: 255
     t.text "comment"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
     t.string "user_ip", limit: 255
     t.string "user_agent", limit: 255
     t.string "referrer", limit: 255
@@ -89,17 +88,17 @@ ActiveRecord::Schema.define(version: 2022_01_02_104953) do
     t.string "email", limit: 255
     t.string "subject", limit: 255
     t.text "message"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
   end
 
   create_table "images", id: :serial, force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.string "picture_file_name", limit: 255
     t.string "picture_content_type", limit: 255
     t.integer "picture_file_size"
-    t.datetime "picture_updated_at"
+    t.datetime "picture_updated_at", precision: nil
   end
 
   create_table "testimonials", id: :serial, force: :cascade do |t|
@@ -114,8 +113,8 @@ ActiveRecord::Schema.define(version: 2022_01_02_104953) do
     t.string "login", limit: 255, null: false
     t.string "crypted_password", limit: 255, null: false
     t.string "password_salt", limit: 255, null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
     t.string "persistence_token", limit: 255, null: false
   end
 
