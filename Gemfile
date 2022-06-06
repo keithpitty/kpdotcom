@@ -45,5 +45,5 @@ end
 
 group :production do
   gem 'unicorn'
-  gem 'rack-timeout', '~> 0.6.0'
+  gem 'rack-timeout', '~> 0.6.1'
 end
