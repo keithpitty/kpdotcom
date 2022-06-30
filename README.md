@@ -12,7 +12,7 @@ Below I explain the features of the application, its history, and some notes abo
 
 _Keith Pitty_
 
-_9 March, 2022_
+_1 July, 2022_
 
 ## Code Health
 
@@ -85,7 +85,7 @@ I'll provide some notes below about the codebase with more focus on the back-end
 	* makes use of `rakismet` gem;
 	* validation, using regex for email validation
 * `Contact` includes straight-forward validation;
-* `Image` stores images on S3, using the `paperclip` gem (which needs to be replaced);
+* `Image` stores images on S3, using Active Storage
 * `Testimonial` includes straight-forward validation;
 * `User` and `UserSession` make use of the `authlogic` gem
 
@@ -153,5 +153,4 @@ Specs are supported by the `factory_bot_rails` gem.
 ### Opportunities for improvement
 
 * fix broken RSS feed;
-* replace use of deprecated `paperclip` gem with `ActiveStorage`;
 * improve usability of Admin UI by introducing React components
