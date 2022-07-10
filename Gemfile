@@ -17,6 +17,7 @@ gem 'gemoji'
 gem 'bootsnap'
 gem 'webpacker'
 gem "scrypt", "~> 3.0"
+gem 'database_cleaner-active_record'
 
 group :development, :test do
   gem 'minitest'
