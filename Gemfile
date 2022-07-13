@@ -16,11 +16,8 @@ gem 'gemoji'
 gem 'bootsnap'
 gem 'webpacker'
 gem "scrypt", "~> 3.0"
-<<<<<<< HEAD
 gem 'database_cleaner-active_record'
-=======
 gem "image_processing"
->>>>>>> c27f9e6 (Add image_processing gem)
 
 group :development, :test do
   gem 'minitest'
