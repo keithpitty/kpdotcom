@@ -98,6 +98,9 @@ Rails.application.configure do
     :socket_failure_delay => 0.2
   }
 
+  # Store uploaded files on the local file system (see config/storage.yml for options)
+  config.active_storage.service = :amazon
+
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
   # middleware. The `delay` is used to determine how long to wait after a write
