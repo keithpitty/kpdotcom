@@ -40,6 +40,8 @@ group :test do
   gem 'simplecov', require: false
 end
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 group :staging, :production do
   gem 'rails_12factor'
 end
