@@ -10,7 +10,6 @@ gem 'coderay', '~> 1.1.3'
 gem 'authlogic'
 gem 'rakismet', '~> 1.5.4'
 gem 'simple_form', '~> 5.1.0'
-gem 'paperclip', '~> 6.1.0'
 gem 'aws-sdk'
 gem 'dalli', '~> 3.2.1'
 gem 'gemoji'
@@ -18,6 +17,7 @@ gem 'bootsnap'
 gem 'webpacker'
 gem "scrypt", "~> 3.0"
 gem 'database_cleaner-active_record'
+gem "image_processing"
 
 group :development, :test do
   gem 'minitest'

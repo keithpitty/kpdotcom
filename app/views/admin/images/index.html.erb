@@ -13,8 +13,8 @@
   <tbody>
     <% @images.each do |image| %>
       <tr>
-        <td><%= image_tag image.picture.url(:thumb) %></td>
-        <td><%= link_to image.picture.url, image.picture.url %></td>
+        <td><%= image_tag image.picture.variant(resize_to_limit: [100, nil]) %></td>
+        <td><%= link_to url_for(image.picture), url_for(image.picture) %></td>
         <td class="form-actions">
           <%= button_to 'Delete', admin_image_path(image), :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-mini btn-danger btn-form ml-1" %>
         </td>

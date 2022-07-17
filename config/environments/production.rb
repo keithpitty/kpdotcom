@@ -88,17 +88,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
-  # Configure AWS variables for paperclip
-  config.paperclip_defaults = {
-      storage: :s3,
-      s3_credentials: {
-          bucket: ENV['S3_BUCKET_NAME'],
-          access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-          secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
-          s3_region: ENV['S3_REGION']
-      }
-  }
-  
   # Configure memcachier
   config.cache_store =  :mem_cache_store,
   (ENV["MEMCACHIER_SERVERS"] || "").split(","),
@@ -108,6 +97,9 @@ Rails.application.configure do
     :socket_timeout => 1.5,
     :socket_failure_delay => 0.2
   }
+
+  # Store uploaded files on the local file system (see config/storage.yml for options)
+  config.active_storage.service = :amazon
 
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
