@@ -3,7 +3,7 @@
 <% cache "testimonials", skip_digest: true do %>
   <% @testimonials.each do |testimonial| %>
     <blockquote class="testimonial">
-      <p><%= h testimonial.recommendation %></p>
+      <p><%= h textilize(testimonial.recommendation) %></p>
       <cite><%= h testimonial.provider %></cite>
     </blockquote>
   <% end %>
