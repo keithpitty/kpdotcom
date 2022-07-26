@@ -58,7 +58,6 @@ module Admin
         flash[:notice] = 'Blog post created.'
         redirect_to admin_blog_posts_url
       else
-        logger.debug(e.message)
         render :new
       end
     end
