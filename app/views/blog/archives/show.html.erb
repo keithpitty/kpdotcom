@@ -1,4 +1,5 @@
 <% cache "blog_post_detail_#{@blog_post.id}", skip_digest: true do %>
+  <% content_for(:title) { @blog_post.title } %>
   <h1 class="blog"><%= @blog_post.title %></h1>
   <h6><%= @blog_post.published_at.to_date.to_formatted_s(:full_australian) %></h6>
   <%= textilize(coderay(@blog_post.post)) %>
