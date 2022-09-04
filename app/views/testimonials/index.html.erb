@@ -1,3 +1,4 @@
+<% content_for(:title) { 'Testimonials' } %>
 <h1>Testimonials</h1>
 <p>If you would like to talk with one of my referees, please <%= link_to 'contact me', '/contact'%>. Meanwhile, please read on to find out what others have had to say about my work.</p>
 <% cache "testimonials", skip_digest: true do %>
