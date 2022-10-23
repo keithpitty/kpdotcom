@@ -9,7 +9,7 @@ describe ContactsController do
                                            email: 'invalid',
                                            subject: 'Shot!',
                                            message: 'Great shot, man!' },
-                                honeypot: ''
+                                content: ''
                               }
         expect(response).to render_template(:new)
         expect(flash[:error]).to eq('Please fix the errors and try again.')
@@ -22,7 +22,7 @@ describe ContactsController do
                                            email: 'invalid',
                                            subject: 'Shot!',
                                            message: 'Great shot, man!' },
-                                honeypot: ''
+                                content: ''
                               }
         expect(response).to render_template(:new)
         expect(flash[:error]).to eq('Please fix the errors and try again.')
@@ -32,7 +32,7 @@ describe ContactsController do
                                            email: 'brian@example.com',
                                            subject: 'Shot!',
                                            message: 'Great shot, man!' },
-                                honeypot: ''
+                                content: ''
                               }
         expect(response).to be_redirect
         expect(flash[:notice]).to eq('Message sent!')
