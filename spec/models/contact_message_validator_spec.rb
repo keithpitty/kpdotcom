@@ -105,7 +105,18 @@ describe ContactMessageValidator do
         validator = ContactMessageValidator.new(
           honeypot: '',
           contact: valid_contact,
-          message: 'Make dollars just sitting home. Telegram - @Cryptaxbot lorinoke'
+          message: 'Your money keep grow 24/7 if you use the financial Robot. Telegram - @Cryptaxbot lorinoke'
+        )
+        expect(validator.error_message).to eq('Spam detected.')
+      end
+    end
+
+    context 'has a message which is likely to be spam: contains the word money' do
+      it 'is invalid' do
+        validator = ContactMessageValidator.new(
+          honeypot: '',
+          contact: valid_contact,
+          message: 'Your money keep grow 24/7 if you use the financial Robot.'
         )
         expect(validator.error_message).to eq('Spam detected.')
       end

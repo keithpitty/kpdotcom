@@ -11,10 +11,15 @@ class ContactMessageValidator
   end
 
   def error_message
-    return 'Spam detected.' if @honeypot.length > 0
+    return 'Spam detected.' if spam_detected?
     return 'Spam detected. If you are human, try entering a message without a hyperlink.' if @message =~ /(<a href=)|(http:\/\/)|(https:\/\/)/
-    return 'Spam detected.' if @message =~ /@Cryptaxbot lorinoke/
     return 'Please fix the errors and try again.' unless @contact.valid?
     ''
+  end
+
+  private
+
+  def spam_detected?
+    (@honeypot.length > 0) || (@message =~ /(@Cryptaxbot lorinoke)|(money)|(financial)/)
   end
 end
