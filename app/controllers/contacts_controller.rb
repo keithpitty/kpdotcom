@@ -5,12 +5,17 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
+    @validator = ContactMessageValidator.new(
+      honeypot: params[:content],
+      contact: @contact,
+      message: params[:contact][:message])
     if valid_input?
       @contact.save
       ContactMailer.contact_message(@contact).deliver_now
       flash[:notice] = 'Message sent!'
       redirect_to '/contact'
     else
+      flash[:error] = @validator.error_message
       render :new
     end
   end
@@ -22,10 +27,6 @@ class ContactsController < ApplicationController
   end
 
   def valid_input?
-    flash.clear
-    flash[:error] = 'Spam detected' if params[:content].length > 0
-    flash[:error] = 'Spam detected. If you are human, try entering a message without a hyperlink.' if params[:contact][:message] =~ /(<a href=)|(http:\/\/)|(https:\/\/)/
-    flash[:error] = 'Please fix the errors and try again.' unless @contact.valid?
-    flash[:error].nil?
+    @validator.valid?
   end
 end
