@@ -20,6 +20,6 @@ class ContactMessageValidator
   private
 
   def spam_detected?
-    (@honeypot.length > 0) || (@message =~ /(@Cryptaxbot lorinoke)|(money)|(financial)/)
+    (@honeypot.length > 0) || (@message =~ /(@Cryptaxbot)|(money)|(financial)|free/)
   end
 end
