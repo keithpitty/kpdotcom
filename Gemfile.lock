@@ -1323,7 +1323,7 @@ GEM
       ffi (>= 1.0.0)
       rake
     formatador (0.3.0)
-    gemoji (3.0.1)
+    gemoji (4.0.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     guard (2.18.0)
