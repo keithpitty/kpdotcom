@@ -2,9 +2,11 @@
 
 ## Overview
 
-This repository holds the codebase that supports [my website](https://keithpitty.com). It is written in Ruby on Rails, currently using version 7.0.4.
+This repository holds the codebase that used to support [my website](https://keithpitty.com). It is written in Ruby on Rails, currently using version 7.0.4.
 
-These days the application runs on Heroku using a Postgres database, MemCachier for caching, Papertrail for logging, and Twilio SendGrid for sending emails. I forget where I initially deployed it to back in 2007!
+I say "used to" because, in April 2023 I completed [converting my site to use Jekyll](https://keithpitty.com/blog/archives/2023-04-06-migrating-to-jekyll).
+
+The application used to run on Heroku using a Postgres database, MemCachier for caching, Papertrail for logging, and Twilio SendGrid for sending emails. I forget where I initially deployed it to back in 2007!
 
 It is a relatively simple Rails application that has served its purpose over the intervening years.
 
@@ -12,7 +14,7 @@ Below I explain the features of the application, its history, and some notes abo
 
 _Keith Pitty_
 
-_18 July, 2022_
+_6 April, 2023_
 
 ## Code Health
 
@@ -149,8 +151,3 @@ The following types of RSpec automated tests are run on CircleCI:
 	* a public user visiting all parts of the site
 
 Specs are supported by the `factory_bot_rails` gem.
-
-### Opportunities for improvement
-
-* fix broken RSS feed;
-* improve usability of Admin UI by introducing React components
