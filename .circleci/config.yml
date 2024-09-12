@@ -4,7 +4,7 @@ jobs:
     parallelism: 1
     working_directory: ~/kpdotcom
     docker:
-      - image: cimg/ruby:3.1.2-browsers
+      - image: cimg/ruby:3.1.3-browsers
         environment:
           BUNDLER_VERSION: 2.2.23
           BUNDLE_JOBS: 3
@@ -93,7 +93,7 @@ jobs:
 
   upload-coverage:
     docker:
-      - image: cimg/ruby:3.1.2-browsers
+      - image: cimg/ruby:3.1.3-browsers
     environment:
       CC_TEST_REPORTER_ID: eca569d89e2a8d954a3e28ef958ce10e912eef6570bbdabbb28297e11948efa8
     working_directory: ~/kpdotcom
